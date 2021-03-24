@@ -7,7 +7,6 @@ import { getAllFestivals, getOneFestival } from '../controllers/festivals.js'
 const router = express.Router()
 
 router.route('/festivals')
-  console.log("festivals route")
   .get(getAllFestivals)
   // .post(secureRoute, addFestival)
 
