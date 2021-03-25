@@ -1,52 +1,33 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { Menu } from 'semantic-ui-react'
 
 
 
 const Navigation = () => {
   return (
-    <nav className=''>
-      <div className=''>
-        <div className=''>       
-          <div className='' >
-            <Link to='/home'>
-              <span className="">
-              Home
-              </span>
-            </Link>
-          </div>
-          <div className=''>
-            <Link to='/festivals'>
-              <span className=''>
-              Festivals
-              </span>
-            </Link>
-          </div>
-          <div className=''>
-            <Link to='/userprofile'>
-              <span className=''>
-              User Profile
-              </span>
-            </Link>
-          </div>
-          <div className=''>
-            <Link to='/register'>
-              <span className=''>
-            Register
-              </span>
-            </Link>
-          </div>
-          <div className=''>
-            <Link to='/login'>
-              <span className="">
-            Login
-              </span>
-            </Link>
-          </div>
-        </div>
-      </div>
-    </nav>
-  )
+    <div>
+      <Menu pointing secondary>
+        <Menu.Item
+          as= { Link }
+          to='/festivals'
+          name='Festivals'
+        />
+        <Menu.Menu position='right'>
+          <Menu.Item
+            as= { Link }
+            to='/register'
+            name='Register'
+          />
+          <Menu.Item
+            as= { Link }
+            to='/login'
+            name='Login'
+          />
+        </Menu.Menu>
+      </Menu>
+    </div>
+  )   
 }
 
 export default Navigation
