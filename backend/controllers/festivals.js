@@ -49,3 +49,17 @@ export const updateFestival = async (req, res ) => {
     return res.status(404).json(err)
   }
 }
+
+export const deleteFestival = async (req, res) => {
+  try {
+    const { id } = req.params
+    const festivalToDelete = await Festival.findById(id)
+    if (!festivalToDelete) throw new Error('Could not find festival to DELETE')
+    await festivalToDelete.remove()
+    return res.status(200).json( { message: "Festival removed from DB"})
+  } catch (err) {
+    console.log('🥴 could not DELETE festival')
+    console.log(err)
+    return res.status(404).json({message: "Festival not found"})
+  }
+}
