@@ -16,7 +16,7 @@ export default [
     password: 'pass',
     passwordConfirmation: 'pass',
     isAdmin: true
-  } ,
+  },
   {
     username: 'Joe Public',
     email: 'joe@public.com',
