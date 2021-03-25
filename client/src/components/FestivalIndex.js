@@ -3,8 +3,10 @@ import axios from 'axios'
 
 import FestivalCard from './FestivalCard'
 
+// import image1 from '../../../backend/assets/mainFestivalImage/nos-alive-main.jpeg'
+
 const FestivalIndex = () => {
-  const [festivals, setFestivals] = useState(null)
+  const [festivals, setFestivals] = useState([])
 
   useEffect(() => {
     const getData = async () => {
@@ -12,17 +14,19 @@ const FestivalIndex = () => {
       setFestivals(response.data)
     }
     getData()
-  }, [])
 
+  }, [])
+  console.log('FESTIVALS1>>', festivals)
+
+  if (!festivals) return null
   return (
     <>
-      { festivals &&
-        <div>
-          { festivals.map( festival => (
-            <FestivalCard key={festival._id} {...festival} />
-          ))}
-        </div>
-      }
+      <div>
+        {/* <img src={image1} /> */}
+        { festivals.map( festival => (
+          <FestivalCard key={festival._id}{...festival} />
+        ))}
+      </div>
     </>
   )
   
