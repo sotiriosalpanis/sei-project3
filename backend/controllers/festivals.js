@@ -2,7 +2,7 @@ import Festival from '../models/festival.js'
 // import seededFestivals from '../db/data/seededFestivals.js'
 
 export const getAllFestivals = async (_req, res) => {
-  console.log("REQUEST MADE")
+  console.log('REQUEST MADE')
   // const festivals = await seededFestivals
   const festivals = await Festival.find()
   console.log('GETTING FESTIVALS>>', festivals)
@@ -21,7 +21,7 @@ export const addFestival = async (req, res) => {
 }
 
 export const getOneFestival = async (req, res) => {
-  try{
+  try {
     const { id } = req.params
     const singleFestival = await Festival.findById(id)
     if (!singleFestival) {
@@ -30,17 +30,16 @@ export const getOneFestival = async (req, res) => {
     return res.status(200).json(singleFestival)
   } catch (err) {
     console.log('📍Error in getOneFestival>>', err)
-    return res.status(404).json({'message':'Not found'})
+    return res.status(404).json({ message: 'Not found' })
   }
 }
 
-
-export const updateFestival = async (req, res ) => {
+export const updateFestival = async (req, res) => {
   try {
     const { id } = req.params
     const festivalToUpdate = await Festival.findById(id)
     if (!festivalToUpdate) throw new Error('Could not find festival to PUT info into')
-    Object.assign(festivalToUpdate,req.body)
+    Object.assign(festivalToUpdate, req.body)
     await festivalToUpdate.save()
     return res.status(202).json(festivalToUpdate)
   } catch (err) {
@@ -56,10 +55,10 @@ export const deleteFestival = async (req, res) => {
     const festivalToDelete = await Festival.findById(id)
     if (!festivalToDelete) throw new Error('Could not find festival to DELETE')
     await festivalToDelete.remove()
-    return res.status(200).json( { message: "Festival removed from DB"})
+    return res.status(200).json({ message: 'Festival removed from DB' })
   } catch (err) {
     console.log('🥴 could not DELETE festival')
     console.log(err)
-    return res.status(404).json({message: "Festival not found"})
+    return res.status(404).json({ message: 'Festival not found' })
   }
 }

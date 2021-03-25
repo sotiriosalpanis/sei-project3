@@ -28,13 +28,12 @@ const seedDatabase = async () => {
     // * add shows to db
     const festivals = await Festival.create(festivalsWithUsers)
     console.log('Festivals >>', festivals)
- 
+
     console.log(`🌱 DB seeded with ${festivals.length} festivals`)
 
     // * close the connection
     await mongoose.connection.close()
     console.log('✌ Bye!')
-
   } catch (err) {
     console.log(err)
     await mongoose.connection.close()

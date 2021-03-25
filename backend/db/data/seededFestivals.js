@@ -13,7 +13,6 @@
 // }
 // *
 
-
 export default [
   {
     festivalName: 'All Points East',
@@ -27,5 +26,4 @@ export default [
     longitude: -0.03991,
     mainFestivalImage: '/images'
   }
-  
 ]
