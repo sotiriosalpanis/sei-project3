@@ -14,7 +14,7 @@ router.route('/festivals')
 router.route('/festivals/:id')
   .get(getOneFestival)
   .put(updateFestival) //! Building without secure route- will need to be added later
-  .delete(deleteFestival)
+  .delete(deleteFestival) //! Building without secure route- will need to be added later
   // .put(secureRoute, updateFestival)
   // .delete(secureRoute, deleteFestival)
 
