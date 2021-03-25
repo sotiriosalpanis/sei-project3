@@ -22,3 +22,14 @@ export const getOneFestival = async (req, res) => {
     return res.status(404).json({'message':'Not found'})
   }
 }
+
+export const addFestival = async (req, res) => {
+  try {
+    const festivalToAdd = await Festival.create(req.body)
+    return res.status(201).json(festivalToAdd)
+  } catch (err) {
+    console.log('🥴 could not add the festival')
+    console.log(err)
+    return res.status(422).json(err)
+  }
+}
