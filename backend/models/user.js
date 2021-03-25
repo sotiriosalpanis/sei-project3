@@ -8,27 +8,15 @@ const userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   isAdmin: { type: Boolean }
 })
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - PASSWORD CONFIRMATION
-userSchema.set('toJSON', {
-  virtuals: true,
-  transform (_doc, json) {
-    delete json.password
-    return json
-  }
-})
-
 userSchema
   .virtual('passwordConfirmation')
   .set(function (passwordConfirmation) {
     this._passwordConfirmation = passwordConfirmation
   })
 
-userSchema
-  .virtual('passwordConfirmation')
-  .set(function (passwordConfirmation) {
-    this._passwordConfirmation = passwordConfirmation
-  })
-
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - PASSWORD CHECK
 userSchema
   .pre('validate', function (next) {
     if (this.isModified('password') && this.password !== this._passwordConfirmation) {
@@ -37,6 +25,7 @@ userSchema
     next()
   })
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - BCRYPT HASH
 userSchema
   .pre('save', function (next) {
     if (this.isModified('password')) {
@@ -45,9 +34,19 @@ userSchema
     next()
   })
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - PASSWORD COMPARE FOR LOGIN
 userSchema.methods.validatePassword = function (password) {
   return bcrypt.compareSync(password, this.password)
 }
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - PASSWORD COMPARE
+userSchema.set('toJSON', {
+  virtuals: true,
+  transform (_doc, json) {
+    delete json.password
+    return json
+  }
+})
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - EXPORT
 
