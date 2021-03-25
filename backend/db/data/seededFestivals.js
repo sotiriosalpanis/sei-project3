@@ -25,7 +25,7 @@ export default [
     country: 'United Kingdom',
     latitude: 51.53629,
     longitude: -0.03991,
-    mainFestivalImage: '../../assets/mainFestivalImage/all-points-east-main.jpeg'
+    mainFestivalImage: '../assets/mainFestivalImage/all-points-east-main.jpeg'
   },
   {
     festivalName: 'NOS Alive',
