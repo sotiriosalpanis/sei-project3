@@ -22,7 +22,7 @@ const App = () =>{
         <Route exact path ="/festivals"> {/*Uses the FestivalCard component to display all festivals*/}
           <FestivalIndex/>
         </Route>
-        <Route exact path ="/festivals/:id">
+        <Route exact path ="/festivals/:id"> {/*Uses FestivalPage component to display one specific festival by id*/}
           <FestivalPage/>
         </Route>
         <Route exact path ="/userprofile"> {/*Default route, gets users own profile by default?*/}
