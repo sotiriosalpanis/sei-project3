@@ -1,7 +1,7 @@
 import express from 'express'
 import { getAllFestivals, getOneFestival, addFestival, updateFestival, deleteFestival } from '../controllers/festivals.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
-// import { getUserProfile } from '../controllers/users.js'
+import { getUserProfile } from '../controllers/users.js'
 import { secureRoute } from '../config/secureRoute.js'
 
 const router = express.Router()
@@ -20,5 +20,8 @@ router.route('/register')
 
 router.route('/login')
   .post(loginUser)
+
+router.route('/profile')
+  .get(secureRoute, getUserProfile)
 
 export default router
