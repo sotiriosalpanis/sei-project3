@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 import { Container, Header, Divider , Button, Form } from 'semantic-ui-react'
+import { useHistory } from 'react-router-dom'
 
 
 const Register = () => {
+
+  const history = useHistory()
 
   const [ formData, setFormData ] = useState({
     username: '',
@@ -16,11 +20,12 @@ const Register = () => {
     setFormData(newFormData)
   }
 
-  const handleSubmit = event => {
+  const handleSubmit = async event => {
     event.preventDefault()
-    console.log('CLICKED!!')
+    
     try {
-      console.log(event)
+      await axios.post('/api/register',formData)
+      history.push('/')
     } catch (err) {
       console.log(err)
     }
