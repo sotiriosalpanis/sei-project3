@@ -1,6 +1,6 @@
 //   import { secret } from '../config/environment.js'
 //   import User from '../models/user.js'
-//import jwt from 'jsonwebtoken'
+// import jwt from 'jsonwebtoken'
 
 //   export const secureRoute = async (req, res, next) => {
 //   try {

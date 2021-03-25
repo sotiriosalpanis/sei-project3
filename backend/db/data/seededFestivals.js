@@ -13,7 +13,6 @@
 // }
 // *
 
-
 export default [
   {
     festivalName: 'All Points East',
