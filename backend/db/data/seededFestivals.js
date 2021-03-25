@@ -13,7 +13,6 @@
 // }
 // *
 
-
 export default [
   {
     festivalName: 'All Points East',
@@ -223,5 +222,4 @@ export default [
     longitude: -90.08,
     mainFestivalImage: '../../assets/mainFestivalImage/no-jazz-main.jpeg'
   }
-  
 ]
