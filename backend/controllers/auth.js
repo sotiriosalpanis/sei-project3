@@ -14,15 +14,25 @@ export const registerUser = async (req, res) => {
 }
 
 export const loginUser = async (req, res) => {
+  
   try {
-    const userToLogin = await User.findOne({ email: req.body.email })
-    if (!userToLogin || !userToLogin.validatePassword(req.body.password)) {
-      throw new Error()
+    const userToLogin = await User.findOne(
+      { $or: [{ email: req.body.email }, { username: req.body.username }]}) 
+    
+    if (!userToLogin) {
+      throw new ReferenceError('Woah! Have you registered?')
     }
+    
+    if (!userToLogin.validatePassword(req.body.password)) {
+      throw new ReferenceError('Hmm... That\'s not correct')
+    }
+    
     const token = jwt.sign({ sub: userToLogin._id }, secret, { expiresIn: '7 days' })
     return res.status(200).json({ message: `Welcome back ${userToLogin.username}`, token })
-  } catch (err) {
-    console.log(err)
-    return res.status(422).json({ message: '❌ Unauthorized' })
+  } 
+  
+  catch (err) {
+    console.log('AUTH ERROR!', err)
+    return res.status(422).json({ message: err.message })
   }
 }

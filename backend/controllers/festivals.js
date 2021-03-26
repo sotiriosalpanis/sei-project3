@@ -1,9 +1,7 @@
 import Festival from '../models/festival.js'
-// import seededFestivals from '../db/data/seededFestivals.js'
 
 export const getAllFestivals = async (_req, res) => {
   console.log('REQUEST MADE')
-  // const festivals = await seededFestivals
   const festivals = await Festival.find()
   console.log('GETTING FESTIVALS>>', festivals)
   return res.status(200).json(festivals)
