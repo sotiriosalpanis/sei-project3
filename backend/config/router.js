@@ -2,23 +2,28 @@ import express from 'express'
 import { getAllFestivals, getOneFestival, addFestival, updateFestival, deleteFestival } from '../controllers/festivals.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { getUserProfile } from '../controllers/users.js'
-import { secureRoute } from '../config/secureRoute.js'
-import { getAllArtists, addArtist } from '../controllers/artists.js'
+import { secureRoute, secureRouteAdmin } from '../config/secureRoute.js'
+import { getAllArtists, addArtist, getOneArtist, updateArtist, deleteArtist } from '../controllers/artists.js'
 
 const router = express.Router()
 
 router.route('/festivals')
   .get(getAllFestivals)
-  .post(secureRoute, addFestival) //! Building without secure route- will need to be added later
+  .post(secureRouteAdmin, addFestival) //! Building without secure route- will need to be added later
 
 router.route('/festivals/:id')
   .get(getOneFestival)
-  .put(secureRoute, updateFestival) //! Building without secure route- will need to be added later
-  .delete(secureRoute, deleteFestival) //! Building without secure route- will need to be added later
+  .put(secureRouteAdmin, updateFestival) //! Building without secure route- will need to be added later
+  .delete(secureRouteAdmin, deleteFestival) //! Building without secure route- will need to be added later
 
 router.route('/artists')
   .get(getAllArtists)
-  .post(secureRoute, addArtist)
+  .post(secureRouteAdmin, addArtist)
+
+router.route('/artists/:id')
+  .get(secureRouteAdmin, getOneArtist)
+  .put(secureRouteAdmin, updateArtist)
+  .delete(secureRouteAdmin, deleteArtist)
 
 router.route('/register')
   .post(registerUser)

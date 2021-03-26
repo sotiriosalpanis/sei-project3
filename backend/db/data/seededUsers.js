@@ -1,13 +1,3 @@
-// * Blank Seed model:
-// {
-//   username: '',
-//   email: '',
-//   password: '',
-//   passwordConfirmation: '',
-//   isAdmin: false
-// }
-// *
-
 export default [
 
   {
