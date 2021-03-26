@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import { Image } from 'semantic-ui-react'
+import { Image, Divider, Container, Header, Grid } from 'semantic-ui-react'
 import axios from 'axios'
 
 const Home = () => {
-  
-  let pictures = []
+  let i = 0
   let currentPicture = ''
+  let displayFestivals = []
   const [dataSet, setDataSet] = useState(null)
-  // const [currentPic, setCurrentPic] = useState(String)
+
+  
 
   useEffect(()=>{
     const getPictures = async () => {
@@ -21,44 +22,74 @@ const Home = () => {
       }
     }
     getPictures()
+    
   }, [])
   
-
-  
   const changePicture = () => {
-    if (pictures.length > 0){
-      //currentPicture = (pictures[Math.round(Math.random(0, pictures.length - 1))])
-      console.log('IN CHANGE PIC>>', pictures)
-      currentPicture = pictures[0].mainFestivalImage
+    if (dataSet.length > 0){
+      i = Math.round(Math.random(0, dataSet.length - 1) * dataSet.length)
+      currentPicture = dataSet[i].mainFestivalImage
+      return (currentPicture)
     } else {
       currentPicture = ('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZmVzdGl2YWx8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80')
+      return (currentPicture)
     }
   }
 
   const startPictureChange = () => {
-    setTimeout(() => changePicture(), 1000)
+    setTimeout(() => changePicture(), console.log('setinterval working'), 1000)
+  }
+
+  const setDisplayedFestivals = () => {
+    const tempArray = []
+    for (let f = 0; f < 3; f++) {
+      const festival = dataSet[Math.round(Math.random(0, dataSet.length - 1) * dataSet.length)]
+      if (tempArray.includes(festival)){
+        f--
+      } else {
+        tempArray[f] = festival
+      }      
+    }
+    return (tempArray)
   }
   
-  startPictureChange()
   if (!dataSet) return null
-  const temp = dataSet.map(pic => {
-    return pic.mainFestivalImage
-  })
-  pictures = temp
-  console.log('CURRENT PIC',currentPicture)
+  displayFestivals = setDisplayedFestivals()
+  startPictureChange()
 
+  if (!currentPicture) currentPicture = changePicture()
+  
   return (
     <main>
-      <div className='Container '>
-        <h1>{dataSet[0].festivalName}</h1>
+      <Container fluid>
+        <Header className='homeHeader' as='h1'>{dataSet[i].festivalName}</Header>
+        <Divider/>
         <Image 
-          src={currentPicture}
-          fluid >
-        </Image> 
-      </div>
-      <div> {/*Display festivals near you / popular festivals */}
-
-      </div>
+          src={`${currentPicture}`}
+          fluid
+          as='a'
+          href={dataSet[i].website}
+        /> 
+      </Container>
+      <Divider/>
+      <Container fluid> 
+        <Grid columns={3} divided>
+          <Grid.Row>
+            <Grid.Column>
+              <Header className='homeHeader' as='h3'>{displayFestivals[0].festivalName}</Header>
+              <Image size='huge' src={displayFestivals[0].mainFestivalImage} />
+            </Grid.Column>
+            <Grid.Column>
+              <Header className='homeHeader' as='h3'>{displayFestivals[1].festivalName}</Header>
+              <Image size='huge' src={displayFestivals[1].mainFestivalImage} />
+            </Grid.Column>
+            <Grid.Column>
+              <Header className='homeHeader' as='h3'>{displayFestivals[2].festivalName}</Header>
+              <Image size='huge' src={displayFestivals[2].mainFestivalImage} />
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </Container>
     </main>
   )
 }
