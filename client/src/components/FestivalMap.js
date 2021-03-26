@@ -1,18 +1,20 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-// import ReactMapGL from 'react-map-gl'
-import ReactMapGL, { Marker } from 'react-map-gl'
-// import { Container } from 'semantic-ui-react'
+import ReactMapGL, { Marker, Popup } from 'react-map-gl'
+import { Link } from 'react-router-dom'
 
 const FestivalMap = () => {
 
   const [ mapData, setMapData ] = useState(null)
 
+  const [ popup, setPopup ] = useState(null)
+
   const [viewport, setViewport] = useState({
     latitude: 51.515,
     longitude: -0.078,
-    zoom: 4
+    zoom: 2
   })
+
 
 
   useEffect(() => {
@@ -30,16 +32,16 @@ const FestivalMap = () => {
 
 
   if (!mapData) return null
+  if (!viewport) return null
 
 
   return (
     <div className="map-container">
-      {/* <h1>Map</h1> */}
       <ReactMapGL
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
         height='100%'
         width='100%'
-        mapStyle='mapbox://styles/mapbox/streets-v11'
+        mapStyle='mapbox://styles/mapbox/light-v10'
         {...viewport}
         onViewportChange={(viewport) => setViewport(viewport)}
       >
@@ -49,9 +51,24 @@ const FestivalMap = () => {
             longitude={location.longitude}
             latitude={location.latitude}
           >
+            <span onClick={() => setPopup(location)}>
             📍
+            </span>            
           </Marker>
         })}
+        { popup &&
+          <Popup
+            latitude={popup.latitude}
+            longitude={popup.longitude}
+            closeOnClick={true}
+            onClose={() => setPopup(null)}
+          >
+            {popup.festivalName}
+            <Link to={`/festivals/${popup._id}`}>
+              <p>More info</p>
+            </Link>
+          </Popup>
+        }
       </ReactMapGL>
     </div>
   )

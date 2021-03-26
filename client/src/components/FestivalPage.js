@@ -44,7 +44,7 @@ const FestivalPage = () => {
               mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
               height='100%'
               width='100%'
-              mapStyle='mapbox://styles/mapbox/streets-v11'
+              mapStyle='mapbox://styles/mapbox/light-v10'
               latitude={latitude}
               longitude={longitude}
               zoom={13}
