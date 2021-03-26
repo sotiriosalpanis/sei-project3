@@ -13,6 +13,11 @@ const Navigation = () => {
           to='/festivals'
           name='Festivals'
         />
+        <Menu.Item
+          as= { Link }
+          to='/festival-map'
+          name='Map of Festivals'
+        />
         <Menu.Menu position='right'>
           <Menu.Item
             as= { Link }

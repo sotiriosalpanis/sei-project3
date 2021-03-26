@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import { Grid, Dropdown, Pagination } from 'semantic-ui-react'
 
 import FestivalCard from './FestivalCard'
 
@@ -8,26 +9,62 @@ import FestivalCard from './FestivalCard'
 const FestivalIndex = () => {
   const [festivals, setFestivals] = useState([])
 
+  const countryOptions = [
+    { key: 'af', value: 'af', flag: 'af', text: 'Afghanistan' },
+    { key: 'ax', value: 'ax', flag: 'ax', text: 'Aland Islands' },
+    { key: 'al', value: 'al', flag: 'al', text: 'Albania' },
+    { key: 'dz', value: 'dz', flag: 'dz', text: 'Algeria' },
+    { key: 'as', value: 'as', flag: 'as', text: 'American Samoa' },
+    { text: `${festivals.country}` }
+  ]
+
   useEffect(() => {
     const getData = async () => {
       const response = await axios.get('/api/festivals')
       setFestivals(response.data)
+      console.log('FESTIVALS country>>', response.data.country)
     }
     getData()
 
   }, [])
-  console.log('FESTIVALS1>>', festivals)
+  
+
+
+
+  
 
   if (!festivals) return null
   return (
+
     <>
-      <div>
-        {/* <img src={image1} /> */}
-        { festivals.map( festival => (
-          <FestivalCard key={festival._id}{...festival} />
-        ))}
+      <div className="filter-container">
+        <Dropdown
+          clearable
+          fluid
+          multiple
+          search
+          selection
+          options={countryOptions}
+          placeholder='Select Country'
+        />
       </div>
+
+      <Grid centered stackable>
+        <Grid.Row columns={4}>
+          { festivals.map( festival => {
+            return <Grid.Column key={festival._id}>
+              <FestivalCard {...festival} />
+            </Grid.Column> 
+          })}
+        </Grid.Row>
+      </Grid>
+
+      <div className="index-pagination">
+        <Pagination defaultActivePage={5} totalPages={10} />
+      </div>
+
     </>
+
   )
   
 }

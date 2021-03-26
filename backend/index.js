@@ -13,7 +13,7 @@ const startServer = async () => {
     app.use(express.json())
 
     app.use((req, _res, next) => {
-      console.log(`🚨 Incoming request: ${req.method} - ${req.url}`)
+      console.log(`🚨 Incoming request: ${req.method} - ${req.url} - user = ${req.currentUser}`)
       next()
     })
 

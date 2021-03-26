@@ -13,6 +13,22 @@ export const secureRoute = async (req, res, next) => {
     next()
   } catch (err) {
     console.log(err)
-    return res.status(401).json({ message: 'Unauthorized' })
+    return res.status(401).json({ message: 'Hey! You need to login to do that!' })
+  }
+}
+
+export const secureRouteAdmin = async (req, res, next) => {
+  try {
+    if (!req.headers.authorization) throw new Error('Missing header')
+    const token = req.headers.authorization.replace('Bearer ', '')
+    const payload = jwt.verify(token, secret)
+    const userToVerify = await User.findById(payload.sub)
+    if (!userToVerify) throw new Error('User not found')
+    req.currentUser = userToVerify
+    if (userToVerify.isAdmin !== true) throw new Error('User is not admin')
+    next()
+  } catch (err) {
+    console.log(err)
+    return res.status(401).json({ message: 'Hey! You need to be and Admin to do that!' })
   }
 }

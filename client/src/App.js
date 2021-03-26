@@ -8,6 +8,7 @@ import Login from '../src/components/Login.js'
 import Footer from '../src/components/Footer.js'
 import FestivalPage from '../src/components/FestivalPage.js'
 import UserProfile from './components/UserProfile.js'
+import FestivalMap from './components/FestivalMap.js'
 
 const App = () =>{
 
@@ -18,6 +19,9 @@ const App = () =>{
       <Switch>
         <Route exact path ="/home">
           <Home/>
+        </Route>
+        <Route exact path ="/festival-map"> {/*Uses the FestivalCard component to display all festivals*/}
+          <FestivalMap/>
         </Route>
         <Route exact path ="/festivals"> {/*Uses the FestivalCard component to display all festivals*/}
           <FestivalIndex/>

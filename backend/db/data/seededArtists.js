@@ -1,21 +1,10 @@
-// * Blank Seed model:
-
-// {
-//   artist: '',
-//   genre: '',
-//   website: '',
-//   twitter: '',
-//   instagram: ''
-// }
-
-// *
-
 export default [
   {
-    artist: '',
-    genre: '',
-    website: '',
-    twitter: '',
-    instagram: ''
+    artist: 'OR:LA',
+    genre: 'House Techno'
+  },
+  {
+    artist: 'Avalon Emerson',
+    genre: 'Heavy Techno'
   }
 ]
