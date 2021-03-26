@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router'
-import { Header, Grid, Segment, Image } from 'semantic-ui-react'
+import { useParams, Link } from 'react-router-dom'
+import { Header, Grid, Segment, Image, Flag } from 'semantic-ui-react'
 
 //For showing a single festival using an ID
 
@@ -27,7 +27,7 @@ const FestivalPage = () => {
 
   console.log(festivalData)
 
-  const { startDate, endDate, festivalName, mainFestivalImage, lineup } = festivalData
+  const { startDate, endDate, festivalName, mainFestivalImage, lineup, website, price, venue, country } = festivalData
   const startDateString = new Date(startDate).toDateString()
   const endDateString = new Date(endDate).toDateString()
 
@@ -42,9 +42,23 @@ const FestivalPage = () => {
           <Segment><Header>{festivalName}</Header></Segment>
         </Grid.Column>
         <Grid.Column>
-          <Segment>{startDateString} - {endDateString}</Segment>
-          <Segment>2</Segment>
-          <Segment>3</Segment>
+          <Segment>
+            <div>
+              {startDateString}-{endDateString}
+            </div>
+            <div>
+              {venue}
+            </div>
+            <div>
+              <Flag name={country.toLowerCase()}/>
+            </div>
+          </Segment>
+          <Segment>
+            <Link to={website}>
+              <p>{festivalName} website</p>
+            </Link>
+          </Segment>
+          <Segment>£{price}</Segment>
         </Grid.Column>
         <Grid.Column>
           {lineup.map(artist => {
