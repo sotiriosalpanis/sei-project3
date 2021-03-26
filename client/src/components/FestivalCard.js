@@ -2,6 +2,7 @@ import React from 'react'
 import { Card, Image } from 'semantic-ui-react'
 
 
+
 const FestivalCard = ({ festivalName, mainFestivalImage, venue, country, startDate, endDate }) => {
   
   console.log('IMAGE', mainFestivalImage)

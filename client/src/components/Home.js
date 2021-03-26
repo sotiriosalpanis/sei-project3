@@ -15,7 +15,6 @@ const Home = () => {
         const response = await axios.get('/api/festivals')
         console.log('HERE IS THE DATA>>', response)
         setDataSet(response.data)
-        
       } catch (err) {
         console.log('ERROR IN HOME')
         console.log(err)
