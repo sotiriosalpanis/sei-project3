@@ -12,8 +12,6 @@ const FestivalPage = () => {
   const { id } = useParams()
   const [ festivalData, setFestivalData ] = useState()
 
-  console.log('TOKEN>>>>',process.env)
-
   useEffect(() => {
     const getData = async () => {
       try {
