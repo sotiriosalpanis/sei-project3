@@ -1,13 +1,25 @@
 import React from 'react'
-// import { Card, Icon, Image } from 'semantic-ui-react'
+import { Card, Image } from 'semantic-ui-react'
 
-const FestivalCard = ({ name }) => {
 
+const FestivalCard = ({ festivalName, mainFestivalImage, venue, country, startDate, endDate }) => {
+  
+  console.log('IMAGE', mainFestivalImage)
   return (
-    <>
-      <h1> hello </h1>
-      <h1>  {name} </h1>
-    </>
+    <Card>
+      <Image src={`${mainFestivalImage}`} wrapped ui={false} />
+      <Card.Content>
+        <Card.Header>{festivalName}</Card.Header>
+        <Card.Description>
+          {venue} - {country}
+        </Card.Description>
+        <Card.Description>
+          {startDate} - {endDate}
+        </Card.Description>
+      </Card.Content>
+    </Card>
+
+
   )
 
 }
