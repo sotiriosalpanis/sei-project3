@@ -13,6 +13,6 @@ export const secureRoute = async (req, res, next) => {
     next()
   } catch (err) {
     console.log(err)
-    return res.status(401).json({ message: 'Unauthorized' })
+    return res.status(401).json({ message: 'Hey! You need to login to do that! SECURE ROUTE' })
   }
 }

@@ -6,5 +6,6 @@ export default [
   {
     artist: 'Avalon Emerson',
     genre: 'Heavy Techno'
-  }
+  },
+
 ]
