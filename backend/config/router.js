@@ -3,6 +3,7 @@ import { getAllFestivals, getOneFestival, addFestival, updateFestival, deleteFes
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { getUserProfile } from '../controllers/users.js'
 import { secureRoute } from '../config/secureRoute.js'
+import { getAllArtists } from '../controllers/artists.js'
 
 const router = express.Router()
 
@@ -14,6 +15,9 @@ router.route('/festivals/:id')
   .get(getOneFestival)
   .put(secureRoute, updateFestival) //! Building without secure route- will need to be added later
   .delete(secureRoute, deleteFestival) //! Building without secure route- will need to be added later
+
+router.route('/artists')
+  .get(getAllArtists)
 
 router.route('/register')
   .post(registerUser)

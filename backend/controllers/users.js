@@ -2,7 +2,7 @@ import User from '../models/user.js'
 
 export const getUserProfile = async (req, res) => {
   try {
-    const user = await User.findById(req.currentUser._id)
+    const user = await User.findById(req.currentUser._id).populate('createdArtists')
     console.log('USER >>', user)
     if (!user) throw new Error('User not found')
     return res.status(200).json(user)
