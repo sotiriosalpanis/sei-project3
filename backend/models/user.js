@@ -9,6 +9,13 @@ const userSchema = new mongoose.Schema({
   isAdmin: { type: Boolean }
 })
 
+// - - - - - - - - - - - - - - - - - - - - - - - - REVERSE RELATIONSHIP TO SHOW USER HAS CREATED ARTISTS
+userSchema.virtual('createdArtist', {
+  ref: 'Artist',
+  localField: '_id',
+  foreignField: 'owner'
+})
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - PASSWORD CONFIRMATION
 userSchema
   .virtual('passwordConfirmation')
