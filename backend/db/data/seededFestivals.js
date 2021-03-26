@@ -64,7 +64,7 @@ export default [
     country: 'China',
     latitude: 40.44552,
     longitude: 116.66352,
-    mainFestivalImage: '../../assets/mainFestivalImage/great-wall-main.png'
+    mainFestivalImage: 'https://imgur.com/bfVwBTr'
   },
   {
     festivalName: 'Primavera Sound',
