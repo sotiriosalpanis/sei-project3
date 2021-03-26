@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Header, Grid, Segment, Image, Flag } from 'semantic-ui-react'
+// import ReactMapGL from 'react-mapbox-gl'
 
 //For showing a single festival using an ID
 
@@ -25,8 +26,6 @@ const FestivalPage = () => {
 
   if (!festivalData) return null
 
-  console.log(festivalData)
-
   const { startDate, endDate, festivalName, mainFestivalImage, lineup, website, price, venue, country } = festivalData
   const startDateString = new Date(startDate).toDateString()
   const endDateString = new Date(endDate).toDateString()
@@ -37,9 +36,21 @@ const FestivalPage = () => {
       <Grid.Row stretched>
         <Grid.Column>
           <Segment>
+            <Header>{festivalName}</Header>
             <Image src={`${mainFestivalImage}`} />
           </Segment>
-          <Segment><Header>{festivalName}</Header></Segment>
+          <Segment> <p>MAP?</p>
+            {/* <ReactMapGL 
+              mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+              height='50%'
+              width='50%'
+              mapStyle='mapbox://styles/mapbox/streets-v11'
+              latitude={latitude}
+              longitude={longitude}
+              zoom={12}
+            >
+            </ReactMapGL> */}
+          </Segment>
         </Grid.Column>
         <Grid.Column>
           <Segment>
