@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
-import ReactMapGL from 'react-map-gl'
-// import ReactMapGL, { Marker } from 'react-map-gl'
+// import ReactMapGL from 'react-map-gl'
+import ReactMapGL, { Marker } from 'react-map-gl'
 // import { Container } from 'semantic-ui-react'
 
 const FestivalMap = () => {
@@ -29,11 +29,8 @@ const FestivalMap = () => {
 
 
 
-
   if (!mapData) return null
 
-  
-  console.log(process.env.REACT_APP_MAPBOX_ACCESS_TOKEN)
 
   return (
     <div className="map-container">
@@ -46,8 +43,7 @@ const FestivalMap = () => {
         {...viewport}
         onViewportChange={(viewport) => setViewport(viewport)}
       >
-        {/* {mapData.map(location => {
-          console.log(location)
+        {mapData.map(location => {
           return <Marker
             key={location._id}
             longitude={location.longitude}
@@ -55,7 +51,7 @@ const FestivalMap = () => {
           >
             📍
           </Marker>
-        })} */}
+        })}
       </ReactMapGL>
     </div>
   )
