@@ -89,3 +89,5 @@ node_modules
 .env
 *.log
 .ds_store
+.eslintrc.json
+package-lock.json
