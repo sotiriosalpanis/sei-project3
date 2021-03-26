@@ -60,7 +60,7 @@ const FestivalMap = () => {
           <Popup
             latitude={popup.latitude}
             longitude={popup.longitude}
-            closeOnClick={true}
+            closeOnClick={false}
             onClose={() => setPopup(null)}
           >
             {popup.festivalName}
