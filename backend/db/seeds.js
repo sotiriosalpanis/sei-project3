@@ -1,37 +1,50 @@
 import mongoose from 'mongoose'
 import { dbURI } from '../config/environment.js'
-import festivalData from './data/seededFestivals.js'
 import userData from './data/seededUsers.js'
-import Festival from '../models/festival.js'
 import User from '../models/user.js'
+import festivalData from './data/seededFestivals.js'
+import Festival from '../models/festival.js'
+import artistData from './data/seededArtists.js'
+import Artist from '../models/artist.js'
 
 const seedDatabase = async () => {
   try {
-    // * Connect to database
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - connect to the db
     await mongoose.connect(dbURI, { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true })
     console.log('🚀 Database has connected successfully')
 
-    // * clear the db
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - clear DB
     await mongoose.connection.db.dropDatabase()
     console.log('👍 DB dropped')
 
-    // * add users to db
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add users to the db
     const users = await User.create(userData)
     console.log(`🌱 DB seeded with ${users.length} users`)
 
-    // * add owner to festival
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - add festivals with an owner
     const festivalsWithUsers = festivalData.map(festival => {
       festival.owner = users[0]._id
       return festival
     })
-
-    // * add shows to db
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add festivals
     const festivals = await Festival.create(festivalsWithUsers)
-    console.log('Festivals >>', festivals)
+    // console.log('Festivals >>', festivals)
 
     console.log(`🌱 DB seeded with ${festivals.length} festivals`)
 
-    // * close the connection
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add Artists with user to db
+    const artistsWithUsers = artistData.map(artist => {
+      artist.owner = users[0]._id
+      return artist
+    })
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add Artists
+    const artists = await Artist.create(artistsWithUsers)
+    console.log('Artists >>', artists)
+
+    console.log(`🌱 DB seeded with ${artists.length} artists`)
+
+    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - close connection with db
     await mongoose.connection.close()
     console.log('✌ Bye!')
   } catch (err) {
