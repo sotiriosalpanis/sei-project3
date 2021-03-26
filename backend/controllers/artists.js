@@ -16,18 +16,19 @@ export const getOneArtist = async (req, res) => {
     }
     return res.status(200).json(singleArtist)
   } catch (err) {
-    console.log('📍Error in getOneArtist>>', err)
+    console.log('Error in getOneArtist>>', err)
     return res.status(404).json({ message: 'Not found' })
   }
 }
 
   export const addArtist =  async (req, res) => {
+    console.log(req.currentUser)
 
     if (!req.currentUser) {
       return res.status(401).json({ message: 'Hey! You need to login to do that!' })
     }
-    if (!req.currentUser || req.currentUser.isAdmin !== true) {
-      return res.status(401).json({ message: 'Hey! You need to be an Admin to do that!' })
+    if (req.currentUser.isAdmin !== true) {
+      return res.status(401).json({ message: 'Woah! You need to be an Admin for that!' })
     }
     try {
       const newArtist = { ...req.body, owner: req.currentUser._id }
@@ -52,7 +53,7 @@ export const showArtist = async (req, res) => {
     if (!singleArtist) {
       throw new Error('Cannot find that Artist!')
     }
-    return res.sttus(200).json(singleArtist)
+    return res.status(200).json(singleArtist)
   } catch (err) {
     console.log('Woah there! That is not correct!', err)
     return res.status(404).json({ message: err.message })
@@ -80,7 +81,7 @@ export const updateArtist = async (req, res) => {
     if (!singleArtist) throw new Error('Woah, that Artists is not here!')
     Object.assign(singleArtist, req.body)
     await singleArtist.save()
-    return res.status(202).json('updated!', singleArtist)    
+    return res.status(202).json({ 'Updated Artist': singleArtist })    
   } catch (err) {
     console.log('Woah there! Cannot update this artist')
     console.log(err)
