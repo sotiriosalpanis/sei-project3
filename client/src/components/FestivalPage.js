@@ -1,11 +1,8 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { Header, Grid, Segment, Image, Flag } from 'semantic-ui-react'
+import { Header, Grid, Segment, Image, Flag, Button, Label } from 'semantic-ui-react'
 import ReactMapGL, { Marker } from 'react-map-gl'
-
-//For showing a single festival using an ID
-
 
 const FestivalPage = () => {
 
@@ -56,13 +53,31 @@ const FestivalPage = () => {
             <Link to={website}>
               <p>{festivalName} website</p>
             </Link>
+            £{price}
           </Segment>
         </Grid.Column>
       </Grid.Row>
-      <Grid.Row height={100}>
-        <Grid.Column width={4}>
+      <Grid.Row verticalAlign='middle' stretched>
+        <Grid.Column width={4} textAlign='center' >
           <Segment>
-            £{price}
+            <Button as='div' labelPosition='right'>
+              <Button >
+              Interested
+              </Button>
+              <Label as='a' basic pointing='left'>
+                COUNT
+              </Label>
+            </Button>
+          </Segment>
+          <Segment>
+            <Button as='div' labelPosition='right' >
+              <Button>
+              Going
+              </Button>
+              <Label as='a' basic pointing='left'>
+                COUNT
+              </Label>
+            </Button>
           </Segment>
         </Grid.Column>
         <Grid.Column width={12}>
@@ -86,7 +101,7 @@ const FestivalPage = () => {
       <Grid.Row>
         {lineup.map(artist => {
           return <Grid.Column key={artist}>
-            <Segment>
+            <Segment textAlign='center'>
               {artist}
             </Segment>
           </Grid.Column>
