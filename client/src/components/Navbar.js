@@ -1,23 +1,39 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Menu } from 'semantic-ui-react'
+import { Menu, Dropdown } from 'semantic-ui-react'
 
 
 
 const Navigation = () => {
+
+
   return (
-    <div>
+    <header>
       <Menu pointing secondary>
         <Menu.Item
           as= { Link }
-          to='/festivals'
-          name='Festivals'
+          to='/home'
+          name='Home'
         />
-        <Menu.Item
-          as= { Link }
-          to='/festival-map'
-          name='Map of Festivals'
-        />
+        <Dropdown item text='Find a festival'>
+          <Dropdown.Menu>
+            <Dropdown.Item
+              as= { Link }
+              to='/festivals'
+              name='Festivals'
+            >Festivals
+            </Dropdown.Item>
+            <Dropdown.Item
+              as= { Link }
+              to='/festival-map'
+              name='Map of Festivals'
+            >
+              Map of festivals
+            </Dropdown.Item>
+          </Dropdown.Menu>
+
+        </Dropdown>
+
         <Menu.Menu position='right'>
           <Menu.Item
             as= { Link }
@@ -31,7 +47,7 @@ const Navigation = () => {
           />
         </Menu.Menu>
       </Menu>
-    </div>
+    </header>
   )   
 }
 
