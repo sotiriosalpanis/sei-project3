@@ -34,28 +34,13 @@ const FestivalPage = () => {
     <Grid stackable container columns={3} divided>
       
       <Grid.Row stretched>
-        <Grid.Column>
+        <Grid.Column width={12}>
           <Segment>
             <Header>{festivalName}</Header>
             <Image src={`${mainFestivalImage}`} />
           </Segment>
-          <Segment>
-            <ReactMapGL 
-              mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
-              height='100%'
-              width='100%'
-              mapStyle='mapbox://styles/mapbox/light-v10'
-              latitude={latitude}
-              longitude={longitude}
-              zoom={13}
-            >
-              <Marker latitude={latitude} longitude={longitude}>
-                📍
-              </Marker>
-            </ReactMapGL>
-          </Segment>
         </Grid.Column>
-        <Grid.Column>
+        <Grid.Column width={4}>
           <Segment>
             <div>
               {startDateString}-{endDateString}
@@ -72,16 +57,40 @@ const FestivalPage = () => {
               <p>{festivalName} website</p>
             </Link>
           </Segment>
-          <Segment>£{price}</Segment>
         </Grid.Column>
-        <Grid.Column>
-          {lineup.map(artist => {
-            return <Segment key={artist}>
+      </Grid.Row>
+      <Grid.Row height={100}>
+        <Grid.Column width={4}>
+          <Segment>
+            £{price}
+          </Segment>
+        </Grid.Column>
+        <Grid.Column width={12}>
+          <Segment className='map-container-medium'>
+            <ReactMapGL 
+              mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
+              height='100%'
+              width='100%'
+              mapStyle='mapbox://styles/mapbox/light-v10'
+              latitude={latitude}
+              longitude={longitude}
+              zoom={13}
+            >
+              <Marker latitude={latitude} longitude={longitude}>
+                📍
+              </Marker>
+            </ReactMapGL>
+          </Segment>
+        </Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        {lineup.map(artist => {
+          return <Grid.Column key={artist}>
+            <Segment>
               {artist}
             </Segment>
-          })}
-        </Grid.Column>
-
+          </Grid.Column>
+        })}
       </Grid.Row>
     </Grid>
 
