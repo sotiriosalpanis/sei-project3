@@ -58,7 +58,6 @@ const Navigation = () => {
               >
               My Festivals
               </Dropdown.Item>
-            
             }
 
 
