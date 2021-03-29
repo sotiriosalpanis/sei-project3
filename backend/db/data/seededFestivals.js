@@ -222,6 +222,7 @@ export default [
     longitude: -90.08,
     mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759752/no-jazz-main_do5fgg.jpg'
   },
+  // --------------------------------------------------------------------------------------
   {
     festivalName: 'Sziget Festival',
     startDate: '2021-08-04',

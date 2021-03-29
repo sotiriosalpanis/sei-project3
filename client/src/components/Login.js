@@ -45,7 +45,7 @@ const Login = () => {
         <Form className='ui form' onSubmit={handleSubmit} >
           <div className="field">
             <Form.Field>
-              <label>Email address:</label>
+              <label>Email address or Username:</label>
               <input 
                 placeholder='someone@example.com' 
                 type="email"

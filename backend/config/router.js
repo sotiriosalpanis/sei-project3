@@ -1,7 +1,7 @@
 import express from 'express'
 import { getAllFestivals, getOneFestival, addFestival, updateFestival, deleteFestival, addAttendanceToFestival } from '../controllers/festivals.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
-import { getUserProfile } from '../controllers/users.js'
+import { getUserProfile, getAllProfiles } from '../controllers/users.js'
 import { secureRoute, secureRouteAdmin } from '../config/secureRoute.js'
 import { getAllArtists, addArtist, getOneArtist, updateArtist, deleteArtist } from '../controllers/artists.js'
 
@@ -36,5 +36,8 @@ router.route('/login')
 
 router.route('/profile')
   .get(secureRoute, getUserProfile)
+
+router.route('/profiles')
+  .get(secureRoute, getAllProfiles)
 
 export default router

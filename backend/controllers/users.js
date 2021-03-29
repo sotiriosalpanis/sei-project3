@@ -11,3 +11,10 @@ export const getUserProfile = async (req, res) => {
     return res.status(404).json({ message: err.message })
   }
 }
+
+export const getAllProfiles = async (req, res) => {
+  console.log('REQUEST MADE')
+  const profiles = await User.find()
+  console.log('GETTING ARTISTS>>', profiles)
+  return res.status(200).json(profiles)
+}
