@@ -35,7 +35,7 @@ const Login = () => {
     }
   }
 
-  console.log(errors)
+  console.log(errors.message)
 
   return (
     <div>
