@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Header, Grid, Segment, Image, Flag, Button, Label } from 'semantic-ui-react'
 import ReactMapGL, { Marker } from 'react-map-gl'
-import userIsAuthenticated from '../helpers/auth.js'
+import { userIsAuthenticated, getTokenFromLocalStorage } from '../helpers/auth.js'
 
 const FestivalPage = () => {
 
@@ -34,16 +34,25 @@ const FestivalPage = () => {
   const { startDate, endDate, festivalName, mainFestivalImage, lineup, website, price, venue, country, latitude, longitude } = festivalData
   const startDateString = new Date(startDate).toDateString()
   const endDateString = new Date(endDate).toDateString()
+  
 
-  const handleAttendance = event => {
-    console.log('Value',event.target.name,typeof(event.target.value))
+  const handleAttendance = async event => {
     let strToBool = false
     if (event.target.value === 'true' ){
       strToBool = true
     } 
     const newUserStatus = { ...userAttendingStatus, [event.target.name]: !strToBool }
-    setUserAttendingStatus(newUserStatus)
-    console.log('Updated values- going',userAttendingStatus.going)
+    try {
+      await axios.post(`/api/festivals/${id}/attendance`,newUserStatus, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`
+        }
+      })
+      setUserAttendingStatus(newUserStatus)
+    } catch (err) {
+      console.log(err)
+    }
+
   }
 
   return (

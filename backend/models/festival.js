@@ -4,6 +4,12 @@ const festivalImageSchema = new mongoose.Schema({
   userImages: [{ type: String }]
 })
 
+const festivalAttendanceSchema = new mongoose.Schema({
+  interested: { type: Boolean, default: false },
+  going: { type: Boolean, default: false },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+})
+
 const festivalSchema = new mongoose.Schema({
   festivalName: { type: String, required: true, unique: true },
   startDate: { type: Date, required: true },
@@ -17,7 +23,8 @@ const festivalSchema = new mongoose.Schema({
   latitude: { type: Number, required: true },
   longitude: { type: Number, required: true },
   mainFestivalImage: { type: String, required: true },
-  userImages: { festivalImageSchema }
+  userImages: { festivalImageSchema },
+  festivalAttendance: [festivalAttendanceSchema]
 })
 
 export default mongoose.model('Festival', festivalSchema)
