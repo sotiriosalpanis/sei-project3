@@ -28,7 +28,7 @@ const seedDatabase = async () => {
     })
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add festivals
     const festivals = await Festival.create(festivalsWithUsers)
-    console.log('Festivals >>', festivals)
+    // console.log('Festivals >>', festivals)
 
     console.log(`🌱 DB seeded with ${festivals.length} festivals`)
 

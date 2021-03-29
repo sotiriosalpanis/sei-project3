@@ -11,6 +11,10 @@ const Login = () => {
     email: '',
     password: ''
   })
+  const [ errors, setErrors ] = useState({
+    email: '',
+    password: ''
+  })
 
   const handleChange = (event) =>{
     const newFormData = { ...formData, [event.target.name]: event.target.value }
@@ -26,9 +30,12 @@ const Login = () => {
       window.localStorage.setItem('token', token)
       history.push('/')
     } catch (err) {
-      console.log(err)
+      // console.log(err)
+      setErrors(err.response.data)
     }
   }
+
+  console.log(errors)
 
   return (
     <div>
@@ -38,7 +45,7 @@ const Login = () => {
         <Form className='ui form' onSubmit={handleSubmit} >
           <div className="field">
             <Form.Field>
-              <label>Email address:</label>
+              <label>Email address or Username:</label>
               <input 
                 placeholder='someone@example.com' 
                 type="email"

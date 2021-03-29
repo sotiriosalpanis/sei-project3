@@ -15,6 +15,13 @@ const Register = () => {
     passwordConfirmation: ''
   })
 
+  const [ errors, setErrors ] = useState({
+    username: '',
+    email: '',
+    password: '',
+    passwordConfirmation: ''
+  })
+
   const handleChange = (event) =>{
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     setFormData(newFormData)
@@ -27,9 +34,12 @@ const Register = () => {
       await axios.post('/api/register',formData)
       history.push('/')
     } catch (err) {
-      console.log(err)
+      // console.log(err)
+      setErrors(err.response.data.message)
     }
   }
+
+  console.log('Errors',errors)
 
   
   return (
