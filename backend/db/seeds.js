@@ -28,19 +28,17 @@ const seedDatabase = async () => {
     })
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add festivals
     const festivals = await Festival.create(festivalsWithUsers)
-    // console.log('Festivals >>', festivals)
 
     console.log(`🌱 DB seeded with ${festivals.length} festivals`)
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add Artists with user to db
-    const artistsWithUsers = artistData.map(artist => {
-      artist.owner = users[0]._id
-      return artist
-    })
+    // const artistsWithFestival = artistData.map(artist => {
+    //   artist.owner = users[0]._id
+    //   return artist
+    // })
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add Artists
-    const artists = await Artist.create(artistsWithUsers)
-    console.log('Artists >>', artists)
+    const artists = await Artist.create(artistData)
 
     console.log(`🌱 DB seeded with ${artists.length} artists`)
 
