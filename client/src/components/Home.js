@@ -27,6 +27,7 @@ const Home = () => {
   
   const changePicture = () => {
     if (dataSet.length > 0){
+      i = 0
       i = Math.round(Math.random(0, dataSet.length - 1) * dataSet.length)
       currentPicture = dataSet[i].mainFestivalImage
       return (currentPicture)
@@ -42,7 +43,7 @@ const Home = () => {
 
   const setDisplayedFestivals = () => {
     const tempArray = []
-    for (let f = 0; f < 3; f++) {
+    for (let f = 0; f < 4; f++) {
       const festival = dataSet[Math.round(Math.random(0, dataSet.length - 1) * dataSet.length)]
       if (tempArray.includes(festival)){
         f--
@@ -63,7 +64,6 @@ const Home = () => {
     <main>
       <Container fluid>
         <Header className='homeHeader' as='h1'>{dataSet[i].festivalName}</Header>
-        <Divider/>
         <Image 
           src={`${currentPicture}`}
           fluid
@@ -73,22 +73,27 @@ const Home = () => {
       </Container>
       <Divider/>
       <Container fluid> 
-        <Grid columns={3} divided>
+        <Grid columns={4, 'equal'} relaxed padded divided>
           <Grid.Row>
-            <Grid.Column>
+            <Grid.Column >
               <Header className='homeHeader' as='h3'>{displayFestivals[0].festivalName}</Header>
-              <Image size='huge' src={displayFestivals[0].mainFestivalImage} />
+              <Image size='huge' src={displayFestivals[0].mainFestivalImage} circular />
             </Grid.Column>
             <Grid.Column>
               <Header className='homeHeader' as='h3'>{displayFestivals[1].festivalName}</Header>
-              <Image size='huge' src={displayFestivals[1].mainFestivalImage} />
+              <Image size='huge' src={displayFestivals[1].mainFestivalImage} circular />
             </Grid.Column>
             <Grid.Column>
               <Header className='homeHeader' as='h3'>{displayFestivals[2].festivalName}</Header>
-              <Image size='huge' src={displayFestivals[2].mainFestivalImage} />
+              <Image size='huge' src={displayFestivals[2].mainFestivalImage} circular />
+            </Grid.Column>
+            <Grid.Column>
+              <Header className='homeHeader' as='h3'>{displayFestivals[3].festivalName}</Header>
+              <Image size='huge' src={displayFestivals[3].mainFestivalImage} circular />
             </Grid.Column>
           </Grid.Row>
         </Grid>
+        <Divider/>
       </Container>
     </main>
   )
