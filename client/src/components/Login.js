@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Container, Header, Divider , Button, Form } from 'semantic-ui-react'
+import { Container, Divider , Button, Form } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 
 const Login = () => {
@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div>
       <Container>
-        <Header as='h3'>Login to your account</Header>
+        {/* <Header as='h3'>Login to your account</Header> */}
         <Divider />
         <Form className='ui form' onSubmit={handleSubmit} >
           <div className="field">

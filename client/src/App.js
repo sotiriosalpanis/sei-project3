@@ -9,6 +9,7 @@ import Footer from '../src/components/Footer.js'
 import FestivalPage from '../src/components/FestivalPage.js'
 import UserProfile from './components/UserProfile.js'
 import FestivalMap from './components/FestivalMap.js'
+import RegLogin from './components/RegLogin.js'
 
 const App = () =>{
 
@@ -34,6 +35,9 @@ const App = () =>{
         </Route>
         <Route exact path ="/userprofile/:id"> {/*Search route for another users profile*/}
           <UserProfile/>
+        </Route>
+        <Route exact path ="/sign-in">
+          <RegLogin/>
         </Route>
         <Route exact path ="/register">
           <Register/>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Container, Header, Divider , Button, Form } from 'semantic-ui-react'
+import { Container, Divider , Button, Form } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 
 
@@ -45,7 +45,7 @@ const Register = () => {
   return (
     <div>
       <Container>
-        <Header as='h3'>Register Here</Header>
+        {/* <Header as='h3'>Register Here</Header> */}
         <Divider />
         <Form className='ui form' onSubmit={handleSubmit} >
           <div className="field">

@@ -37,13 +37,8 @@ const Navigation = () => {
         <Menu.Menu position='right'>
           <Menu.Item
             as= { Link }
-            to='/register'
-            name='Register'
-          />
-          <Menu.Item
-            as= { Link }
-            to='/login'
-            name='Login'
+            to='/sign-in'
+            name='Account'
           />
         </Menu.Menu>
       </Menu>
