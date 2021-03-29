@@ -14,6 +14,12 @@ import RegLogin from './components/RegLogin.js'
 const App = () =>{
 
 
+
+
+
+
+
+
   return (
     <BrowserRouter>
       <NavBar/>

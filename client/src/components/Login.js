@@ -28,7 +28,7 @@ const Login = () => {
       const response = await axios.post('/api/login',formData)
       const token = response.data.token
       window.localStorage.setItem('token', token)
-      history.push('/')
+      history.push('/home')
     } catch (err) {
       // console.log(err)
       setErrors(err.response.data)

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Menu, Dropdown } from 'semantic-ui-react'
-import { userIsAuthenticated } from './helpers/auth'
+import { userIsAuthenticated } from '../helpers/auth.js'
 
 
 
@@ -12,10 +12,16 @@ const Navigation = () => {
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     setIsLoggedIn(false)
-    history.push('/sign-in')
+    history.push('/home')
   }
 
   const [ isLoggedIn, setIsLoggedIn ] = useState(false)
+
+  useEffect(() => {
+    if (userIsAuthenticated()) return setIsLoggedIn(true)
+    if (!userIsAuthenticated()) return setIsLoggedIn(false)
+  },[isLoggedIn])
+
 
   useEffect(() => {
     if (userIsAuthenticated()) return setIsLoggedIn(true)
@@ -25,6 +31,8 @@ const Navigation = () => {
 
   console.log('Is Logged in?>>>>',isLoggedIn)
   console.log('Is Authenticated?>>>>',userIsAuthenticated())
+
+
 
 
   return (
@@ -70,7 +78,7 @@ const Navigation = () => {
           <Menu.Item
             as= { Link }
             to='/sign-in'
-            name='Account'
+            name='Sign-in Register'
           />
           }
           { isLoggedIn &&
