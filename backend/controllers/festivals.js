@@ -37,11 +37,12 @@ export const getOneFestival = async (req, res) => {
     } 
     catch (error) {
       if (error.message.indexOf("11000")) {
-        return res.status(422).json({ message: 'Woah! That festival already exists!' })
+        console.log(error)
+        return res.status(422).json({ message: error.message })
       }
       if (error instanceof SyntaxError) {
       console.log('ERROR>', error)
-      return res.status(422).json({ message: 'Woah there! You have not entered the information correctly' })
+      return res.status(422).json({ message: error.message })
       }
     }
   }
