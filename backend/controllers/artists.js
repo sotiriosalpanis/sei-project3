@@ -22,6 +22,7 @@ export const getOneArtist = async (req, res) => {
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 export const addArtist = async (req, res) => {
   console.log(req.currentUser)
 =======
@@ -37,6 +38,8 @@ export const addArtist = async (req, res) => {
     if (req.currentUser.isAdmin !== true) {
       return res.status(401).json({ message: 'Woah! You need to be an Admin for that!' })
 =======
+=======
+>>>>>>> bef36c40384ecc882bef81ab166c3e4e309d181d
 export const addArtist = async (req, res) => {
   if (!req.currentUser) {
     return res.status(401).json({ message: 'Hey! You need to login to do that!' })
@@ -51,7 +54,6 @@ export const addArtist = async (req, res) => {
   } catch (error) {
     if (error.message.indexOf('11000')) {
       return res.status(422).json({ message: 'Woah! That Artist already exists!' })
->>>>>>> 530ed0208752d48db93ea3c2866d5cb0cc32a8d2
     }
 <<<<<<< HEAD
   } catch (err) {
@@ -102,6 +104,7 @@ export const updateArtist = async (req, res) => {
     Object.assign(singleArtist, req.body)
     await singleArtist.save()
 <<<<<<< HEAD
+<<<<<<< HEAD
     return res.status(202).json({ 'Updated Artist': singleArtist })
 =======
 <<<<<<< HEAD
@@ -110,6 +113,9 @@ export const updateArtist = async (req, res) => {
     return res.status(202).json('updated!', singleArtist)
 >>>>>>> 530ed0208752d48db93ea3c2866d5cb0cc32a8d2
 >>>>>>> development
+=======
+    return res.status(202).json({ 'Updated Artist': singleArtist })
+>>>>>>> bef36c40384ecc882bef81ab166c3e4e309d181d
   } catch (err) {
     console.log('Woah there! Cannot update this artist')
     console.log(err)

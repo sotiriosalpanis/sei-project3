@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Container, Header, Divider , Button, Form } from 'semantic-ui-react'
+import { Container, Divider , Button, Form } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 
 const Login = () => {
@@ -28,7 +28,7 @@ const Login = () => {
       const response = await axios.post('/api/login',formData)
       const token = response.data.token
       window.localStorage.setItem('token', token)
-      history.push('/')
+      history.push('/home')
     } catch (err) {
       // console.log(err)
       setErrors(err.response.data)
@@ -40,7 +40,7 @@ const Login = () => {
   return (
     <div>
       <Container>
-        <Header as='h3'>Login to your account</Header>
+        {/* <Header as='h3'>Login to your account</Header> */}
         <Divider />
         <Form className='ui form' onSubmit={handleSubmit} >
           <div className="field">
