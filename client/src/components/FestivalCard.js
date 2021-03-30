@@ -10,15 +10,17 @@ const FestivalCard = ({ _id, festivalName, mainFestivalImage, venue, country, st
   const endDateString = new Date(endDate).toDateString()
 
   return (
-    <Card>
+    <Card id="festival-card"
+      as='a' 
+      href={`/festivals/${_id}`}
+    >
       <Image 
-        src={`${mainFestivalImage}`} 
+        src={`${mainFestivalImage}`}
+        size='medium'
         wrapped ui={false}
-        as='a' 
-        href={`/festivals/${_id}`}
       />
-      <Card.Content>
-        <Card.Header>{festivalName}</Card.Header>
+      <Card.Content className='header-custom'>
+        <Card.Header >{festivalName}</Card.Header>
         <Card.Description>
           {venue} - {country}
         </Card.Description>

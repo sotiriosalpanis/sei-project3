@@ -1,37 +1,44 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Grid, Pagination } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 
 const ArtistIndex = () => {
-
   const [artists, setArtists] = useState([])
 
   useEffect(() => {
-    setArtists()
+    const getData = async () => {
+      const { data } = await axios.get('/api/artists')
+      setArtists(data)
+    }
+    getData()
+    console.log(artists)
   }, [])
 
-  const getData = async () => {
-    const response = await axios.get('/api/artists')
-    setArtists(response.data)
-  }
-  getData()
-
   return (
-
     <>
       <Grid centered stackable>
-        <Grid.Row columns={4}>
-          { artists.map( artist => {
-            return <Grid.Column key={artist._id}>
-            </Grid.Column> 
+        <Grid.Row columns={3}>
+          {artists.map( artist => {
+            return (
+              <Grid.Column key={artist._id}>
+                <div className='artist-grid' key={artist.id}>
+                  <Link Link to={`/artists/${artist._id}`}>
+                    <h1>{artist.artist}</h1>
+                  </Link>
+                  <p>Festivals: {artist.festivals.map( festival => {
+                    return (
+                      <div key={festival._id}>
+                        <p className='festival-name' >{festival}</p>
+                      </div>
+                    )
+                  })}</p>
+                </div>
+              </Grid.Column> 
+            )
           })}
         </Grid.Row>
       </Grid>
-
-      <div className="index-pagination">
-        <Pagination defaultActivePage={5} totalPages={10} />
-      </div>
-
     </>
 
   )
