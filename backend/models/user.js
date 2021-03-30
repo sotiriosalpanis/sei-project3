@@ -46,11 +46,12 @@ userSchema.methods.validatePassword = function (password) {
   return bcrypt.compareSync(password, this.password)
 }
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - PASSWORD COMPARE
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Remove password when sent back
 userSchema.set('toJSON', {
   virtuals: true,
   transform (_doc, json) {
     delete json.password
+    delete json.isAdmin
     return json
   }
 })

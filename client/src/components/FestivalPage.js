@@ -26,8 +26,12 @@ const FestivalPage = () => {
         const userAttendence = festivalAttendance.filter(item => {
           return  userIsOwner(item.user)
         })
-        if (! userAttendence) return userAttendingStatus
-        setUserAttendingStatus(userAttendence[0])
+        if (userAttendence.length === 0){
+          return userAttendingStatus
+        } else {
+          setUserAttendingStatus(userAttendence[0])
+        }
+        
       } catch (err) {
         console.log(err)
       }

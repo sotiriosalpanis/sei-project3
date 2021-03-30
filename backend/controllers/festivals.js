@@ -1,12 +1,14 @@
 import Festival from '../models/festival.js'
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get all festivals
 export const getAllFestivals = async (_req, res) => {
   console.log('REQUEST MADE')
-  const festivals = await Festival.find()
+  const festivals = await Festival.find().populate('owner').populate('attendance.owner')
   console.log('GETTING Festival>>', festivals)
   return res.status(200).json(festivals)
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get one festival
 export const getOneFestival = async (req, res) => {
   try {
     const { id } = req.params
@@ -21,6 +23,7 @@ export const getOneFestival = async (req, res) => {
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add festivals
 export const addFestival = async (req, res) => {
   console.log(req.currentUser)
 
@@ -46,20 +49,7 @@ export const addFestival = async (req, res) => {
   }
 }
 
-export const showFestival = async (req, res) => {
-  try {
-    const { id } = req.params
-    const singleFestival = await Festival.findById(id).populate('owner')
-    if (!singleFestival) {
-      throw new Error('Cannot find that Festival!')
-    }
-    return res.status(200).json(singleFestival)
-  } catch (err) {
-    console.log('Woah there! That is not correct!', err)
-    return res.status(404).json({ message: err.message })
-  }
-}
-
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Delete festival by ID
 export const deleteFestival = async (req, res) => {
   try {
     const { id } = req.params
@@ -74,6 +64,7 @@ export const deleteFestival = async (req, res) => {
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Update festival by ID
 export const updateFestival = async (req, res) => {
   try {
     const { id } = req.params
@@ -89,13 +80,15 @@ export const updateFestival = async (req, res) => {
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add attendance to festival by ID
+
 export const addAttendanceToFestival = async (req, res) => {
   try {
     const { id } = req.params
     const festival = await Festival.findById(id)
     if (!festival) throw new Error('Could not find festival')
     const newAttendanceInfo = { ...req.body, user: req.currentUser._id }
-    const attendeeMatch = festival.festivalAttendance.filter((fest, index) => {
+    const attendeeMatch = festival.festivalAttendance.filter(fest => {
       return String(fest.user) === String(req.currentUser._id)
     }
     )
@@ -105,10 +98,32 @@ export const addAttendanceToFestival = async (req, res) => {
     } else {
       festival.festivalAttendance[resultIndex] = { ...newAttendanceInfo }
     }
+    // if (!festival) throw new Error('Cannot find festival')
+    // const newAttendance = { ...req.body, owner: req.currentUser._id }
+    // festival.attendance.push(newAttendance)
     await festival.save()
     return res.status(200).json(festival)
   } catch (err) {
     console.log(err)
-    return res.status().json({ message: err.message })
+    return res.status(404).json({ message: err.message })
+  }
+}
+
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Delete attendance from festival
+export const deleteAttendanceFromFestival = async (req, res) => {
+  try {
+    const { id, attendanceId } = req.params
+    const festival = await Festival.findById(id)
+    if (!festival) throw new Error('festival not found')
+    const attendanceToDelete = festival.attendance.id(attendanceId)
+    if (!attendanceToDelete) throw new Error('You are already not attending')
+    if (!attendanceToDelete.owner.equals(req.currentUser._id)) throw new Error('Woah! This isn\'t yours!')
+    await attendanceToDelete.remove()
+    await festival.save()
+    console.log('attendance removed')
+    return res.status(204).json({ message: 'Attendance removed!' })
+  } catch (err) {
+    console.log(err)
+    return res.status(404).json({ message: err.message })
   }
 }

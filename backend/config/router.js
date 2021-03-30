@@ -1,5 +1,5 @@
 import express from 'express'
-import { getAllFestivals, getOneFestival, addFestival, updateFestival, deleteFestival, addAttendanceToFestival } from '../controllers/festivals.js'
+import { getAllFestivals, getOneFestival, addFestival, updateFestival, deleteFestival, addAttendanceToFestival, deleteAttendanceFromFestival } from '../controllers/festivals.js'
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { getUserProfile, getAllProfiles } from '../controllers/users.js'
 import { secureRoute, secureRouteAdmin } from '../config/secureRoute.js'
@@ -9,12 +9,12 @@ const router = express.Router()
 
 router.route('/festivals')
   .get(getAllFestivals)
-  .post(secureRouteAdmin, addFestival) //! Building without secure route- will need to be added later
+  .post(secureRouteAdmin, addFestival)
 
 router.route('/festivals/:id')
   .get(getOneFestival)
-  .put(secureRouteAdmin, updateFestival) //! Building without secure route- will need to be added later
-  .delete(secureRouteAdmin, deleteFestival) //! Building without secure route- will need to be added later
+  .put(secureRouteAdmin, updateFestival)
+  .delete(secureRouteAdmin, deleteFestival)
 
 router.route('/festivals/:id/attendance')
   .post(secureRoute, addAttendanceToFestival)
@@ -22,6 +22,8 @@ router.route('/festivals/:id/attendance')
 // router.route('/artists')
 //   .get(getAllArtists)
 //   .post(secureRouteAdmin, addArtist)
+router.route('/festivals/:id/attendance/:attendanceId')
+  .delete(secureRoute, deleteAttendanceFromFestival)
 
 // router.route('/artists/:id')
 //   .get(secureRouteAdmin, getOneArtist)
@@ -38,6 +40,6 @@ router.route('/profile')
   .get(secureRoute, getUserProfile)
 
 router.route('/profiles')
-  .get(secureRoute, getAllProfiles)
+  .get(secureRouteAdmin, getAllProfiles)
 
 export default router
