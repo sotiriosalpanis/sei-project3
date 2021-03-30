@@ -27,11 +27,6 @@ const FestivalIndex = () => {
     getData()
 
   }, [])
-  
-
-
-
-  
 
   if (!festivals) return null
   return (
