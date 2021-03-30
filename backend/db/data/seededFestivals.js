@@ -191,7 +191,7 @@ export default [
     price: 291.50,
     lineup: ['Rage Against the Machine', 'Frank Ocean', 'Travis Scott', 'Calvin Harris', 'Flume', 'Lana Del Rey', 'Thom Yorke', 'FKA Twigs'],
     venue: 'Empire Polo Club, Indio, California',
-    country: 'USA',
+    country: 'United States',
     latitude: 33.67463,
     longitude: -116.22202,
     mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759750/coachella-main_vlmzl8.jpg'
@@ -204,7 +204,7 @@ export default [
     price: 1019,
     lineup: ['Margot Price', 'Belako', 'Steam Down', 'HMLTD', 'Pigs Pigs Pigs Pigs Pigs Pigs Pigs Pigs', 'Pokey LaFarge', 'Soccer Mommy'],
     venue: 'Austin Convention Centre',
-    country: 'USA',
+    country: 'United States',
     latitude: 30.26362,
     longitude: -97.73950,
     mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/SXSW-main_djirnq.png'
@@ -217,7 +217,7 @@ export default [
     price: 62.10,
     lineup: ['Foo Fighters', 'Stevie Nicks', 'Lizzo', 'The Who', 'Dead & Company', 'Lionel Richie', 'Erykah Badu'],
     venue: 'Fair Grounds Race Course, New Orleans',
-    country: 'USA',
+    country: 'United States',
     latitude: 29.98,
     longitude: -90.08,
     mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759752/no-jazz-main_do5fgg.jpg'
