@@ -1,5 +1,6 @@
 import Artist from '../models/artist.js'
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get all artists
 export const getAllArtists = async (_req, res) => {
   console.log('REQUEST MADE')
   const artists = await Artist.find()
@@ -7,6 +8,7 @@ export const getAllArtists = async (_req, res) => {
   return res.status(200).json(artists)
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get one artist
 export const getOneArtist = async (req, res) => {
   try {
     const { id } = req.params
@@ -21,6 +23,7 @@ export const getOneArtist = async (req, res) => {
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add artist
 export const addArtist = async (req, res) => {
   console.log(req.currentUser)
 
@@ -37,20 +40,7 @@ export const addArtist = async (req, res) => {
   }
 }
 
-export const showArtist = async (req, res) => {
-  try {
-    const { id } = req.params
-    const singleArtist = await Artist.findById(id)
-    if (!singleArtist) {
-      throw new Error('Cannot find that Artist!')
-    }
-    return res.status(200).json(singleArtist)
-  } catch (err) {
-    console.log('Woah there! That is not correct!', err)
-    return res.status(404).json({ message: err.message })
-  }
-}
-
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Delete Artist
 export const deleteArtist = async (req, res) => {
   try {
     const { id } = req.params
@@ -65,6 +55,7 @@ export const deleteArtist = async (req, res) => {
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Update Artist
 export const updateArtist = async (req, res) => {
   try {
     const { id } = req.params

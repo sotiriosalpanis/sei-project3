@@ -4,7 +4,7 @@ const festivalImageSchema = new mongoose.Schema({
   userImages: [{ type: String }]
 })
 
-// adds an array to the end of each festival to store comments / and attending info
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Referanced Attendace Schema
 const attendanceSchema = new mongoose.Schema({
   text: { type: String, maxlength: 300 },
   attending: { type: Boolean },
@@ -14,7 +14,7 @@ const attendanceSchema = new mongoose.Schema({
   timestamp: true
 })
 
-// Festival Schema
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Festival Schema
 const festivalSchema = new mongoose.Schema({
   festivalName: { type: String, required: true, unique: true },
   startDate: { type: Date, required: true },

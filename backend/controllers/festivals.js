@@ -49,21 +49,6 @@ export const addFestival = async (req, res) => {
   }
 }
 
-// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get festival by ID
-// export const showFestival = async (req, res) => {
-//   try {
-//     const { id } = req.params
-//     const singleFestival = await Festival.findById(id).populate('owner').populate('attendance.owner')
-//     if (!singleFestival) {
-//       throw new Error('Cannot find that Festival!')
-//     }
-//     return res.status(200).json(singleFestival)
-//   } catch (err) {
-//     console.log('Woah there! That is not correct!', err)
-//     return res.status(404).json({ message: err.message })
-//   }
-// }
-
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Delete festival by ID
 export const deleteFestival = async (req, res) => {
   try {
@@ -112,6 +97,7 @@ export const addAttendanceToFestival = async (req, res) => {
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Delete attendance from festival
 export const deleteAttendanceFromFestival = async (req, res) => {
   try {
     const { id, attendanceId } = req.params

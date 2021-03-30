@@ -41,6 +41,6 @@ router.route('/profile')
   .get(secureRoute, getUserProfile)
 
 router.route('/profiles')
-  .get(secureRoute, getAllProfiles)
+  .get(secureRouteAdmin, getAllProfiles)
 
 export default router
