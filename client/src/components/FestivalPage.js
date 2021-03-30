@@ -76,16 +76,14 @@ const FestivalPage = () => {
     } catch (err) {
       console.log(err)
     }
-
   }
 
   return (
-    <Grid stackable container columns={3} divided>
-      
+    <Grid stackable container columns={3} divided textAlign='justified'>
       <Grid.Row stretched>
         <Grid.Column width={12}>
           <Segment>
-            <Header className='header-custom' size='large'>{festivalName}</Header>
+            <Header className='header-custom' size='huge'>{festivalName}</Header>
             <Image src={`${mainFestivalImage}`} />
           </Segment>
         </Grid.Column>
@@ -106,8 +104,8 @@ const FestivalPage = () => {
             <Link to={website}>
               <Header size='medium'>{festivalName} website</Header>
             </Link>
-            <Header sub>
-              £{price}
+            <Header size='small'>
+              Price: £{price}
             </Header>
           </Segment>
         </Grid.Column>

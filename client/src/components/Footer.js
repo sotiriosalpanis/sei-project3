@@ -9,9 +9,9 @@ const Footer = () => {
 
 
   return (
-    <footer className='footer' id='footer'>
+    <footer>
       <Divider/>
-      <Container centered>
+      <Container className='footer' id='footer'>
         <Menu text widths={5} inverted>
           <Menu.Item header>Search Our Site</Menu.Item>
           <Menu.Item
