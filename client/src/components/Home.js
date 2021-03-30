@@ -25,9 +25,9 @@ const Home = () => {
 
   const getNewFestival = () => {
     setInterval(() => {
-      console.log('Interval', hero)
       setHero(Math.floor(Math.random() * 27))
-    }, 5000)
+    }, 8000)
+    clearInterval()
   }
 
   return (

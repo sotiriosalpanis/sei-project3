@@ -6,11 +6,8 @@ const Home = () => {
   return (
     <>
       <div className='about-container'>
-
         <div className='about-inner-container'>
-
           <div className='about-card'>
-
             <Image src='https://media-exp1.licdn.com/dms/image/C4E03AQE5cV5-04RKeQ/profile-displayphoto-shrink_200_200/0/1612114384620?e=1622678400&v=beta&t=ti8DRvLTw4_9BQr3n8LO2UpMp0cNsZcQsKbuMQVbvjY'/>
             <Card.Content>
               <Card.Header>Anna Monkman</Card.Header>
@@ -27,11 +24,8 @@ const Home = () => {
             GitHub
               </a>
             </Card.Content>
-
           </div>
-
           <div className='about-card'>
-
             <Image src='https://media-exp1.licdn.com/dms/image/C4D03AQFKaDnlBCNHgg/profile-displayphoto-shrink_200_200/0/1612125430137?e=1622678400&v=beta&t=5pOBOy9fpIKd3TduFtpLOJx7qsbSdsc_uUmO3Q_jcOY'/>
             <Card.Content>
               <Card.Header>George Shaw</Card.Header>
@@ -50,9 +44,7 @@ const Home = () => {
             </Card.Content>
           </div>
         </div>
-
         <div className='about-inner-container'>
-        
           <div className='about-card'>
             <Image src='https://media-exp1.licdn.com/dms/image/C5103AQF_gzGZCkMefw/profile-displayphoto-shrink_200_200/0/1517547323802?e=1622678400&v=beta&t=799x8DE4FzkyZeZzYP-lveDsg-Hv784NT1tkf75_ros'/>
             <Card.Content>
@@ -71,7 +63,6 @@ const Home = () => {
               </a>
             </Card.Content>
           </div>
-
           <div className='about-card'>
             <Image src='https://media-exp1.licdn.com/dms/image/C4D03AQGMEdWdBetqYg/profile-displayphoto-shrink_200_200/0/1613654052738?e=1620864000&v=beta&t=A1slZ-XvNW9tTMhe7cZOtMf2j-Iti8hPeLm0rupa2l0'/>
             <Card.Content>
