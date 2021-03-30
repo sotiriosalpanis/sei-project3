@@ -25,7 +25,7 @@ export default [
     country: 'United Kingdom',
     latitude: 51.53629,
     longitude: -0.03991,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759750/all-points-east-main_t3jgtk.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759750/mainFestivalImage/all-points-east-main_t3jgtk.jpg'
   },
   {
     festivalName: 'NOS Alive',
@@ -38,7 +38,7 @@ export default [
     country: 'Portugal',
     latitude: 38.6966,
     longitude: -9.23225,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759753/nos-alive-main_oll07d.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759753/mainFestivalImage/nos-alive-main_oll07d.jpg'
   },
   {
     festivalName: 'Splendour in the Grass',
@@ -51,7 +51,7 @@ export default [
     country: 'Australia',
     latitude: -28.48208,
     longitude: 153.51554,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759756/splendour-in-the-grass-main_ueuvvu.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759756/mainFestivalImage/splendour-in-the-grass-main_ueuvvu.jpg'
   },
   {
     festivalName: 'Great Wall Festival',
@@ -64,7 +64,7 @@ export default [
     country: 'China',
     latitude: 40.44552,
     longitude: 116.66352,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/great-wall-main_dqldrr.png'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/mainFestivalImage/great-wall-main_dqldrr.png'
   },
   {
     festivalName: 'Primavera Sound',
@@ -77,7 +77,7 @@ export default [
     country: 'Spain',
     latitude: 41.41155,
     longitude: 2.224669,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759753/primavera-main_kq7kq2.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759753/mainFestivalImage/primavera-main_kq7kq2.jpg'
   },
   {
     festivalName: 'Rock am Ring & Rock im Park',
@@ -90,7 +90,7 @@ export default [
     country: 'Germany',
     latitude: 50.334049,
     longitude: 6.942639,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/rock-am-ring-main_omcpeh.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/mainFestivalImage/rock-am-ring-main_omcpeh.jpg'
   },
   {
     festivalName: 'Ultra Europe',
@@ -103,7 +103,7 @@ export default [
     country: 'Croatia',
     latitude: 43.519023,
     longitude: 16.44422,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759756/ultra-europe-main_xa4hn7.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759756/mainFestivalImage/ultra-europe-main_xa4hn7.jpg'
   },
   {
     festivalName: 'Parklife',
@@ -116,7 +116,7 @@ export default [
     country: 'United Kingdom',
     latitude: 53.53508,
     longitude: -2.25478,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759753/parklife-main_iobtvm.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759753/mainFestivalImage/parklife-main_iobtvm.jpg'
   },
   {
     festivalName: 'Rewind South',
@@ -129,7 +129,7 @@ export default [
     country: 'United Kingdom',
     latitude: 51.5517939589622,
     longitude: -0.890377917029945,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/rewind-south-main_bvpodw.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/mainFestivalImage/rewind-south-main_bvpodw.jpg'
   },
   {
     festivalName: 'Leeds Festival',
@@ -142,7 +142,7 @@ export default [
     country: 'United Kingdom',
     latitude: 53.8680912218597,
     longitude: -1.38202549181189,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759751/leeds-festival-main_iiv6io.png'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759752/mainFestivalImage/leeds-festival-main_nz5jlq.webp'
   },
   {
     festivalName: 'Reading Festival',
@@ -155,7 +155,7 @@ export default [
     country: 'United Kingdom',
     latitude: 51.4639045047128,
     longitude: -0.990131781483103,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/reading-festival-main_lcsd6p.png'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/mainFestivalImage/reading-festival-main_lcsd6p.png'
   },
   {
     festivalName: 'Latitude Festival',
@@ -168,7 +168,7 @@ export default [
     country: 'United Kingdom',
     latitude: 52.3383438400106,
     longitude: 1.6001563578663,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759752/latitude-main_up5tpp.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759752/mainFestivalImage/latitude-main_up5tpp.jpg'
   },
   {
     festivalName: 'Cambridge Club',
@@ -181,7 +181,7 @@ export default [
     country: 'United Kingdom',
     latitude: 52.2267501712594,
     longitude: -0.0165582863177924,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759754/cambridge-club-main_c9nl8v.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759754/mainFestivalImage/cambridge-club-main_c9nl8v.jpg'
   },
   {
     festivalName: 'Coachella',
@@ -194,7 +194,7 @@ export default [
     country: 'United States',
     latitude: 33.67463,
     longitude: -116.22202,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759750/coachella-main_vlmzl8.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759750/mainFestivalImage/coachella-main_vlmzl8.jpg'
   },
   {
     festivalName: 'South By South West',
@@ -207,7 +207,7 @@ export default [
     country: 'United States',
     latitude: 30.26362,
     longitude: -97.73950,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/SXSW-main_djirnq.png'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759755/mainFestivalImage/SXSW-main_djirnq.png'
   },
   {
     festivalName: 'New Orleans Jazz & Heritage Festival',
@@ -220,7 +220,7 @@ export default [
     country: 'United States',
     latitude: 29.98,
     longitude: -90.08,
-    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759752/no-jazz-main_do5fgg.jpg'
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759752/mainFestivalImage/no-jazz-main_do5fgg.jpg'
   },
   // --------------------------------------------------------------------------------------
   {

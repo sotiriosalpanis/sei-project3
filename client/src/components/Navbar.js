@@ -36,12 +36,13 @@ const Navigation = () => {
 
 
   return (
-    <header>
+    <header id="navbar">
       <Menu pointing secondary>
         <Menu.Item
           as= { Link }
           to='/home'
           name='Home'
+          header
         />
         <Dropdown item text='Find a festival'>
           <Dropdown.Menu>
@@ -58,6 +59,12 @@ const Navigation = () => {
             >
               Map of festivals
             </Dropdown.Item>
+            <Dropdown.Item
+              as= { Link }
+              to= '/artists'
+              name= 'Arists'
+            > Artists
+            </Dropdown.Item>
             { isLoggedIn && 
               <Dropdown.Item
                 as= { Link }
@@ -67,12 +74,8 @@ const Navigation = () => {
               My Festivals
               </Dropdown.Item>
             }
-
-
           </Dropdown.Menu>
-
         </Dropdown>
-
         <Menu.Menu position='right'>
           { !isLoggedIn &&
           <Menu.Item

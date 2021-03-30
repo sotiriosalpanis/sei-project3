@@ -2,9 +2,7 @@ import Festival from '../models/festival.js'
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get all festivals
 export const getAllFestivals = async (_req, res) => {
-  console.log('REQUEST MADE')
   const festivals = await Festival.find().populate('owner').populate('attendance.owner')
-  console.log('GETTING Festival>>', festivals)
   return res.status(200).json(festivals)
 }
 

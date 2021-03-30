@@ -10,15 +10,11 @@ import FestivalPage from '../src/components/FestivalPage.js'
 import UserProfile from './components/UserProfile.js'
 import FestivalMap from './components/FestivalMap.js'
 import RegLogin from './components/RegLogin.js'
+import ArtistIndex from './components/ArtistIndex.js'
+import About from './components/About.js'
+import ArtistCard from './components/ArtistCard.js'
 
 const App = () =>{
-
-
-
-
-
-
-
 
   return (
     <BrowserRouter>
@@ -36,6 +32,12 @@ const App = () =>{
         <Route exact path ="/festivals/:id"> {/*Uses FestivalPage component to display one specific festival by id*/}
           <FestivalPage/>
         </Route>
+        <Route exact path ="/artists"> {/*Uses the FestivalCard component to display all festivals*/}
+          <ArtistIndex/>
+        </Route>
+        <Route exact path ="/artists/:id"> {/*Uses FestivalPage component to display one specific festival by id*/}
+          <ArtistCard/>
+        </Route>
         <Route exact path ="/userprofile"> {/*Default route, gets users own profile by default?*/}
           <UserProfile/>
         </Route>
@@ -50,6 +52,9 @@ const App = () =>{
         </Route>
         <Route exact path ="/login">
           <Login/>
+        </Route>
+        <Route exact path ="/about">
+          <About/>
         </Route>
       </Switch>
       <Footer/>

@@ -3,7 +3,7 @@ import { getAllFestivals, getOneFestival, addFestival, updateFestival, deleteFes
 import { registerUser, loginUser } from '../controllers/auth.js'
 import { getUserProfile, getAllProfiles } from '../controllers/users.js'
 import { secureRoute, secureRouteAdmin } from '../config/secureRoute.js'
-// import { getAllArtists, addArtist, getOneArtist, updateArtist, deleteArtist } from '../controllers/artists.js'
+import { getAllArtists, addArtist, getOneArtist, updateArtist, deleteArtist } from '../controllers/artists.js'
 
 const router = express.Router()
 
@@ -19,16 +19,17 @@ router.route('/festivals/:id')
 router.route('/festivals/:id/attendance')
   .post(secureRoute, addAttendanceToFestival)
 
-// router.route('/artists')
-//   .get(getAllArtists)
-//   .post(secureRouteAdmin, addArtist)
 router.route('/festivals/:id/attendance/:attendanceId')
   .delete(secureRoute, deleteAttendanceFromFestival)
 
-// router.route('/artists/:id')
-//   .get(secureRouteAdmin, getOneArtist)
-//   .put(secureRouteAdmin, updateArtist)
-//   .delete(secureRouteAdmin, deleteArtist)
+router.route('/artists')
+  .get(getAllArtists)
+  .post(secureRouteAdmin, addArtist)
+
+router.route('/artists/:id')
+  .get(getOneArtist)
+  .put(secureRouteAdmin, updateArtist)
+  .delete(secureRouteAdmin, deleteArtist)
 
 router.route('/register')
   .post(registerUser)

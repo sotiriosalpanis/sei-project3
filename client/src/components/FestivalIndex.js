@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Grid, Dropdown, Pagination, Button } from 'semantic-ui-react'
+import { Grid, Dropdown, Button, Container, Segment } from 'semantic-ui-react'
 
 import FestivalCard from './FestivalCard'
 
@@ -153,13 +153,12 @@ const FestivalIndex = () => {
   // * RETURN ---------------------------------------------------------------------------
   return (
 
-    <>
-      <div className="filters-container">
+    <Container textAlign='justified'>
+      <Segment.Inline>
 
         { /* Semantic UI Countries*/ }
         <Dropdown
           clearable
-          fluid
           multiple
           search
           selection
@@ -192,12 +191,18 @@ const FestivalIndex = () => {
         { /* Semantic UI Price */ }
         <Dropdown placeholder='Price per day (£)' fluid multiple selection options={priceOptions} onChange={handleChangePrice}/>
 
-        <Button>Submit</Button>
-        <Button>Reset</Button>
-      </div>
+
+
+      </Segment.Inline>
+      <Segment.Inline>
+        <Button basic inverted color='violet'>Submit</Button>
+        <Button basic inverted color='violet'>Reset</Button>
+      </Segment.Inline>
+
+      
 
       <Grid centered stackable>
-        <Grid.Row columns={4}>
+        <Grid.Row columns={3} centered>
           { filteredFestivals.map( festival => {
             return <Grid.Column key={festival._id}>
               <FestivalCard {...festival} />
@@ -206,11 +211,11 @@ const FestivalIndex = () => {
         </Grid.Row>
       </Grid>
 
-      <div className="index-pagination">
+      {/* <div className="index-pagination">
         <Pagination defaultActivePage={5} totalPages={10} />
-      </div>
+      </div> */}
 
-    </>
+    </Container>
 
   )
   

@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import { Link } from 'react-router-dom'
+import { Container } from 'semantic-ui-react'
 
 const FestivalMap = () => {
 
@@ -15,8 +16,6 @@ const FestivalMap = () => {
     zoom: 2
   })
 
-
-
   useEffect(() => {
     const getData = async() => {
       try {
@@ -29,14 +28,12 @@ const FestivalMap = () => {
     getData()
   },[])
 
-
-
   if (!mapData) return null
   if (!viewport) return null
-
+  console.log('mapbox', process.env.REACT_APP_MAPBOX_ACCESS_TOKEN)
 
   return (
-    <div className="map-container">
+    <Container fluid className="map-container">
       <ReactMapGL
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
         height='100%'
@@ -70,7 +67,7 @@ const FestivalMap = () => {
           </Popup>
         }
       </ReactMapGL>
-    </div>
+    </Container>
   )
 }
 
