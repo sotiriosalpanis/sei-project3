@@ -58,6 +58,12 @@ const Navigation = () => {
             >
               Map of festivals
             </Dropdown.Item>
+            <Dropdown.Item
+              as= { Link }
+              to= '/artists'
+              name= 'Arists'
+            > Artists
+            </Dropdown.Item>
             { isLoggedIn && 
               <Dropdown.Item
                 as= { Link }
