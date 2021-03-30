@@ -4,11 +4,9 @@ import axios from 'axios'
 
 const Home = () => {
   let i = 0
-  let currentPicture = ''
   let displayFestivals = []
   const [dataSet, setDataSet] = useState(null)
-
-  
+  const [picState, setPicState] = useState(null)
 
   useEffect(()=>{
     const getPictures = async () => {
@@ -26,23 +24,27 @@ const Home = () => {
   }, [])
   
   const changePicture = () => {
-    if (dataSet.length !== 0){
+    if (dataSet.length > 0){
       i = 0
-      i = Math.round(Math.random(0, dataSet.length - 1) * dataSet.length)
+      i = Math.round(Math.random() * dataSet.length - 1)
       if (dataSet[i].mainFestivalImage !== false) {
-        currentPicture = dataSet[i].mainFestivalImage
+        setPicState(dataSet[i].mainFestivalImage)
       }
-      return (currentPicture)
     } else {
-      currentPicture = ('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZmVzdGl2YWx8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80')
-      return (currentPicture)
+      setPicState('https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8ZmVzdGl2YWx8ZW58MHx8MHw%3D&ixlib=rb-1.2.1&w=1000&q=80')
     }
+
+    setTimeout(changePicture(), 10000)
+    return
   }
 
-  const startPictureChange = () => {
-    setTimeout(() => changePicture(), console.log('setinterval working'), 5000)
-    
-  }
+  // const startPictureChange = () => {
+  //   console.log('Interval Started')
+  //   setInterval(() => {
+  //     changePicture()
+  //     console.log('picture changed>', picState)
+  //   }, 10000)
+  // }
 
   const setDisplayedFestivals = () => {
     const tempArray = []
@@ -58,17 +60,28 @@ const Home = () => {
   }
   
   if (!dataSet) return null
-  displayFestivals = setDisplayedFestivals()
-  startPictureChange()
+  if (dataSet !== null) {
+    displayFestivals = setDisplayedFestivals()
+    clearTimeout
+    changePicture()
+  }
+  
+  // if (!picState){
+  //   clearTimeout
+  //   changePicture()
+  //   console.log('Inside if statement')
+  // }
+  
 
-  if (!currentPicture) currentPicture = changePicture()
+  if (!picState) return null
   
   return (
     <main>
       <Container fluid> 
         <Header  className='homeHeader' as='h1'>{dataSet[i].festivalName}</Header>
         <Image 
-          src={`${currentPicture}`}
+          src={picState}
+          key={Date.now()}
           fluid
           as='a'
           href={dataSet[i].website}
