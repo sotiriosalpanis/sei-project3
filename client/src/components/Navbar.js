@@ -29,8 +29,8 @@ const Navigation = () => {
 
 
 
-  console.log('Is Logged in?>>>>',isLoggedIn)
-  console.log('Is Authenticated?>>>>',userIsAuthenticated())
+  // console.log('Is Logged in?>>>>',isLoggedIn)
+  // console.log('Is Authenticated?>>>>',userIsAuthenticated())
 
 
 

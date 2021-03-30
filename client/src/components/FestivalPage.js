@@ -3,8 +3,8 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Header, Grid, Segment, Image, Flag, Button, Label } from 'semantic-ui-react'
 import ReactMapGL, { Marker } from 'react-map-gl'
-import { userIsAuthenticated, getTokenFromLocalStorage } from '../helpers/auth.js'
-//userIsOwner
+import { userIsAuthenticated, getTokenFromLocalStorage, userIsOwner } from '../helpers/auth.js'
+
 
 const FestivalPage = () => {
 
@@ -39,12 +39,13 @@ const FestivalPage = () => {
   const interestedAttendance = festivalAttendance.filter(item => item.interested === true)
   const goingAttendance = festivalAttendance.filter(item => item.going === true)
 
-  // const userAttendence = festivalAttendance.filter(item => {
-  //   const initialUserStatus = userIsOwner(item.user)
-  //   return setUserAttendingStatus(initialUserStatus)
-  // })
+  const userAttendence = festivalAttendance.filter(item => {
+    return  userIsOwner(item.user)
+  })
 
-  // console.log('USER check',userAttendence)
+  console.log('USER check',userAttendence[0].interested)
+
+
 
 
   const handleAttendance = async event => {
