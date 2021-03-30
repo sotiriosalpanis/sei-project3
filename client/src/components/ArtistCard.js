@@ -5,7 +5,7 @@ import axios from 'axios'
 
 const ArtistCard = () => {
   const params = useParams()
-  const [artist, setArtist] = useState(null)
+  const [artist, setArtist] = useState([])
 
   useEffect(() => {
     const getData = async () => {
@@ -14,17 +14,13 @@ const ArtistCard = () => {
     }
     getData()
   }, [])
-
-  console.log('1 artist', artist)
-  console.log('artist.festivals', artist.festivals)
-
-  // need to add images and so on once the data is there
+  
   return (
     <>
       <p>{artist.artist}</p>
-
-      {(artist === []) ?
-
+      {(!artist.festivals) ?
+        <p>loading</p>
+        :
         <p>Festivals:{artist.festivals.map( festival => {
           return (
             <div key={festival._id}>
@@ -32,8 +28,6 @@ const ArtistCard = () => {
             </div>
           )
         })}</p>
-        :
-        <p>loading</p>
       }
     </>
   )
@@ -41,19 +35,3 @@ const ArtistCard = () => {
 }
 
 export default ArtistCard
-
-
-// {(artist === []) ?
-
-//   <p>Festivals:{artist.festivals.map( festival => {
-//     return (
-//       <div key={festival._id}>
-//         <p className='festival-name' >{festival}</p>
-//       </div>
-//     )
-//   })}</p>
-
-//   :
-
-//   <p>loading</p>
-// }

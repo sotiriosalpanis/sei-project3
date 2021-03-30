@@ -22,3 +22,17 @@
 .festival-name{
   margin: 0px;
 }
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-inner-container {
+  display: flex;
+  justify-content: space-evenly;
+  img {
+    border-radius: 60%;
+  }
+}

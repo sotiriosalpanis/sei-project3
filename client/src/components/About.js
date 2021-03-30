@@ -1,47 +1,95 @@
 import React from 'react'
+import { Card, Icon, Image } from 'semantic-ui-react'
 
 
 const Home = () => {
   return (
     <>
-      <div className='person-outer'>
-        <div className='person-inner'>
-          <h1> Olivia Flynn</h1>
-          <div className="photo-container">
-            <span className="btn"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQF6x3r13kR2Rg/profile-displayphoto-shrink_200_200/0/1615162371959?e=1620864000&v=beta&t=R1LTPi3GqqCzFrhhZx4TOWdWjPjyJuQcjU4wCGzmkFU" alt="olivia-img" /></span>
+      <div className='about-container'>
+
+        <div className='about-inner-container'>
+
+          <div className='about-card'>
+
+            <Image src='https://media-exp1.licdn.com/dms/image/C4E03AQE5cV5-04RKeQ/profile-displayphoto-shrink_200_200/0/1612114384620?e=1622678400&v=beta&t=ti8DRvLTw4_9BQr3n8LO2UpMp0cNsZcQsKbuMQVbvjY'/>
+            <Card.Content>
+              <Card.Header>Anna Monkman</Card.Header>
+            </Card.Content>
+            <Card.Content extra>
+              <a href='https://www.linkedin.com/in/anna-monkman-526734125/' target='blank'>
+                <Icon name='linkedin'/>
+            LinkedIn
+              </a>
+            </Card.Content>
+            <Card.Content extra>
+              <a href='https://github.com/annamonkman' target='blank'>
+                <Icon name='github'/>
+            GitHub
+              </a>
+            </Card.Content>
+
           </div>
-          <br />
-          <div className='about-info'>
-          </div>
-          <div className='info-section'>
-            <p>Software Engineer from London.</p>
-            <p>Likes: Aperol Spritzs in beer gardens, travelling <br/>and detailed spotify playlist names.</p>
-            <p>Fun Fact: Has been to 24 countries.</p>
-            <p><a href='https://www.linkedin.com/in/olivia-flynn-061518150/' target="blank">LinkedIn</a> | <a href='https://github.com/oliviafpersonal' target='blank'>GitHub</a></p>
+
+          <div className='about-card'>
+
+            <Image src='https://media-exp1.licdn.com/dms/image/C4D03AQFKaDnlBCNHgg/profile-displayphoto-shrink_200_200/0/1612125430137?e=1622678400&v=beta&t=5pOBOy9fpIKd3TduFtpLOJx7qsbSdsc_uUmO3Q_jcOY'/>
+            <Card.Content>
+              <Card.Header>George Shaw</Card.Header>
+            </Card.Content>
+            <Card.Content extra>
+              <a href='https://www.linkedin.com/in/georgeshaw1998/' target='blank'>
+                <Icon name='linkedin'/>
+            LinkedIn
+              </a>
+            </Card.Content>
+            <Card.Content extra>
+              <a href='https://github.com/Gs742' target='blank'>
+                <Icon name='github'/>
+            GitHub
+              </a>
+            </Card.Content>
           </div>
         </div>
-        <div className='spotify-section'>
-          <iframe width="450" height="300" src="https://www.youtube.com/embed/0HbagZwKBro" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-        </div>
-      </div>
-      <div className='person-outer'>
-        <div className='person-inner'>
-          <h1> Michael Henderson</h1>
-          <div className="photo-container">
-            <span className="btn"><img src="https://media-exp1.licdn.com/dms/image/C4D03AQGMEdWdBetqYg/profile-displayphoto-shrink_200_200/0/1613654052738?e=1620864000&v=beta&t=A1slZ-XvNW9tTMhe7cZOtMf2j-Iti8hPeLm0rupa2l0" alt="michael-img" /></span>
+
+        <div className='about-inner-container'>
+        
+          <div className='about-card'>
+            <Image src='https://media-exp1.licdn.com/dms/image/C5103AQF_gzGZCkMefw/profile-displayphoto-shrink_200_200/0/1517547323802?e=1622678400&v=beta&t=799x8DE4FzkyZeZzYP-lveDsg-Hv784NT1tkf75_ros'/>
+            <Card.Content>
+              <Card.Header>Sotirios Alpanis</Card.Header>
+            </Card.Content>
+            <Card.Content extra>
+              <a href='https://www.linkedin.com/in/sotirios-alpanis-5903b960/' target='blank'>
+                <Icon name='linkedin'/>
+            LinkedIn
+              </a>
+            </Card.Content>
+            <Card.Content extra>
+              <a href='https://github.com/sotiriosalpanis' target='blank'>
+                <Icon name='github'/>
+            GitHub
+              </a>
+            </Card.Content>
           </div>
-          <br />
-          <div className='about-info'>
+
+          <div className='about-card'>
+            <Image src='https://media-exp1.licdn.com/dms/image/C4D03AQGMEdWdBetqYg/profile-displayphoto-shrink_200_200/0/1613654052738?e=1620864000&v=beta&t=A1slZ-XvNW9tTMhe7cZOtMf2j-Iti8hPeLm0rupa2l0'/>
+            <Card.Content>
+              <Card.Header>Michael Henderson</Card.Header>
+            </Card.Content>
+            <Card.Content extra>
+              <a href='https://www.linkedin.com/in/mhenderson24/' target='blank'>
+                <Icon name='linkedin'/>
+            LinkedIn
+              </a>
+            </Card.Content>
+            <Card.Content extra>
+              <a href='https://github.com/Awyssa' target='blank'>
+                <Icon name='github'/>
+            GitHub
+              </a>
+            </Card.Content>
           </div>
-          <div className='info-section'>
-            <p>Software Engineer from London.</p>
-            <p>Likes: Prosecco, Kate Bush, Mango Chutney, and the BioShock game series.</p>
-            <p>Fun Fact: Color blind but can solve a Rubiks Cube.</p>
-            <p><a href='https://www.linkedin.com/in/mhenderson24/' target="blank">LinkedIn</a> | <a href='https://github.com/Awyssa' target='blank'>GitHub</a></p>
-          </div>
-        </div>
-        <div className='spotify-section'>
-          <iframe width="450" height="300" src="https://www.youtube.com/embed/aXgSHL7efKg" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
         </div>
       </div>
     </>
