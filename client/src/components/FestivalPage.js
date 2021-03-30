@@ -3,11 +3,19 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { Header, Grid, Segment, Image, Flag, Button, Label } from 'semantic-ui-react'
 import ReactMapGL, { Marker } from 'react-map-gl'
+import { userIsAuthenticated, getTokenFromLocalStorage } from '../helpers/auth.js'
 
 const FestivalPage = () => {
 
   const { id } = useParams()
   const [ festivalData, setFestivalData ] = useState()
+  const [ userAttendingStatus, setUserAttendingStatus ] = useState(
+    {
+      interested: false,
+      going: false
+    }
+  )
+
 
   useEffect(() => {
     const getData = async () => {
@@ -26,6 +34,26 @@ const FestivalPage = () => {
   const { startDate, endDate, festivalName, mainFestivalImage, lineup, website, price, venue, country, latitude, longitude } = festivalData
   const startDateString = new Date(startDate).toDateString()
   const endDateString = new Date(endDate).toDateString()
+  
+
+  const handleAttendance = async event => {
+    let strToBool = false
+    if (event.target.value === 'true' ){
+      strToBool = true
+    } 
+    const newUserStatus = { ...userAttendingStatus, [event.target.name]: !strToBool }
+    try {
+      await axios.post(`/api/festivals/${id}/attendance`,newUserStatus, {
+        headers: {
+          Authorization: `Bearer ${getTokenFromLocalStorage()}`
+        }
+      })
+      setUserAttendingStatus(newUserStatus)
+    } catch (err) {
+      console.log(err)
+    }
+
+  }
 
   return (
     <Grid stackable container columns={3} divided>
@@ -38,6 +66,7 @@ const FestivalPage = () => {
           </Segment>
         </Grid.Column>
         <Grid.Column width={4}>
+          
           <Segment>
             <div>
               {startDateString}-{endDateString}
@@ -59,26 +88,42 @@ const FestivalPage = () => {
       </Grid.Row>
       <Grid.Row verticalAlign='middle' stretched>
         <Grid.Column width={4} textAlign='center' >
-          <Segment>
-            <Button as='div' labelPosition='right'>
-              <Button >
-              Interested
-              </Button>
-              <Label as='a' basic pointing='left'>
-                COUNT
-              </Label>
-            </Button>
-          </Segment>
-          <Segment>
-            <Button as='div' labelPosition='right' >
-              <Button>
-              Going
-              </Button>
-              <Label as='a' basic pointing='left'>
-                COUNT
-              </Label>
-            </Button>
-          </Segment>
+          { userIsAuthenticated() ? 
+            <>
+              <Segment>
+                <Button as='div' labelPosition='right'>
+                  <Button
+                    name='interested'
+                    value={userAttendingStatus.interested}
+                    onClick={handleAttendance}
+                  >
+                      Interested
+                  </Button>
+                  <Label as='a' basic pointing='left'
+
+                  >
+                    { userAttendingStatus.interested ? 'Yes' : 'No' }
+                  </Label>
+                </Button>
+              </Segment>
+              <Segment>
+                <Button as='div' labelPosition='right' >
+                  <Button
+                    onClick={handleAttendance}
+                    name='going'
+                    value={userAttendingStatus.going}
+                  >
+                      Going
+                  </Button>
+                  <Label as='a' basic pointing='left'>
+                    { userAttendingStatus.going ? 'Yes' : 'No' }
+                  </Label>
+                </Button>
+              </Segment>
+            </>
+            : <Segment>Login to add this festival to your account</Segment>
+          }
+
         </Grid.Column>
         <Grid.Column width={12}>
           <Segment className='map-container-medium'>

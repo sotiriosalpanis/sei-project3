@@ -88,3 +88,30 @@ export const updateFestival = async (req, res) => {
     return res.sendStatus(404).json({ message: err.message })
   }
 }
+
+export const addAttendanceToFestival = async (req, res) => {
+  try {
+    const { id } = req.params
+    const festival = await Festival.findById(id)
+    if (!festival) throw new Error('Could not find festival')
+    const newAttendanceInfo = { ...req.body, user: req.currentUser._id }
+    const attendeeMatch = festival.festivalAttendance.filter((fest, index) => {
+      const check = String(fest.user) === String(req.currentUser._id)
+      console.log('Check', check)
+      return index
+    }
+    )
+    if (attendeeMatch.length === 0) {
+      console.log('ATTENDEE', newAttendanceInfo)
+      festival.festivalAttendance.push(newAttendanceInfo)
+    } else {
+      console.log('No', newAttendanceInfo)
+      festival.festivalAttendance[attendeeMatch] = { ...newAttendanceInfo }
+    }
+    await festival.save()
+    return res.status(200).json(festival)
+  } catch (err) {
+    console.log(err)
+    return res.status().json({ message: err.message })
+  }
+}
