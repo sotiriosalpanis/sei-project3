@@ -141,7 +141,7 @@ const FestivalPage = () => {
                 </Button>
               </Segment>
             </>
-            : <Segment>Login to add this festival to your account</Segment>
+            : <Segment> <Link to={'/sign-in'}>Login or register</Link> to add this festival to your account</Segment>
           }
           <Segment>
             { interestedAttendance.length === 1 ? 
