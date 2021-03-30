@@ -87,7 +87,7 @@ export const addAttendanceToFestival = async (req, res) => {
     const { id } = req.params
     const festival = await Festival.findById(id)
     if (!festival) throw new Error('Could not find festival')
-    const newAttendanceInfo = { ...req.body, user: req.currentUser._id }
+    const newAttendanceInfo = { ...req.body, user: req.currentUser._id }merge 
     const attendeeMatch = festival.festivalAttendance.filter(fest => {
       return String(fest.user) === String(req.currentUser._id)
     }
