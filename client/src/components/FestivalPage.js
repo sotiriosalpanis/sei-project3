@@ -22,6 +22,23 @@ const FestivalPage = () => {
     const getData = async () => {
       try {
         const { data } = await axios.get(`/api/festivals/${id}`)
+        const { festivalAttendance } = data
+        const userAttendence = festivalAttendance.filter(item => {
+          return  userIsOwner(item.user)
+        })
+        if (! userAttendence) return userAttendingStatus
+        setUserAttendingStatus(userAttendence[0])
+      } catch (err) {
+        console.log(err)
+      }
+    }
+    getData()
+  },[])
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const { data } = await axios.get(`/api/festivals/${id}`)
         setFestivalData(data)
       } catch (err) {
         console.log(err)
@@ -38,15 +55,6 @@ const FestivalPage = () => {
 
   const interestedAttendance = festivalAttendance.filter(item => item.interested === true)
   const goingAttendance = festivalAttendance.filter(item => item.going === true)
-
-  const userAttendence = festivalAttendance.filter(item => {
-    return  userIsOwner(item.user)
-  })
-
-  console.log('USER check',userAttendence[0].interested)
-
-
-
 
   const handleAttendance = async event => {
     let strToBool = false
