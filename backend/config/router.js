@@ -19,7 +19,7 @@ router.route('/festivals/:id')
 router.route('/festivals/:id/attendance')
   .post(secureRoute, addAttendanceToFestival)
 
-router.route('/festivals/:id/attendance/:id')
+router.route('/festivals/:id/attendance/:attendanceId')
   .delete(secureRoute, deleteAttendanceFromFestival)
 
 router.route('/artists')

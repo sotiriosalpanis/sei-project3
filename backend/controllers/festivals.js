@@ -103,12 +103,13 @@ export const deleteAttendanceFromFestival = async (req, res) => {
     const { id, attendanceId } = req.params
     const festival = await Festival.findById(id)
     if (!festival) throw new Error('festival not found')
-    const attendanceToDelete = festival.attendances.id(attendanceId)
-    if (!attendanceToDelete) throw new Error('attendance not found')
-    if (!attendanceToDelete.owner.equals(req.currentUser._id)) throw new Error('Unauthorized')
+    const attendanceToDelete = festival.attendance.id(attendanceId)
+    if (!attendanceToDelete) throw new Error('You are already not attending')
+    if (!attendanceToDelete.owner.equals(req.currentUser._id)) throw new Error('Woah! This isn\'t yours!')
     await attendanceToDelete.remove()
     await festival.save()
-    return res.status(204).json()
+    console.log('attendance removed')
+    return res.status(204).json({ message: 'Attendance removed!' })
   } catch (err) {
     console.log(err)
     return res.status(404).json({ message: err.message })
