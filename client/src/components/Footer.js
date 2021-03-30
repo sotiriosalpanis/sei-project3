@@ -9,10 +9,10 @@ const Footer = () => {
 
 
   return (
-    <footer className='footer'>
+    <footer className='footer' id='footer'>
       <Divider/>
-      <Container>
-        <Menu text>
+      <Container centered>
+        <Menu text widths={5} inverted>
           <Menu.Item header>Search Our Site</Menu.Item>
           <Menu.Item
             name='Sign Up'

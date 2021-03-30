@@ -85,28 +85,30 @@ const FestivalPage = () => {
       <Grid.Row stretched>
         <Grid.Column width={12}>
           <Segment>
-            <Header>{festivalName}</Header>
+            <Header className='header-custom' size='large'>{festivalName}</Header>
             <Image src={`${mainFestivalImage}`} />
           </Segment>
         </Grid.Column>
         <Grid.Column width={4}>
           
           <Segment>
-            <div>
+            <Header size='medium'>
               {startDateString}-{endDateString}
-            </div>
-            <div>
+            </Header>
+            <Header sub>
               {venue}
-            </div>
-            <div>
+            </Header>
+            <Header>
               <Flag name={country.toLowerCase()}/>
-            </div>
+            </Header>
           </Segment>
           <Segment>
             <Link to={website}>
-              <p>{festivalName} website</p>
+              <Header size='medium'>{festivalName} website</Header>
             </Link>
-            £{price}
+            <Header sub>
+              £{price}
+            </Header>
           </Segment>
         </Grid.Column>
       </Grid.Row>
@@ -117,15 +119,15 @@ const FestivalPage = () => {
               <Segment>
                 <Button as='div' labelPosition='right'>
                   <Button
+                    basic
+                    color='teal'
                     name='interested'
                     value={userAttendingStatus.interested}
                     onClick={handleAttendance}
                   >
                       Interested
                   </Button>
-                  <Label as='a' basic pointing='left'
-
-                  >
+                  <Label as='a' pointing='left' color='teal'>
                     { userAttendingStatus.interested ? 'Yes' : 'No' }
                   </Label>
                 </Button>
@@ -133,13 +135,15 @@ const FestivalPage = () => {
               <Segment>
                 <Button as='div' labelPosition='right' >
                   <Button
+                    basic
+                    color='pink'
                     onClick={handleAttendance}
                     name='going'
                     value={userAttendingStatus.going}
                   >
                       Going
                   </Button>
-                  <Label as='a' basic pointing='left'>
+                  <Label as='a' pointing='left' color='pink'>
                     { userAttendingStatus.going ? 'Yes' : 'No' }
                   </Label>
                 </Button>
@@ -181,7 +185,9 @@ const FestivalPage = () => {
         {lineup.map(artist => {
           return <Grid.Column key={artist}>
             <Segment textAlign='center'>
-              {artist}
+              <Header sub>
+                {artist}
+              </Header>
             </Segment>
           </Grid.Column>
         })}

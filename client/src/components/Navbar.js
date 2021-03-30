@@ -36,12 +36,13 @@ const Navigation = () => {
 
 
   return (
-    <header>
+    <header id="navbar">
       <Menu pointing secondary>
         <Menu.Item
           as= { Link }
           to='/home'
           name='Home'
+          header
         />
         <Dropdown item text='Find a festival'>
           <Dropdown.Menu>
@@ -67,12 +68,8 @@ const Navigation = () => {
               My Festivals
               </Dropdown.Item>
             }
-
-
           </Dropdown.Menu>
-
         </Dropdown>
-
         <Menu.Menu position='right'>
           { !isLoggedIn &&
           <Menu.Item
