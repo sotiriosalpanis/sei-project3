@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Container, Header, Divider , Button, Form } from 'semantic-ui-react'
-import { useHistory } from 'react-router-dom'
+import { Container, Divider , Button, Form } from 'semantic-ui-react'
+// import { useHistory } from 'react-router-dom'
 
 
 const Register = () => {
 
-  const history = useHistory()
+  // const history = useHistory()
 
   const [ formData, setFormData ] = useState({
     username: '',
@@ -32,9 +32,8 @@ const Register = () => {
     
     try {
       await axios.post('/api/register',formData)
-      history.push('/')
+      // history.push('/')
     } catch (err) {
-      // console.log(err)
       setErrors(err.response.data.message)
     }
   }
@@ -45,7 +44,7 @@ const Register = () => {
   return (
     <div>
       <Container>
-        <Header as='h3'>Register Here</Header>
+        {/* <Header as='h3'>Register Here</Header> */}
         <Divider />
         <Form className='ui form' onSubmit={handleSubmit} >
           <div className="field">

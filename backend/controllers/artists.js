@@ -1,5 +1,6 @@
 import Artist from '../models/artist.js'
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get all artists
 export const getAllArtists = async (_req, res) => {
   console.log('REQUEST MADE')
   const artists = await Artist.find()
@@ -7,6 +8,7 @@ export const getAllArtists = async (_req, res) => {
   return res.status(200).json(artists)
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get one artist
 export const getOneArtist = async (req, res) => {
   try {
     const { id } = req.params
@@ -16,47 +18,29 @@ export const getOneArtist = async (req, res) => {
     }
     return res.status(200).json(singleArtist)
   } catch (err) {
-    console.log('📍Error in getOneArtist>>', err)
+    console.log('Error in getOneArtist>>', err)
     return res.status(404).json({ message: 'Not found' })
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add artist
 export const addArtist = async (req, res) => {
-  if (!req.currentUser) {
-    return res.status(401).json({ message: 'Hey! You need to login to do that!' })
-  }
-  if (!req.currentUser || req.currentUser.isAdmin !== true) {
-    return res.status(401).json({ message: 'Hey! You need to be an Admin to do that!' })
-  }
-  try {
-    const newArtist = { ...req.body, owner: req.currentUser._id }
-    const artistToAdd = await Artist.create(newArtist)
-    return res.status(201).json(artistToAdd)
-  } catch (error) {
-    if (error.message.indexOf('11000')) {
-      return res.status(422).json({ message: 'Woah! That Artist already exists!' })
-    }
-    if (error instanceof SyntaxError) {
-      console.log('ERROR>', error)
-      return res.status(422).json({ message: 'Woah there! You have not entered the information correctly' })
-    }
-  }
-}
+  console.log(req.currentUser)
 
-export const showArtist = async (req, res) => {
   try {
-    const { id } = req.params
-    const singleArtist = await Artist.findById(id).populate('owner')
-    if (!singleArtist) {
-      throw new Error('Cannot find that Artist!')
+    if (!req.currentUser) {
+      return res.status(401).json({ message: 'Hey! You need to login to do that!' })
     }
-    return res.sttus(200).json(singleArtist)
+    if (req.currentUser.isAdmin !== true) {
+      return res.status(401).json({ message: 'Woah! You need to be an Admin for that!' })
+    }
   } catch (err) {
-    console.log('Woah there! That is not correct!', err)
-    return res.status(404).json({ message: err.message })
+    console.log('ERROR>', err)
+    return res.status(422).json({ message: 'Woah there! You have not entered the information correctly' })
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Delete Artist
 export const deleteArtist = async (req, res) => {
   try {
     const { id } = req.params
@@ -71,6 +55,7 @@ export const deleteArtist = async (req, res) => {
   }
 }
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Update Artist
 export const updateArtist = async (req, res) => {
   try {
     const { id } = req.params
@@ -78,7 +63,7 @@ export const updateArtist = async (req, res) => {
     if (!singleArtist) throw new Error('Woah, that Artists is not here!')
     Object.assign(singleArtist, req.body)
     await singleArtist.save()
-    return res.status(202).json('updated!', singleArtist)
+    return res.status(202).json({ 'Updated Artist': singleArtist })
   } catch (err) {
     console.log('Woah there! Cannot update this artist')
     console.log(err)
