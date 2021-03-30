@@ -13,7 +13,7 @@ export const getPayloadFromToken = () => {
 export const userIsOwner = userId => {
   const payload = getPayloadFromToken()
   if ( !payload ) return false
-  console.log(userId, payload.sub)
+  // console.log(userId, payload.sub)
   return userId === payload.sub
 }
 

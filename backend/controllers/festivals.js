@@ -84,9 +84,21 @@ export const addAttendanceToFestival = async (req, res) => {
   try {
     const { id } = req.params
     const festival = await Festival.findById(id)
-    if (!festival) throw new Error('Cannot find festival')
-    const newAttendance = { ...req.body, owner: req.currentUser._id }
-    festival.attendance.push(newAttendance)
+    if (!festival) throw new Error('Could not find festival')
+    const newAttendanceInfo = { ...req.body, user: req.currentUser._id }
+    const attendeeMatch = festival.festivalAttendance.filter(fest => {
+      return String(fest.user) === String(req.currentUser._id)
+    }
+    )
+    const resultIndex = festival.festivalAttendance.indexOf(attendeeMatch[0])
+    if (attendeeMatch.length === 0) {
+      festival.festivalAttendance.push(newAttendanceInfo)
+    } else {
+      festival.festivalAttendance[resultIndex] = { ...newAttendanceInfo }
+    }
+    // if (!festival) throw new Error('Cannot find festival')
+    // const newAttendance = { ...req.body, owner: req.currentUser._id }
+    // festival.attendance.push(newAttendance)
     await festival.save()
     return res.status(200).json(festival)
   } catch (err) {
@@ -113,30 +125,3 @@ export const deleteAttendanceFromFestival = async (req, res) => {
     return res.status(404).json({ message: err.message })
   }
 }
-
-// export const addAttendanceToFestival = async (req, res) => {
-//   try {
-//     const { id } = req.params
-//     const festival = await Festival.findById(id)
-//     if (!festival) throw new Error('Cannot find that festival!')
-//     const newAttendanceInfo = { ...req.body, user: req.currentUser._id }
-//     const attendeeMatch = festival.festivalAttendance.filter((fest, index) => {
-//       const check = String(fest.user) === String(req.currentUser._id)
-//       console.log('Check', check)
-//       return index
-//     }
-//     )
-//     if (attendeeMatch.length === 0) {
-//       console.log('ATTENDEE', newAttendanceInfo)
-//       festival.festivalAttendance.push(newAttendanceInfo)
-//     } else {
-//       console.log('No', newAttendanceInfo)
-//       festival.festivalAttendance[attendeeMatch] = { ...newAttendanceInfo }
-//     }
-//     await festival.save()
-//     return res.status(200).json(festival)
-//   } catch (err) {
-//     console.log(err)
-//     return res.status().json({ message: err.message })
-//   }
-// }
