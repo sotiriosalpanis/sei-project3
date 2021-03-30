@@ -16,8 +16,6 @@ const FestivalMap = () => {
     zoom: 2
   })
 
-
-
   useEffect(() => {
     const getData = async() => {
       try {
@@ -30,11 +28,9 @@ const FestivalMap = () => {
     getData()
   },[])
 
-
-
   if (!mapData) return null
   if (!viewport) return null
-
+  console.log('mapbox', process.env.REACT_APP_MAPBOX_ACCESS_TOKEN)
 
   return (
     <Container fluid className="map-container">
