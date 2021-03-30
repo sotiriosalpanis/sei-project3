@@ -40,7 +40,7 @@ export const addArtist = async (req, res) => {
 export const showArtist = async (req, res) => {
   try {
     const { id } = req.params
-    const singleArtist = await Artist.findById(id).populate('owner')
+    const singleArtist = await Artist.findById(id)
     if (!singleArtist) {
       throw new Error('Cannot find that Artist!')
     }

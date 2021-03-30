@@ -9,7 +9,7 @@ export const secureRoute = async (req, res, next) => {
     const token = req.headers.authorization.replace('Bearer ', '')
     const payload = jwt.verify(token, secret)
     const userToVerify = await User.findById(payload.sub)
-    if (!userToVerify) throw new Error('User not found')
+    if (!userToVerify) throw new Error('You need to login!')
     req.currentUser = userToVerify
     next()
   } catch (err) {
@@ -25,7 +25,7 @@ export const secureRouteAdmin = async (req, res, next) => {
     const token = req.headers.authorization.replace('Bearer ', '')
     const payload = jwt.verify(token, secret)
     const userToVerify = await User.findById(payload.sub)
-    if (!userToVerify) throw new Error('User not found')
+    if (!userToVerify) throw new Error('You need to login!')
     req.currentUser = userToVerify
     if (userToVerify.isAdmin !== true) throw new Error('Woah! You need to be an ADMIN for that!')
     next()
