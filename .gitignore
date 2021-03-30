@@ -86,7 +86,6 @@ sftp-config.json
 .DS_Store
 node_modules
 .sass-cache
-.env
 *.log
 .ds_store
 .eslintrc.json
