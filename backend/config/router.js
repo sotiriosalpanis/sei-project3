@@ -27,7 +27,7 @@ router.route('/artists')
   .post(secureRouteAdmin, addArtist)
 
 router.route('/artists/:id')
-  .get(secureRouteAdmin, getOneArtist)
+  .get(getOneArtist)
   .put(secureRouteAdmin, updateArtist)
   .delete(secureRouteAdmin, deleteArtist)
 

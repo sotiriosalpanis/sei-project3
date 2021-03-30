@@ -2,9 +2,7 @@ import Artist from '../models/artist.js'
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get all artists
 export const getAllArtists = async (_req, res) => {
-  console.log('REQUEST MADE')
   const artists = await Artist.find()
-  console.log('GETTING ARTISTS>>', artists)
   return res.status(200).json(artists)
 }
 
@@ -25,8 +23,6 @@ export const getOneArtist = async (req, res) => {
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Add artist
 export const addArtist = async (req, res) => {
-  console.log(req.currentUser)
-
   try {
     if (!req.currentUser) {
       return res.status(401).json({ message: 'Hey! You need to login to do that!' })
