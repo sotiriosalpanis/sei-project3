@@ -1,44 +1,35 @@
 import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import axios from 'axios'
+import { getTokenFromLocalStorage } from '../helpers/auth'
+// import { getUserID } from '../helpers/auth.js'
 
 const UserProfile = () => {
-  const params = useParams()
 
-  const [user, setUser] = useState([])
+  // const user = getUserID()
+
+  const [userInfo, setUserInfo] = useState([])
 
   useEffect(() => {
     const getData = async () => {
-      const { data } = await axios.get(`/api/getUserProfile/${params.id}`)
-      setUser(data)
+      const { data } = await axios.get('/api/profile',{
+        headers: { Authorization: `Bearer ${getTokenFromLocalStorage()}` }
+      })
+      setUserInfo(data)
     }
     getData()
   }, [])
 
-  console.log('user', user)
+  console.log('user info', userInfo)
+  if (!userInfo ) return null
+
+  const { username } = userInfo
 
   return (
     <div>
       <p>THIS IS YOUR PROFILE</p>
-      <p>{user}</p>
+      <p>{username}</p>
     </div>
   )
 }
 
 export default UserProfile
-
-// const [user, setUser] = useState([])
-
-// useEffect(() => {
-//   getUser()
-// }, [])
-
-// const getUser = () => {
-//   setUser([])
-//   const getData = async () => {
-//     const { data } = await axios.get('/api/getUserProfile')
-//     setUser(data)
-//   }
-//   getData()
-//   console.log('your profile', user)
-// }
