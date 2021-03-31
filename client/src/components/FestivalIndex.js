@@ -10,7 +10,11 @@ const FestivalIndex = () => {
   const [festivals, setFestivals] = useState([])
   // const [filteredCountries, setFilteredCountries] = useState([])
   const [filteredFestivals, setFilteredFestivals] = useState([])
-  const [filterValue, setFilterValue] = useState('')
+  const [filterValueCountry, setFilterValueCountry] = useState('')
+  const [filterValueArtist, setFilterValueArtist] = useState('')
+  const [filterValuePrice, setFilterValuePrice] = useState('')
+
+  let masterArray = []
 
   // * Semantic UI example
   // const countryOptions = [
@@ -38,34 +42,72 @@ const FestivalIndex = () => {
 
   }, [])
 
+  // * HANDLE CHANGE ----------------------------------------------------------
   // * HANDLE CHANGE COUNTRIES
   const handleChangeCountries = (event) => {
     const filteredCountry = event.target.innerText
     console.log('ETV COUNTRY>>', filteredCountry)
-    setFilterValue(filteredCountry)
+    setFilterValueCountry(filteredCountry)
   }
 
-  // * HANDLE CHANGE OTHER
-  const handleChange = (event) => {
-    const filteredFestival = event.target.value
-    console.log('ETV FILTEREDFEST>', filteredFestival)
-    setFilterValue(filteredFestival)
+  // * HANDLE CHANGE ARTISTS 
+  const handleChangeArtists = (event) => {
+    const filteredArtist = event.target.innerText
+    console.log('ETV FILTERED ARTISTS>', filteredArtist)
+    setFilterValueArtist(filteredArtist)
   }
 
-  // * RETURN FILTERED FESTIVALS
+  // * HANDLE CHANGE PRICE
+  const handleChangePrice = (event, data) => {
+    console.log(event)
+    const filteredPrice = data.value
+    console.log('ETV FILTERED PRICE>', filteredPrice)
+    setFilterValuePrice(filteredPrice)
+  }
+
+  // * RETURN FILTERED FESTIVALS ----------------------------------------------
+  // * FILTERED BY COUNTRY
   useEffect((event) => {
-    if (!filterValue || filterValue === 'All') return (
+    if (!filterValueCountry) return (
       setFilteredFestivals(festivals)
     )
     console.log('event', event)
-    const filteredFest = festivals.filter(festival => {
-      return festival.country === filterValue || festival.lineup === filterValue
+    const filteredFestCountry = festivals.filter(festival => {
+      return festival.country === filterValueCountry
     })
-    setFilteredFestivals(filteredFest)
-  }, [filterValue, festivals])
+    setFilteredFestivals(filteredFestCountry)
+  }, [filterValueCountry, festivals])
   
+  // * FILTERED BY ARTIST
+  useEffect((event) => {
+    if (!filterValueArtist) return (
+      setFilteredFestivals(festivals)
+    )
+    console.log('event', event)
+    const filteredFestArtist = festivals.filter(festival => {
+      if (festival.lineup.includes(event.target.innerText) === event.target.innerText) {
+        return festival.lineup === filterValueArtist
+      } 
+    })
+    setFilteredFestivals(filteredFestArtist)
+  }, [filterValueArtist, festivals])
 
-  // * SEMANTIC UI COUNTRIES FILTER
+  // * FILTERED BY PRICE
+  useEffect((event) => {
+    if (!filterValuePrice) return (
+      setFilteredFestivals(festivals)
+    )
+    console.log('event', event)
+    const filteredFestPrice = festivals.filter(festival => {
+      if (festival.price <= 50) {
+        return festival.price === filterValuePrice
+      }
+    })
+    setFilteredFestivals(filteredFestPrice)
+  }, [filterValuePrice, festivals])
+
+  // * --------------------------------------------------------------------------------
+  // * COUNTRIES FILTER
   let countries = festivals.map(festival => {
     return festival.country
   })
@@ -75,30 +117,40 @@ const FestivalIndex = () => {
     return { key: `${country}`, text: `${country}`, value: `${country}`, flag: `${country.toLowerCase()}` }
   })
 
-  // * SEMANTIC UI ARTISTS FILTER
-  let artists = festivals.map(festival => {
+  // * ARTISTS FILTER
+  const festivalsLineupMapped = festivals.map(festival => {
     return festival.lineup
   })
-  const artistsSet = new Set(artists)
-  artists = [...artistsSet]
-  const artistsOptions = artists.map(artist => {
+  festivalsLineupMapped.forEach(artists => {
+    const newArray = artists.map(artist => {
+      return artist
+    })
+    masterArray = [... masterArray, ... newArray]
+  })
+  const artistsSet = new Set(masterArray.sort())
+  const artistsMapped = [...artistsSet]
+  const artistsOptions = artistsMapped.map(artist => {
     return { key: `${artist}`, text: `${artist}`, value: `${artist}` }
   })
 
-  // * SEMANTIC UI PRICE FILTER
+  // * PRICE FILTER
   const priceOptions = [
     { key: 'cheap', text: 'under £50', value: 'cheap' },
     { key: 'midOne', text: '£50 - £100', value: 'midOne' },
-    { key: 'midTwo', text: '£100-200', value: 'midTwo' },
+    { key: 'midTwo', text: '£100 - 200', value: 'midTwo' },
     { key: 'expensive', text: 'over £200', value: 'expensive' }
   ]
 
+  // * HANDLE RESET
+  // const handleReset = (event) => {
+    
+  // }
 
 
   // * IF NO FESTIVALS
   if (!festivals) return null
 
-  // * RETURN
+  // * RETURN ---------------------------------------------------------------------------
   return (
 
     <Container textAlign='justified'>
@@ -106,17 +158,17 @@ const FestivalIndex = () => {
 
         { /* Semantic UI Countries*/ }
         <Dropdown
-          onChange={handleChangeCountries}
           clearable
           multiple
           search
           selection
           options={countriesOptions}
+          onChange={handleChangeCountries}
           placeholder='Select Country'
           // value={countriesOptions}
         />
 
-        <select name="filter" id="filter" onChange={handleChangeCountries}>
+        {/* <select name="filter" id="filter" onChange={handleChangeCountries}>
           <option value='All'>All</option>
           {countries.map(country => (
             <option key={country} 
@@ -124,7 +176,7 @@ const FestivalIndex = () => {
               {country}
             </option>
           ))}
-        </select>
+        </select> */}
 
         {/* {festivals.map(festival => (
             <option key={festival._id}
@@ -134,10 +186,11 @@ const FestivalIndex = () => {
         
 
         { /* Semantic UI Artists */ }
-        <Dropdown placeholder='Artists' multiple selection options={artistsOptions} onChange={handleChange}/>
+        <Dropdown placeholder='Artists' fluid multiple selection options={artistsOptions} onChange={handleChangeArtists}/>
 
         { /* Semantic UI Price */ }
-        <Dropdown placeholder='Price per day (£)' multiple selection options={priceOptions} onChange={handleChange}/>
+        <Dropdown placeholder='Price per day (£)' fluid multiple selection options={priceOptions} onChange={handleChangePrice}/>
+
 
 
       </Segment.Inline>
