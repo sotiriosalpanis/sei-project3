@@ -245,6 +245,7 @@ export default [
     festivals: ['Leeds Festival', 'Reading Festival', 'We Love 90s In The Park!'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120302/Artist%20Images/Liam-Gallagher_oeosiq.jpg'
   },
+  //* - - - - - - - - - - - - - Sotirios seeding extra info from below this line
   {
     artist: 'Little Simz',
     festivals: ['Parklife', 'All Points East'],
