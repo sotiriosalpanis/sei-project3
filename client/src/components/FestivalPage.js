@@ -80,29 +80,36 @@ const FestivalPage = () => {
 
   return (
     <Grid stackable container columns={3} divided textAlign='justified'>
-      <Grid.Row stretched>
+      <Grid.Row>
         <Grid.Column width={12}>
           <Segment>
             <Header className='header-custom' size='huge'>{festivalName}</Header>
             <Image src={`${mainFestivalImage}`} />
           </Segment>
         </Grid.Column>
-        <Grid.Column width={4}>
+        <Grid.Column width={4} verticalAlign='middle'>
+          
           
           <Segment>
-            <Header size='medium'>
-              {startDateString}-{endDateString}
-            </Header>
-            <Header sub>
-              {venue}
-            </Header>
-            <Header>
-              <Flag name={country.toLowerCase()}/>
-            </Header>
+          <Header size='medium'>
+            Dates
+          </Header>
+          <Header sub>
+            {startDateString}-{endDateString}
+          </Header>
           </Segment>
           <Segment>
+          <Header size='medium'>
+            <Flag name={country.toLowerCase()}/> Location
+          </Header>
+          <Header sub>
+            {venue}
+          </Header>
+          </Segment>
+
+          <Segment>
             <Link to={website}>
-              <Header size='medium'>{festivalName} website</Header>
+              <Header size='medium'>Official website</Header>
             </Link>
             <Header size='small'>
               Price: £{price}
