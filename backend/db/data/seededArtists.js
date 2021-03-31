@@ -1,4 +1,3 @@
-
 export default [
   {
     artist: 'A$AP Rocky',

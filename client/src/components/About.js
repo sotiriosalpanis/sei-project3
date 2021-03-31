@@ -8,11 +8,14 @@ const Home = () => {
       <div className='about-container'>
         <div className='about-inner-container'>
           <div className='about-card'>
+            
             <Image src='https://media-exp1.licdn.com/dms/image/C4E03AQE5cV5-04RKeQ/profile-displayphoto-shrink_200_200/0/1612114384620?e=1622678400&v=beta&t=ti8DRvLTw4_9BQr3n8LO2UpMp0cNsZcQsKbuMQVbvjY'/>
+            
             <Card.Content>
               <Card.Header>Anna Monkman</Card.Header>
             </Card.Content>
             <Card.Content extra>
+              <iframe src="https://open.spotify.com/embed/artist/34EP7KEpOjXcM2TCat1ISk" width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>
               <a href='https://www.linkedin.com/in/anna-monkman-526734125/' target='blank'>
                 <Icon name='linkedin'/>
             LinkedIn

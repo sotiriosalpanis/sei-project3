@@ -7,8 +7,10 @@ const Home = () => {
   const [hero, setHero] = useState(0)
 
   useEffect(() => {
-    getNewFestival()
     getFestivals()
+    const timerId = getNewFestival()
+    console.log('timer cleared')
+    return ()=> clearInterval(timerId)
   }, [])
 
   const getFestivals = () => {
@@ -20,15 +22,16 @@ const Home = () => {
     getData()
   }
 
+  let getNewImage = false
+
   const getNewFestival = () => {
-    clearInterval(getNewFestival)
     console.log('get new festival ran')
-    setInterval(() => {
+    const timerId = setInterval(() => {
       console.log('set interval ran')
       setHero(Math.floor(Math.random() * 27))
-      clearInterval(getNewFestival)
+      getNewImage = !getNewImage
     }, 3000)
-    clearInterval(getNewFestival)
+    return timerId
   }
 
   return (
