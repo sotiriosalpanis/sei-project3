@@ -31,6 +31,7 @@ const FestivalCard = ({ _id, festivalName, mainFestivalImage, venue, country, st
     </Card>
 
 
+
   )
 
 }
