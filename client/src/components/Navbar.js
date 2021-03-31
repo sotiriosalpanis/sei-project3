@@ -2,38 +2,31 @@ import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
 import { Menu, Dropdown } from 'semantic-ui-react'
 import { userIsAuthenticated } from '../helpers/auth.js'
-
-
+import Login from '../components/Login'
 
 const Navigation = () => {
 
   const history = useHistory()
-
   const handleLogout = () => {
     window.localStorage.removeItem('token')
     setIsLoggedIn(false)
     history.push('/home')
   }
 
-  const [ isLoggedIn, setIsLoggedIn ] = useState(false)
+  console.log('login', Login)
+
+  const [isLoggedIn, setIsLoggedIn] = useState(null)
 
   useEffect(() => {
+    console.log('loggedin?', isLoggedIn)
     if (userIsAuthenticated()) return setIsLoggedIn(true)
     if (!userIsAuthenticated()) return setIsLoggedIn(false)
-  },[isLoggedIn])
+  },[userIsAuthenticated, isLoggedIn])
 
 
-  useEffect(() => {
-    if (userIsAuthenticated()) return setIsLoggedIn(true)
-  },[isLoggedIn])
-
-
-
-  // console.log('Is Logged in?>>>>',isLoggedIn)
-  // console.log('Is Authenticated?>>>>',userIsAuthenticated())
-
-
-
+  // useEffect(() => {
+  //   if (userIsAuthenticated()) return setIsLoggedIn(true)
+  // },[isLoggedIn])
 
   return (
     <header id="navbar">
@@ -77,25 +70,25 @@ const Navigation = () => {
           </Dropdown.Menu>
         </Dropdown>
         <Menu.Menu position='right'>
-          { !isLoggedIn &&
-          <Menu.Item
-            as= { Link }
-            to='/sign-in'
-            name='Sign-in Register'
-          />
-          }
-          { isLoggedIn &&
-          <>
+          
+          {!isLoggedIn ?
             <Menu.Item
               as= { Link }
-              to='/userprofile'
-              name='Your profile'
+              to='/sign-in'
+              name='Sign-in Register'
             />
-            <Menu.Item 
-              name='Logout'
-              onClick={ handleLogout }
-            />
-          </>
+            :
+            <>
+              <Menu.Item
+                as= { Link }
+                to='/userprofile'
+                name='Your profile'
+              />
+              <Menu.Item 
+                name='Logout'
+                onClick={ handleLogout }
+              />
+            </>
           }
         </Menu.Menu>
       </Menu>
