@@ -8,11 +8,8 @@ const Home = () => {
 
   useEffect(() => {
     getNewFestival()
-  }, [])
-
-  useEffect(() => {
     getFestivals()
-  }, [hero])
+  }, [])
 
   const getFestivals = () => {
     setFestivals([])
@@ -24,10 +21,14 @@ const Home = () => {
   }
 
   const getNewFestival = () => {
+    clearInterval(getNewFestival)
+    console.log('get new festival ran')
     setInterval(() => {
+      console.log('set interval ran')
       setHero(Math.floor(Math.random() * 27))
-    }, 8000)
-    clearInterval()
+      clearInterval(getNewFestival)
+    }, 3000)
+    clearInterval(getNewFestival)
   }
 
   return (
