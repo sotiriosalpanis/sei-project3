@@ -20,6 +20,9 @@ const App = () =>{
     <BrowserRouter>
       <NavBar/>
       <Switch>
+        <Route exact path ="/">
+          <Home/>
+        </Route>
         <Route exact path ="/home">
           <Home/>
         </Route>
