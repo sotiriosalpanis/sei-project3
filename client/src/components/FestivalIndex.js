@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Grid, Dropdown, Button, Container, Segment } from 'semantic-ui-react'
+import { Grid, Dropdown, Container, Segment } from 'semantic-ui-react'
 
 import FestivalCard from './FestivalCard'
 
@@ -10,11 +10,27 @@ const FestivalIndex = () => {
   const [festivals, setFestivals] = useState([])
   // const [filteredCountries, setFilteredCountries] = useState([])
   const [filteredFestivals, setFilteredFestivals] = useState([])
-  const [filterValueCountry, setFilterValueCountry] = useState('')
-  const [filterValueArtist, setFilterValueArtist] = useState('')
-  const [filterValuePrice, setFilterValuePrice] = useState('')
+
+  const [filterValues, setFilterValues] = useState({
+    country: '',
+    price: '',
+    artist: ''
+  })
+
+  // const [filterValueCountry, setFilterValueCountry] = useState('')
+  // const [filterValueArtist, setFilterValueArtist] = useState('')
+  // const [filterValuePrice, setFilterValuePrice] = useState('')
+
+  // console.log(filterValuePrice)
+
+  // console.log('FILTERED FESTIVALS', filteredFestivals)
 
   let masterArray = []
+  
+  // let filteredFestPrice = []
+  // let filteredFestArtist = []
+  // let filteredFestCountry = []
+  // let masterFilteredArray = []
 
   // * Semantic UI example
   // const countryOptions = [
@@ -44,67 +60,149 @@ const FestivalIndex = () => {
 
   // * HANDLE CHANGE ----------------------------------------------------------
   // * HANDLE CHANGE COUNTRIES
-  const handleChangeCountries = (event) => {
-    const filteredCountry = event.target.innerText
-    console.log('ETV COUNTRY>>', filteredCountry)
-    setFilterValueCountry(filteredCountry)
-  }
+  // const handleChangeCountries = (event, data) => {
+  //   const filteredCountry = event.target.innerText
+  //   console.log('data country', data.name)
+  //   // console.log('ETV COUNTRY>>', filteredCountry)
+  //   setFilterValueCountry(filteredCountry)
+  // }
 
-  // * HANDLE CHANGE ARTISTS 
-  const handleChangeArtists = (event) => {
-    const filteredArtist = event.target.innerText
-    console.log('ETV FILTERED ARTISTS>', filteredArtist)
-    setFilterValueArtist(filteredArtist)
-  }
+  // // * HANDLE CHANGE ARTISTS 
+  // const handleChangeArtists = (event, data) => {
+  //   const filteredArtist = event.target.innerText
+  //   console.log('data artist', data.name)
+  //   // console.log('ETV FILTERED ARTISTS>', filteredArtist)
+  //   setFilterValueArtist(filteredArtist)
+  // }
 
-  // * HANDLE CHANGE PRICE
-  const handleChangePrice = (event, data) => {
+  // // * HANDLE CHANGE PRICE
+  // const handleChangePrice = (event, data) => {
+  //   console.log('event target name>>', event.target.name)
+  //   console.log('data price', data.name)
+  //   const filteredPrice = data.value
+  //   // console.log('ETV FILTERED PRICE>', filteredPrice)
+  //   setFilterValuePrice(filteredPrice)
+  // }
+  // * HANDLE CHANGE ALL
+  const handleChangeAll = (event, data) => {
     console.log(event)
-    const filteredPrice = data.value
-    console.log('ETV FILTERED PRICE>', filteredPrice)
-    setFilterValuePrice(filteredPrice)
+    const newFilters = { ...filterValues, [data.name]: data.value }
+    console.log('NEW FILTERS', newFilters)
+    setFilterValues(newFilters)
   }
 
   // * RETURN FILTERED FESTIVALS ----------------------------------------------
+
+  useEffect(() => {
+    for (const [key, value] of Object.entries(filterValues)) {
+      console.log(`${key}: ${value}`)
+      
+      let filteredArray = [ ...festivals ]
+      console.log('filteredArray', filteredArray)
+      // * ARTIST
+      // if (key === 'artist' && value === '') {
+      //   setFilteredFestivals(festivals)
+      // }
+      if (key === 'artist' && value !== '') {
+        filteredArray = festivals.filter(festival => {
+          if (festival.lineup.includes(value) === true) {
+            return festival.lineup
+          } 
+        })
+        // setFilteredFestivals(filteredArray)
+      }
+
+      // * COUNTRY
+      // if (key === 'country' && value === '') {
+      //   setFilteredFestivals(festivals)
+      // }
+      if (key === 'country' && value !== '') {
+        filteredArray = festivals.filter(festival => {
+          // console.log('VALUE',  value, value.length)
+          // console.log('value equal country', festival.country === value)
+          // console.log('festival.country',  festival.country, festival.country.length)
+          return festival.country === value
+        })
+        // console.log('FILTERE FEST COUNTRY', filteredFestCountry)
+      } 
+      setFilteredFestivals(filteredArray)
+      // else {
+      //   setFilteredFestivals(festivals)
+      // }
+
+
+    }
+  }, [filterValues])
+
+
   // * FILTERED BY COUNTRY
-  useEffect((event) => {
-    if (!filterValueCountry) return (
-      setFilteredFestivals(festivals)
-    )
-    console.log('event', event)
-    const filteredFestCountry = festivals.filter(festival => {
-      return festival.country === filterValueCountry
-    })
-    setFilteredFestivals(filteredFestCountry)
-  }, [filterValueCountry, festivals])
+  // useEffect((event) => {
+  //   if (!filterValueCountry) return (
+  //     setFilteredFestivals(festivals)
+  //   )
+  //   console.log('event', event)
+  //   filteredFestCountry = filteredFestivals.filter(festival => {
+  //     return festival.country === filterValueCountry
+  //   })
+  //   // console.log('FILTEREDFESTCOUNTRY', filteredFestCountry)
+  //   setFilteredFestivals(filteredFestCountry)
+  // }, [filterValueCountry, festivals])
   
   // * FILTERED BY ARTIST
-  useEffect((event) => {
-    if (!filterValueArtist) return (
-      setFilteredFestivals(festivals)
-    )
-    console.log('event', event)
-    const filteredFestArtist = festivals.filter(festival => {
-      if (festival.lineup.includes(event.target.innerText) === event.target.innerText) {
-        return festival.lineup === filterValueArtist
-      } 
-    })
-    setFilteredFestivals(filteredFestArtist)
-  }, [filterValueArtist, festivals])
+  // useEffect(() => {
+  //   if (!filterValueArtist) return (
+  //     setFilteredFestivals(festivals)
+  //   )
+  //   filteredFestArtist = filteredFestivals.filter(festival => {
+  //     if (festival.lineup.includes(filterValueArtist) === true) {
+  //       return festival.lineup
+  //     } 
+  //   })
+  //   // console.log('FILTEREDFESTARTIST', filteredFestArtist)
+  //   setFilteredFestivals(filteredFestArtist)
+  // }, [filterValueArtist, festivals])
+
 
   // * FILTERED BY PRICE
-  useEffect((event) => {
-    if (!filterValuePrice) return (
-      setFilteredFestivals(festivals)
-    )
-    console.log('event', event)
-    const filteredFestPrice = festivals.filter(festival => {
-      if (festival.price <= 50) {
-        return festival.price === filterValuePrice
-      }
-    })
-    setFilteredFestivals(filteredFestPrice)
-  }, [filterValuePrice, festivals])
+  // useEffect((event) => {
+  //   if (!filterValuePrice) return (
+  //     setFilteredFestivals(festivals)
+  //   )
+  //   console.log('event', event)
+  //   // console.log('FILTERVALUE PRICE>>', filterValuePrice)
+  //   if (filterValuePrice === 'cheap') {
+  //     filteredFestPrice = filteredFestivals.filter(festival => {
+  //       return (festival.price <= 50)
+  //       // console.log('festival price cheap', festival.price <= 50)
+  //     })
+  //   }
+  //   if (filterValuePrice === 'midOne') {
+  //     filteredFestPrice = filteredFestivals.filter(festival => {
+  //       return (festival.price >= 50 && festival.price <= 100)
+  //     })
+  //   }
+  //   if (filterValuePrice === 'midTwo') {
+  //     filteredFestPrice = filteredFestivals.filter(festival => {
+  //       return (festival.price >= 100 && festival.price <= 200)
+  //     })
+  //   }
+  //   if (filterValuePrice === 'expensive') {
+  //     filteredFestPrice = filteredFestivals.filter(festival => {
+  //       return (festival.price >= 200)
+  //     })
+  //   }
+  //   // console.log('FILTEREDFESTPRICE', filteredFestPrice)
+  //   setFilteredFestivals(filteredFestPrice)
+  // }, [filterValuePrice, festivals])
+
+
+  // * FILTER ALL
+
+
+
+
+  // masterFilteredArray = [...filteredFestCountry, ...filteredFestArtist, ...filteredFestPrice]
+  // console.log('MASTER FILTERED ARRAY', masterFilteredArray)
 
   // * --------------------------------------------------------------------------------
   // * COUNTRIES FILTER
@@ -159,12 +257,12 @@ const FestivalIndex = () => {
         { /* Semantic UI Countries*/ }
         <Dropdown
           clearable
-          multiple
           search
           selection
           options={countriesOptions}
-          onChange={handleChangeCountries}
-          placeholder='Select Country'
+          onChange={handleChangeAll}
+          placeholder='Country'
+          name='country'
           // value={countriesOptions}
         />
 
@@ -186,28 +284,43 @@ const FestivalIndex = () => {
         
 
         { /* Semantic UI Artists */ }
-        <Dropdown placeholder='Artists' fluid multiple selection options={artistsOptions} onChange={handleChangeArtists}/>
+        <Dropdown placeholder='Artists' name='artist' clearable selection options={artistsOptions} onChange={handleChangeAll}/>
 
         { /* Semantic UI Price */ }
-        <Dropdown placeholder='Price per day (£)' fluid multiple selection options={priceOptions} onChange={handleChangePrice}/>
+        <Dropdown placeholder='Price per day (£)' name='price' clearable selection options={priceOptions} onChange={handleChangeAll}/>
 
 
 
       </Segment.Inline>
-      <Segment.Inline>
+
+      {/* <Segment.Inline>
         <Button basic inverted color='violet'>Submit</Button>
         <Button basic inverted color='violet'>Reset</Button>
-      </Segment.Inline>
+      </Segment.Inline> */}
 
-      
+      <div className="ui divider"></div>
 
       <Grid centered stackable>
         <Grid.Row columns={3} centered>
-          { filteredFestivals.map( festival => {
-            return <Grid.Column key={festival._id}>
-              <FestivalCard {...festival} />
-            </Grid.Column> 
-          })}
+          {console.log('filteredfestivals', filteredFestivals)}
+          {filteredFestivals.length === 0 ? 
+            <>
+              { festivals.map( festival => {
+                return <Grid.Column key={festival._id}>
+                  <FestivalCard {...festival} />
+                </Grid.Column> 
+              })}
+            </>
+            :
+            <>
+              { filteredFestivals.map( festival => {
+                return <Grid.Column key={festival._id}>
+                  <FestivalCard {...festival} />
+                </Grid.Column> 
+              })}
+            </>
+          } 
+          
         </Grid.Row>
       </Grid>
 
