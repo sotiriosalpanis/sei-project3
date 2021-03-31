@@ -23,7 +23,6 @@ const Navigation = () => {
     console.log('loggedin?', isLoggedIn)
     if (userIsAuthenticated()) return setIsLoggedIn(true)
     if (!userIsAuthenticated()) return setIsLoggedIn(false)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[userIsAuthenticated, isLoggedIn])
 
 
