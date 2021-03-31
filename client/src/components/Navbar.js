@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useHistory } from 'react-router-dom'
-import { Menu, Dropdown } from 'semantic-ui-react'
+import { Menu, Dropdown, Image } from 'semantic-ui-react'
 import { userIsAuthenticated } from '../helpers/auth.js'
 
-
+import Logo02 from '../assets/Logo02.png'
 
 const Navigation = () => {
 
@@ -38,12 +38,19 @@ const Navigation = () => {
   return (
     <header id="navbar">
       <Menu pointing secondary>
-        <Menu.Item
+        <Image 
+          src={Logo02} 
+          size='medium' 
+          as= { Link }
+          to='/home'
+          name='Home'
+          header/>
+        {/* <Menu.Item
           as= { Link }
           to='/home'
           name='Home'
           header
-        />
+        /> */}
         <Dropdown item text='Find a festival'>
           <Dropdown.Menu>
             <Dropdown.Item

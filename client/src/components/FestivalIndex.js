@@ -16,6 +16,11 @@ const FestivalIndex = () => {
   console.log(filterValuePrice)
 
   let masterArray = []
+  
+  let filteredFestPrice = []
+  let filteredFestArtist = []
+  let filteredFestCountry = []
+  let masterFilteredArray = []
 
   // * Semantic UI example
   // const countryOptions = [
@@ -73,9 +78,10 @@ const FestivalIndex = () => {
       setFilteredFestivals(festivals)
     )
     console.log('event', event)
-    const filteredFestCountry = festivals.filter(festival => {
+    filteredFestCountry = festivals.filter(festival => {
       return festival.country === filterValueCountry
     })
+    console.log('FILTEREDFESTCOUNTRY', filteredFestCountry)
     setFilteredFestivals(filteredFestCountry)
   }, [filterValueCountry, festivals])
   
@@ -85,15 +91,15 @@ const FestivalIndex = () => {
       setFilteredFestivals(festivals)
     )
     console.log('event', event)
-    const filteredFestArtist = festivals.filter(festival => {
+    filteredFestArtist = festivals.filter(festival => {
       if (festival.lineup.includes(filterValueArtist) === true) {
         return festival.lineup
       } 
     })
+    console.log('FILTEREDFESTARTIST', filteredFestArtist)
     setFilteredFestivals(filteredFestArtist)
   }, [filterValueArtist, festivals])
 
-  let filteredFestPrice = []
 
   // * FILTERED BY PRICE
   useEffect((event) => {
@@ -123,8 +129,17 @@ const FestivalIndex = () => {
         return (festival.price >= 200)
       })
     }
+    console.log('FILTEREDFESTPRICE', filteredFestPrice)
     setFilteredFestivals(filteredFestPrice)
   }, [filterValuePrice, festivals])
+
+
+  // * FILTER ALL
+
+
+
+  masterFilteredArray = [...filteredFestCountry, ...filteredFestArtist, ...filteredFestPrice]
+  console.log('MASTER FILTERED ARRAY', masterFilteredArray)
 
   // * --------------------------------------------------------------------------------
   // * COUNTRIES FILTER
@@ -219,7 +234,7 @@ const FestivalIndex = () => {
         <Button basic inverted color='violet'>Reset</Button>
       </Segment.Inline> */}
 
-      
+      <div className="ui divider"></div>
 
       <Grid centered stackable>
         <Grid.Row columns={3} centered>
