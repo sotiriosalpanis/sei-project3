@@ -15,7 +15,6 @@ const Home = () => {
               <Card.Header>Anna Monkman</Card.Header>
             </Card.Content>
             <Card.Content extra>
-              <iframe src="https://open.spotify.com/embed/artist/34EP7KEpOjXcM2TCat1ISk" width="300" height="380" allowtransparency="true" allow="encrypted-media"></iframe>
               <a href='https://www.linkedin.com/in/anna-monkman-526734125/' target='blank'>
                 <Icon name='linkedin'/>
             LinkedIn

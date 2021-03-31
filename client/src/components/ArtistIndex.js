@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Image } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 
 const ArtistIndex = () => {
@@ -10,6 +10,7 @@ const ArtistIndex = () => {
     const getData = async () => {
       const { data } = await axios.get('/api/artists')
       setArtists(data)
+      console.log(artists)
     }
     getData()
     console.log(artists)
@@ -33,6 +34,7 @@ const ArtistIndex = () => {
                       </div>
                     )
                   })}</p>
+                  <Image src={artist.image} />
                 </div>
               </Grid.Column> 
             )
