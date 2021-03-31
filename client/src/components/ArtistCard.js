@@ -17,6 +17,7 @@ const ArtistCard = () => {
       setArtist(data)
     }
     getData()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
   useEffect(() => {
     const getData = async () => {

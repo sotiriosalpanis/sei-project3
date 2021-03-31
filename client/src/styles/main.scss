@@ -124,3 +124,17 @@ $background-color-light: rgb(109, 199, 241);
   background-size: cover;
   background-position: center;
 }
+
+.home-card-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    height: 100px;
+    width: 200px;
+    min-height: 100px;
+    min-width: 200px;
+    max-height: 100px;
+    max-width: 200px;
+  }
+}
