@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
+import { Container, Header, Segment } from 'semantic-ui-react'
 // import { getUserID } from '../helpers/auth.js'
 
 const UserProfile = () => {
 
-  // const user = getUserID()
+  const [userInfo, setUserInfo] = useState(null)
+  const [userFestivals, setUserFestivals ] = useState(null)
 
-  const [userInfo, setUserInfo] = useState([])
 
   useEffect(() => {
     const getData = async () => {
@@ -19,16 +20,39 @@ const UserProfile = () => {
     getData()
   }, [])
 
-  console.log('user info', userInfo)
   if (!userInfo ) return null
+
+  useEffect(() => {
+    const getData = async () => {
+      const { data } = await axios.get('/api/festivals')
+      const myFestivals = data.filter(festival => {
+        if (festival.festivalAttendance.length > 0) {
+          festival.festivalAttendance.filter(attendance => {
+            if (attendance.user === userInfo._id) {
+              return festival
+            }
+          })
+          return festival
+        }
+      })
+      setUserFestivals(myFestivals)
+    }
+    getData()
+  },[])
+
+
 
   const { username } = userInfo
 
   return (
-    <div>
-      <p>THIS IS YOUR PROFILE</p>
-      <p>{username}</p>
-    </div>
+    <Container>
+      <Header>Welcome {username}</Header>
+      {userFestivals.map(festival => {
+        return <Segment key={festival._id}>
+          {festival.festivalName}
+        </Segment>
+      })}
+    </Container>
   )
 }
 

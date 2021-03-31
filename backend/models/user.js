@@ -56,6 +56,20 @@ userSchema.set('toJSON', {
   }
 })
 
+// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Reverse lookup festivals
+// userSchema
+//   .virtual('festivals')
+//   .lookup(
+//     {
+//       from: 'Festival',
+//       localField: '_id',
+//       foreignField: 'festivalAttendance._id',
+//       as: 'festivals'
+//     }
+//   )
+
+userSchema.set('toJSON', { virtual: true })
+
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - EXPORT
 
 export default mongoose.model('User', userSchema)

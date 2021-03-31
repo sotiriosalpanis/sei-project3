@@ -2,7 +2,6 @@ import User from '../models/user.js'
 
 // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - Get users profile
 export const getUserProfile = async (req, res) => {
-  console.log(req.currentUser)
   try {
     const user = await User.findById(req.currentUser._id)
     console.log('USER >>', user)
