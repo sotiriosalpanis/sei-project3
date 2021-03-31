@@ -37,7 +37,7 @@ const FestivalPage = () => {
       }
     }
     getData()
-  },[])
+  },[id, userAttendingStatus])
 
   useEffect(() => {
     const getData = async () => {
@@ -49,7 +49,7 @@ const FestivalPage = () => {
       }
     }
     getData()
-  },[userAttendingStatus])
+  },[id, userAttendingStatus])
 
   if (!festivalData) return null
 

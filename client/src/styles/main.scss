@@ -17,6 +17,7 @@ $background-color-light: rgb(109, 199, 241);
   background-image: linear-gradient(to top, $background-color-dark, $background-color-medium-dark, $background-color-medium-light, $background-color-light );
   font-family: $text-font;
   color: $font-color-dark;
+  min-height: 100vh;
 }
 
 #navbar {
@@ -54,10 +55,15 @@ $background-color-light: rgb(109, 199, 241);
 .map-container {
   height: 90vh;
   max-width: 100%;
+  border: 2px solid $background-color-medium-light;
+  border-radius: 10px;
 }
 
 .map-container-medium{
   height: 300px
+}
+.map-container-medium-large{
+  height: 400px;
 }
 
 .ui.header.header-custom {

@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 import { getTokenFromLocalStorage } from '../helpers/auth'
-import { Container, Header, Segment } from 'semantic-ui-react'
+import { Container, Header, Segment, Grid } from 'semantic-ui-react'
 import ReactMapGL, { Marker } from 'react-map-gl'
+import { Link } from 'react-router-dom'
 
 const UserProfile = () => {
 
@@ -67,18 +68,43 @@ const UserProfile = () => {
 
   return (
     <Container>
-      <Segment>
-        {!userInfo ? <Header>It looks like you do not have an account</Header> : <Header>Welcome {username}</Header>}
-      </Segment>
-
-      
-      {userFestivals.map(festival => {
-        return <Segment key={festival._id}>
+      <Grid textAlign='justified'>
+        <Grid.Row stretched>
+          <Grid.Column>
+          <Segment padded>
+            {!userInfo ? <Header size='large'>It looks like you do not have an account</Header> : <Header size='large' textAlign='center'>{username}, welcome to your Festivalist page</Header>}
+          </Segment>
+          </Grid.Column>
+        </Grid.Row>
+        <Grid.Row verticalAlign='middle'>
+          <Grid.Column width={4}>
+            <Segment textAlign='center'>
+              <Header>Your Festivalist</Header>
+              <Segment.Group stacked>
+              {userFestivals.map(festival => {
+        return <Link 
+        key={festival._id}
+        to={`/festivals/${festival._id}`}
+        >
+        <Segment textAlign='center'>
           {festival.festivalName}
         </Segment>
+        </Link>
       })}
+              </Segment.Group>
+              
+      <Segment secondary textAlign='center'>
+      <Header sub>
+        <Link to={'/festivals'}>
+        Explore more festivals
+        </Link>
+      </Header>
+      </Segment>
 
-      <Segment className='map-container-medium'>
+            </Segment>
+          </Grid.Column>
+          <Grid.Column width={8}>
+          <Segment className='map-container-medium-large'>
         <ReactMapGL 
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
           height='100%'
@@ -93,7 +119,7 @@ const UserProfile = () => {
               longitude={festival.longitude}
               latitude={festival.latitude}
             > 
-            ⭐️
+            🕺🏻
             </Marker>
           })}
           {festivals.map(festival => {
@@ -102,11 +128,30 @@ const UserProfile = () => {
               longitude={festival.longitude}
               latitude={festival.latitude}
             > 
-            📍
+            🎪
             </Marker>
           })}
         </ReactMapGL>
       </Segment>
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <Segment textAlign='center'>
+              <Header>Map Key</Header>
+              <Segment>🕺🏻 your festivals</Segment>
+              <Segment>🎪 more festivals!</Segment>
+            </Segment>
+            
+
+          </Grid.Column>
+        </Grid.Row>
+
+      </Grid>
+
+
+      
+
+
+
     </Container>
   )
 }
