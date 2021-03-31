@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Container, Divider , Button, Form } from 'semantic-ui-react'
+import { Container, Divider , Button, Form, Message } from 'semantic-ui-react'
 // import { useHistory } from 'react-router-dom'
 
 
@@ -22,6 +22,8 @@ const Register = () => {
     passwordConfirmation: ''
   })
 
+  const [ success, setSuccess ] = useState(null)
+
   const handleChange = (event) =>{
     const newFormData = { ...formData, [event.target.name]: event.target.value }
     setFormData(newFormData)
@@ -29,9 +31,9 @@ const Register = () => {
 
   const handleSubmit = async event => {
     event.preventDefault()
-    
     try {
       await axios.post('/api/register',formData)
+      setSuccess(true)
       // history.push('/')
     } catch (err) {
       setErrors(err.response.data.message)
@@ -46,7 +48,8 @@ const Register = () => {
       <Container>
         {/* <Header as='h3'>Register Here</Header> */}
         <Divider />
-        <Form className='ui form' onSubmit={handleSubmit} >
+        
+        <Form success={success} className='ui form' onSubmit={handleSubmit} >
           <div className="field">
             <Form.Field >
               <label>Username</label>
@@ -95,7 +98,13 @@ const Register = () => {
             </Form.Field>
           </div>
           <Button type='submit' className="ui button">Submit</Button>
+          <Message 
+            success
+            header='Registration completed'
+            content="You've successfully registered for Festivalist"
+          />
         </Form>
+
       </Container>
     </div>
   )
