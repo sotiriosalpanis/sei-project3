@@ -26,10 +26,10 @@ const ArtistIndex = () => {
                   <Link Link to={`/artists/${artist._id}`}>
                     <h1>{artist.artist}</h1>
                   </Link>
-                  <p>Festivals: {artist.festivals.map( festival => {
+                  <p>Festivals: {artist.festivals.map( (festival, index) => {
                     return (
-                      <div key={festival._id}>
-                        <p className='festival-name' >{festival}</p>
+                      <div key={index}>
+                        <h3 className='festival-name' >{festival}</h3>
                       </div>
                     )
                   })}</p>

@@ -63,7 +63,8 @@ export default [
   {
     artist: 'Calvin Harris',
     festivals: ['Coachella', 'Sziget Festival'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120313/Artist%20Images/Calvin_Harris_nemvy1.jpg'
+    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120313/Artist%20Images/Calvin_Harris_nemvy1.jpg',
+    spotify: 'https://open.spotify.com/embed/artist/7CajNmpbOovFoOoasH2HaY'
   },
   {
     artist: 'Captain Sensible',

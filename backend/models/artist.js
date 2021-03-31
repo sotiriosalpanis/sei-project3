@@ -5,7 +5,8 @@ import mongoose from 'mongoose'
 const artistSchema = new mongoose.Schema({
   artist: { type: String, required: true, unique: true },
   festivals: [{ type: String }],
-  image: { type: String }
+  image: { type: String },
+  spotify: { type: String }
 })
 
 export default mongoose.model('Artist', artistSchema)

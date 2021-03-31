@@ -52,39 +52,39 @@ const Home = () => {
             <Grid columns={5} relaxed padded divided>
               <Grid.Row>
                 <Grid.Column >
-                  <Header className='homeHeader' as='h3'>{festivals[5].festivalName}</Header>
+                  <Header className='homeHeader' as='h3'>{festivals[0].festivalName}</Header>
                   <Image size='huge' 
-                    src={festivals[5].mainFestivalImage} 
+                    src={festivals[0].mainFestivalImage} 
                     circular 
                     as='a'
-                    href={festivals[5].website}
+                    href={festivals[0].website}
                   />
                 </Grid.Column>
                 <Grid.Column>
-                  <Header className='homeHeader' as='h3'>{festivals[5].festivalName}</Header>
+                  <Header className='homeHeader' as='h3'>{festivals[1].festivalName}</Header>
                   <Image size='huge' 
-                    src={festivals[5].mainFestivalImage} 
+                    src={festivals[1].mainFestivalImage} 
                     circular 
                     as='a'
-                    href={festivals[5].website}
+                    href={festivals[1].website}
                   />
                 </Grid.Column>
                 <Grid.Column>
                   <Header className='homeHeader' as='h3'>{festivals[2].festivalName}</Header>
                   <Image size='huge' 
-                    src={festivals[5].mainFestivalImage} 
+                    src={festivals[2].mainFestivalImage} 
                     circular 
                     as='a'
-                    href={festivals[5].website}
+                    href={festivals[2].website}
                   />
                 </Grid.Column>
                 <Grid.Column>
                   <Header className='homeHeader' as='h3'>{festivals[3].festivalName}</Header>
                   <Image size='huge' 
-                    src={festivals[5].mainFestivalImage} 
+                    src={festivals[3].mainFestivalImage} 
                     circular 
                     as='a'
-                    href={festivals[5].website}
+                    href={festivals[3].website}
                   />
                 </Grid.Column>
               </Grid.Row>
