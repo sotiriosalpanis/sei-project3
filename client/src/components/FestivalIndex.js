@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import { Grid, Dropdown, Button, Container, Segment } from 'semantic-ui-react'
+import { Grid, Dropdown, Container, Segment } from 'semantic-ui-react'
 
 import FestivalCard from './FestivalCard'
 
@@ -13,6 +13,7 @@ const FestivalIndex = () => {
   const [filterValueCountry, setFilterValueCountry] = useState('')
   const [filterValueArtist, setFilterValueArtist] = useState('')
   const [filterValuePrice, setFilterValuePrice] = useState('')
+  console.log(filterValuePrice)
 
   let masterArray = []
 
@@ -85,12 +86,14 @@ const FestivalIndex = () => {
     )
     console.log('event', event)
     const filteredFestArtist = festivals.filter(festival => {
-      if (festival.lineup.includes(event.target.innerText) === event.target.innerText) {
-        return festival.lineup === filterValueArtist
+      if (festival.lineup.includes(filterValueArtist) === true) {
+        return festival.lineup
       } 
     })
     setFilteredFestivals(filteredFestArtist)
   }, [filterValueArtist, festivals])
+
+  let filteredFestPrice = []
 
   // * FILTERED BY PRICE
   useEffect((event) => {
@@ -98,11 +101,28 @@ const FestivalIndex = () => {
       setFilteredFestivals(festivals)
     )
     console.log('event', event)
-    const filteredFestPrice = festivals.filter(festival => {
-      if (festival.price <= 50) {
-        return festival.price === filterValuePrice
-      }
-    })
+    console.log('FILTERVALUE PRICE>>', filterValuePrice)
+    if (filterValuePrice === 'cheap') {
+      filteredFestPrice = festivals.filter(festival => {
+        return (festival.price <= 50)
+        // console.log('festival price cheap', festival.price <= 50)
+      })
+    }
+    if (filterValuePrice === 'midOne') {
+      filteredFestPrice = festivals.filter(festival => {
+        return (festival.price >= 50 && festival.price <= 100)
+      })
+    }
+    if (filterValuePrice === 'midTwo') {
+      filteredFestPrice = festivals.filter(festival => {
+        return (festival.price >= 100 && festival.price <= 200)
+      })
+    }
+    if (filterValuePrice === 'expensive') {
+      filteredFestPrice = festivals.filter(festival => {
+        return (festival.price >= 200)
+      })
+    }
     setFilteredFestivals(filteredFestPrice)
   }, [filterValuePrice, festivals])
 
@@ -159,12 +179,11 @@ const FestivalIndex = () => {
         { /* Semantic UI Countries*/ }
         <Dropdown
           clearable
-          multiple
           search
           selection
           options={countriesOptions}
           onChange={handleChangeCountries}
-          placeholder='Select Country'
+          placeholder='Country'
           // value={countriesOptions}
         />
 
@@ -186,18 +205,19 @@ const FestivalIndex = () => {
         
 
         { /* Semantic UI Artists */ }
-        <Dropdown placeholder='Artists' fluid multiple selection options={artistsOptions} onChange={handleChangeArtists}/>
+        <Dropdown placeholder='Artists' clearable selection options={artistsOptions} onChange={handleChangeArtists}/>
 
         { /* Semantic UI Price */ }
-        <Dropdown placeholder='Price per day (£)' fluid multiple selection options={priceOptions} onChange={handleChangePrice}/>
+        <Dropdown placeholder='Price per day (£)' clearable selection options={priceOptions} onChange={handleChangePrice}/>
 
 
 
       </Segment.Inline>
-      <Segment.Inline>
+
+      {/* <Segment.Inline>
         <Button basic inverted color='violet'>Submit</Button>
         <Button basic inverted color='violet'>Reset</Button>
-      </Segment.Inline>
+      </Segment.Inline> */}
 
       
 
