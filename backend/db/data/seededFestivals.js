@@ -222,7 +222,6 @@ export default [
     longitude: -90.08,
     mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759752/mainFestivalImage/no-jazz-main_do5fgg.jpg'
   },
-  // --------------------------------------------------------------------------------------
   {
     festivalName: 'Sziget Festival',
     startDate: '2021-08-04',
@@ -365,5 +364,83 @@ export default [
     latitude: 52.1979966917168,
     longitude: -1.89519533899843,
     mainFestivalImage: 'https://cdn.shopify.com/s/files/1/1960/0337/articles/Bigfoot21_1400x.png?v=1605783835'
-  }
+  },
+  {
+    festivalName: 'Lost Village',
+    startDate: '2021-08-26',
+    endDate: '2021-08-29',
+    website: 'https://lostvillagefestival.com/',
+    price: 200,
+    lineup: ['Bombay Bicycle Club', 'Bonobo', 'Honey Dijon', 'Chaos In The Cbd', 'Shanti Celeste'],
+    venue: 'Abandoned Woodland Village',
+    country: 'United Kingdom',
+    latitude: 53.1406,
+    longitude: -0.685096,
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1617232559/mainFestivalImage/Screenshot_2021-04-01_at_12.11.12_am_c4nsqp.png'
+  },
+  {
+    festivalName: 'Boomtown',
+    startDate: '2021-08-11',
+    endDate: '2021-08-15',
+    website: 'https://www.boomtownfair.co.uk/',
+    price: 199,
+    lineup: ['Wu-Tang Clan', 'Kano', 'Caravan Palace', 'De la Soul', 'Shy FX', 'Denis Sulta'],
+    venue: 'Matterley Estate',
+    country: 'United Kingdom',
+    latitude: 51.051534,
+    longitude: -1.240282,
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1617257956/mainFestivalImage/maxresdefault_ckf7qg.jpg'
+  },
+  {
+    festivalName: 'Life is Beautiful Festival',
+    startDate: '2021-09-11',
+    endDate: '2021-09-19',
+    website: 'https://lifeisbeautiful.com/',
+    price: 400,
+    lineup: ['Billie Eilish', 'Green Day', 'Tame Impala', 'HAIM', 'A$AP Rocky'],
+    venue: 'Downtown Las Vegas',
+    country: 'United States',
+    latitude: 36.169949,
+    longitude: -115.131804,
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1617257421/mainFestivalImage/Life_is_Beautiful_opy7aj.jpg'
+  },
+  {
+    festivalName: 'Best Kept Secret',
+    startDate: '2021-06-11',
+    endDate: '2021-06-13',
+    website: 'https://www.bestkeptsecret.nl/en/',
+    price: 250,
+    lineup: ['The Strokes', 'Catfish and the Bottlemen', 'The National', 'Jamie xx'],
+    venue: 'Beekse Bergen',
+    country: 'Netherlands',
+    latitude: 51.521683,
+    longitude: 5.121077,
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1617258414/mainFestivalImage/9640-artwork_wogapr.jpg'
+  },
+  {
+    festivalName: 'Rolling Loud Portugal',
+    startDate: '2021-07-06',
+    endDate: '2021-07-10',
+    website: 'https://www.rollingloudportugal.com/',
+    price: 155,
+    lineup: ['A$AP Rocky', 'Stormzy', 'DaBaby', 'Travis Scott', 'AJ Tracey'],
+    venue: 'Praia da Rocha',
+    country: 'Portugal',
+    latitude: 37.116524,
+    longitude: -8.535158,
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1617258720/mainFestivalImage/RollingLoud-Artwork_VJlP2vC_u5hwfl.jpg'
+  },
+  {
+    festivalName: 'Isle of Wight Festival',
+    startDate: '2021-09-16',
+    endDate: '2021-09-19',
+    website: 'https://isleofwightfestival.com/',
+    price: 185,
+    lineup: ['Sophie Ellis‐Bextor', 'Liam Gallagher', 'Snow Patrol', 'Kaiser Chiefs', 'Razorlight', 'Lewis Capaldi'],
+    venue: 'Seaclose Park',
+    country: 'United Kingdom',
+    latitude: 50.708119,
+    longitude: -1.286773,
+    mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1617259265/mainFestivalImage/IOWArtwork_J0qix6d_kt8xza.jpg'
+  },
 ]

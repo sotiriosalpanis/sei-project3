@@ -4,7 +4,6 @@ import { Menu, Dropdown, Image } from 'semantic-ui-react'
 import { userIsAuthenticated } from '../helpers/auth.js'
 
 import Logo02 from '../assets/Logo02.png'
-import Login from '../components/Login'
 
 const Navigation = () => {
 
@@ -15,12 +14,9 @@ const Navigation = () => {
     history.push('/home')
   }
 
-  console.log('login', Login)
-
   const [isLoggedIn, setIsLoggedIn] = useState(null)
 
   useEffect(() => {
-    console.log('loggedin?', isLoggedIn)
     if (userIsAuthenticated()) return setIsLoggedIn(true)
     if (!userIsAuthenticated()) return setIsLoggedIn(false)
   },[userIsAuthenticated, isLoggedIn])
