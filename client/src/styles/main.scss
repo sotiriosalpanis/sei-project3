@@ -46,10 +46,37 @@ $background-color-light: rgb(109, 199, 241);
 
 
 #festival-card {
-  border: 3px solid $background-color-medium-dark;
+  background-color: rgba(255, 255, 255, 0.356);
   border-radius: 10px;
-
   margin: 7px auto;
+  height: 350px;
+  width: 500px;
+  img {
+    height: 200px;
+  }
+  .header {
+    color: white;
+  }
+  .description {
+    color: white;
+  }
+}
+
+#home-card {
+  background-color: rgba(255, 255, 255, 0.356);
+  border-radius: 10px;
+  margin: 7px auto;
+  height: 350px;
+  width: 500px;
+  img {
+    height: 200px;
+  }
+  .header {
+    color: white;
+  }
+  .description {
+    color: white;
+  }
 }
 
 .map-container {
@@ -127,6 +154,10 @@ $background-color-light: rgb(109, 199, 241);
   padding: 30px;
   .Content {
     font-size: 20px;
+  }
+  img {
+    width: 200px;
+    height: 200px;
   }
 }
 
