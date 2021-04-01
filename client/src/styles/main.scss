@@ -18,6 +18,10 @@ $background-color-light: rgb(109, 199, 241);
   font-family: $text-font;
   color: $font-color-dark;
   min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 #navbar {
@@ -27,11 +31,12 @@ $background-color-light: rgb(109, 199, 241);
 }
 
 #footer{
-  height: 10vh;
-  background-color: $background-color-dark;
+  height: fit-content;
+  background-color: rgba(3, 3, 3, 0.1);
   color: $font-color-light;
   &.ui.text.menu .item, .ui.menu .item {
     color: $font-color-light;
+    margin: auto;
   }
 }
 
@@ -128,8 +133,12 @@ $background-color-light: rgb(109, 199, 241);
   width: 200px;
 }
 
+.index-artist-name {
+  margin-bottom: 10px !important;
+}
+
 .festival-name{
-  margin: 0px;
+  margin: 5px 0;
 }
 
 .about-container {
@@ -182,25 +191,30 @@ $background-color-light: rgb(109, 199, 241);
 
 // ----------------- Festival Cards
 .festival-card-image-wrapper {
-  padding: 40px 0;
+  padding: 30px 20px;
   height: 250px;
+  opacity: 0.8;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   position: relative;
   text-align: center;
   color: white;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
+  &:hover{
+    color: white;
+  }
 }
 .festival-card-info-wrapper {
   padding: 30px 0;
   // max-height: 120px;
   // min-height: 120px;
   height: 120px;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 .festival-card-venue {
   text-align: center;
   font-weight: 600;
+  margin: auto;
 }
 .festival-card-dates {
   text-align: center;
@@ -210,6 +224,7 @@ $background-color-light: rgb(109, 199, 241);
 }
 .festival-card-title {
   position: absolute;
+  opacity: 1;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -217,6 +232,12 @@ $background-color-light: rgb(109, 199, 241);
   font-weight: 600;
   font-family: $header-font;
   letter-spacing: 2px;
+  line-height: normal;
+  background-color: rgba(8, 8, 8, 0.2);
+  border-radius: 10px;
+  &:hover{
+    background-color: rgba(8, 8, 8, 0.5);
+  }
 }
 
 // ------------------------------ festival index

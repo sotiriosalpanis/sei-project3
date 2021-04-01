@@ -26,7 +26,7 @@ const ArtistIndex = () => {
                 <div className='artist-grid' key={artist.id}>
                   <div className='artist-index-info'>
                   <Link Link to={`/artists/${artist._id}`}>
-                    <h1>{artist.artist}</h1>
+                    <h1 className='index-artist-name'>{artist.artist}</h1>
                   </Link>
                   <p><h3>Festivals: </h3>{artist.festivals.map( (festival, index) => {
                     return (

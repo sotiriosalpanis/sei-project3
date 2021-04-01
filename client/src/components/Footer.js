@@ -8,13 +8,13 @@ const Footer = () => {
 
   return (
     <>
-      <footer className='footer'>
+      <footer id='footer'>
         <Divider/>
         <Container>
           <Menu text>
             <Menu.Item header>Search Our Site</Menu.Item>
             <Menu.Item><Link to="/home" className="navbar-item">Home</Link></Menu.Item>
-            <Menu.Item><Link to="/userprofile/:id" className="navbar-item">Your Profile</Link></Menu.Item>
+            <Menu.Item><Link to="/userprofile" className="navbar-item">Your Profile</Link></Menu.Item>
             <Menu.Item><Link to="/about" className="navbar-item">About Us</Link></Menu.Item>
           </Menu>
         </Container>

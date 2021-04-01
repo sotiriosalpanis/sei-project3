@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Header, Container, Grid, Image, Segment } from 'semantic-ui-react'
+import { Header, Grid, Image, Segment } from 'semantic-ui-react'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 import FestivalCard from './FestivalCard.js'
@@ -51,13 +51,11 @@ const ArtistCard = () => {
           <h1>Loading</h1>
           :
           <>
-            <Container>
-              <Header className='homeHeader' as='h1'> {artist.artist} </Header>
-            </Container>
             <Grid stackable relaxed padded >
               <Grid.Row columns={2}>
                 <Grid.Column width={8}>
                   <Segment raised>
+                  <Header className='header-custom' size='huge' as='h1'> {artist.artist} </Header>
                     <Image 
                       src={artist.image}
                       fluid
@@ -66,17 +64,19 @@ const ArtistCard = () => {
                   </Segment>
                 </Grid.Column>
                 <Grid.Column width={8}>
-                  <iframe  src="https://open.spotify.com/embed/artist/7CajNmpbOovFoOoasH2HaY" width="100%" height="100%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                  <iframe  src={`${artist.spotify}`} width="100%" height="100%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </Grid.Column>
               </Grid.Row>
 
-              <Grid.Row stretched centered columns={1}>
-                <Grid.Column width={14}>
-                  <Segment raised>{filteredFestivals.map((fest, index) => {
-                    return <FestivalCard  key={index} {...fest}/>
+              <Grid.Row stretched columns={3}>
+                {/* <Grid.Column width={14}> */}
+                  {filteredFestivals.map((fest, index) => {
+                    return <Grid.Column width={8} key={index}>
+                      <FestivalCard   {...fest}/>
+                      </Grid.Column>
                   })}
-                  </Segment>
-                </Grid.Column>
+
+                
 
               </Grid.Row>
             </Grid>

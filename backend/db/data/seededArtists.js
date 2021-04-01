@@ -298,199 +298,199 @@ export default [
     artist: 'Little Simz',
     festivals: ['Parklife', 'All Points East'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120301/Artist%20Images/Little-Simz_jr786z.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/6eXZu6O7nAUA5z6vLV8NKI" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/6eXZu6O7nAUA5z6vLV8NKI'
   },
   {
     artist: 'Loyle Carner',
     festivals: ['Latitude Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120305/Artist%20Images/Loyle-Carner_dewqyc.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/4oDjh8wNW5vDHyFRrDYC4k" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/4oDjh8wNW5vDHyFRrDYC4k'
   },
   {
     artist: 'Major Lazer',
     festivals: ['Sziget Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120305/Artist%20Images/Major-Lazer_sdnwxp.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/738wLrAtLtCtFOLvQBXOXp" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/738wLrAtLtCtFOLvQBXOXp'
   },
   {
     artist: 'Margot Price',
     festivals: ['South By South West'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120300/Artist%20Images/Margot-Price_fe58hf.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/09yvLritEUxHrzx5TlFvbl" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/09yvLritEUxHrzx5TlFvbl'
   },
   {
     artist: 'Maribou State',
     festivals: ['Bigfoot Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120305/Artist%20Images/Maribou-State_hu922s.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/7zrkALJ9ayRjzysp4QYoEg" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/7zrkALJ9ayRjzysp4QYoEg'
   },
   {
     artist: 'Marshmello',
     festivals: ['Ultra Europe'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120299/Artist%20Images/Marshmello_ap1lsc.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/64KEffDW9EtZ1y2vBYgq8T" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/64KEffDW9EtZ1y2vBYgq8T'
   },
   {
     artist: 'Martin Garrix',
     festivals: ['Tomorrowland'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120299/Artist%20Images/Martin-Garrix_dkg5jv.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/60d24wfXkVzDSfLS6hyCjZ" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/60d24wfXkVzDSfLS6hyCjZ'
   },
   {
     artist: 'Mavis Staples',
     festivals: ['Kite Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120298/Artist%20Images/Mavis-Staples_ze9vle.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/0cTSCsVx04SSht9V6cpKN0" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/0cTSCsVx04SSht9V6cpKN0'
   },
   {
     artist: 'Nick Helm',
     festivals: ['Latitude Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120298/Artist%20Images/Nick-Helm_tt1zto.jpg',
-    spotify:'<iframe src="https://open.spotify.com/embed/artist/2JYFvQnnocLtU3Anrt5vS2" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify:'https://open.spotify.com/embed/artist/2JYFvQnnocLtU3Anrt5vS2'
   },
   {
     artist: 'Olly Murs',
     festivals: ['Live In The Wyldes'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120298/Artist%20Images/Olly-Murs_rhcsuf.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/3whuHq0yGx60atvA2RCVRW" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/3whuHq0yGx60atvA2RCVRW'
   },
   {
     artist: 'Pa Salieu',
     festivals: ['Parklife'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120298/Artist%20Images/Pa-Salieu_mc1zkf.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/290nCNEce1y6rfoJiO2rK7" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/290nCNEce1y6rfoJiO2rK7'
   },
   {
     artist: 'Post Malone',
     festivals: ['Leeds Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120298/Artist%20Images/Post-Malone_h7xaef.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/246dkjvS1zLTtiykXe5h60" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/246dkjvS1zLTtiykXe5h60'
   },
   {
     artist: 'Primal Scream',
     festivals: ['Latitude Festival', 'Bigfoot Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120297/Artist%20Images/Primal-Scream_krypxa.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/3wury2nd8idV4GecUg5xze" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/3wury2nd8idV4GecUg5xze'
   },
   {
     artist: 'Queens Of The Stone Age',
     festivals: ['Leeds Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120297/Artist%20Images/Queens-Of-The-Stone-Age_ureqat.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/4pejUc4iciQfgdX6OKulQn" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/4pejUc4iciQfgdX6OKulQn'
   },
   {
     artist: 'Rag N Bone Man',
     festivals: ['Highest Point Festival', 'Live In The Wyldes'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120297/Artist%20Images/Rag-N-Bone-Man_dhxbmk.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/4f9iBmdUOhQWeP7dcAn1pf" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/4f9iBmdUOhQWeP7dcAn1pf'
   },
   {
     artist: 'Rage Against the Machine',
     festivals: ['Coachella'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120300/Artist%20Images/Rage-Against-the-Machine_fwyih3.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/2d0hyoQ5ynDBnkvAbJKORj" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/2d0hyoQ5ynDBnkvAbJKORj'
   },
   {
     artist: 'Razorlight',
     festivals: ['LakeFest', 'Isle of Wight Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120297/Artist%20Images/Razorlight_oitohw.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/450iujbtN6XgiA9pv6fVZz" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/450iujbtN6XgiA9pv6fVZz'
   },
   {
     artist: 'Red Hot Chili Peppers',
     festivals: ['NOS Alive'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120298/Artist%20Images/Red-Hot-Chili-Peppers_g9hd7s.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/450iujbtN6XgiA9pv6fVZz" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/450iujbtN6XgiA9pv6fVZz'
   },
   {
     artist: 'Richie Hawtin',
     festivals: ['Awakenings Festival', 'Ultra Europe'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120296/Artist%20Images/Richie-Hawtin_zbvmxi.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/3AhwIUus3pIaA3CvYBEtpy" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/3AhwIUus3pIaA3CvYBEtpy'
   },
   {
     artist: 'Rudimental',
     festivals: ['Highest Point Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120297/Artist%20Images/Rudimental_abtflk.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/4WN5naL3ofxrVBgFpguzKo" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/4WN5naL3ofxrVBgFpguzKo'
   },
   {
     artist: 'Sad Boys Club',
     festivals: ['CloseUp Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120296/Artist%20Images/Sad-Boys-Club_naoouw.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/3rmR0bhbSlBLfDsxeERY3J" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/3rmR0bhbSlBLfDsxeERY3J'
   },
   {
     artist: 'Seasick Steve',
     festivals: ['LakeFest'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120295/Artist%20Images/Seasick-Steve_ka2rop.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/6OVkHZQP8QoBYqr1ejCGDv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/6OVkHZQP8QoBYqr1ejCGDv'
   },
   {
     artist: 'Slaves',
     festivals: ['Latitude Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120294/Artist%20Images/Slaves_qnbidu.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/3xByNj8XW17oW0wsJhgzYL" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/3xByNj8XW17oW0wsJhgzYL'
   },
   {
     artist: 'Slowthai',
     festivals: ['All Points East'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120295/Artist%20Images/Slowthai_y1xfw0.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/3r1XkJ7vCs8kHBSzGvPLdP" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/3r1XkJ7vCs8kHBSzGvPLdP'
   },
   {
     artist: 'Snow Patrol',
     festivals: ['Latitude Festival', 'Isle of Wight Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120295/Artist%20Images/Snow-Patrol_ok4w4g.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/3rIZMv9rysU7JkLzEaC5Jp" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/3rIZMv9rysU7JkLzEaC5Jp'
   },
   {
     artist: 'Soccer Mommy',
     festivals: ['South By South West'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120293/Artist%20Images/Soccer-Mommy_hr3okl.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/4wXchxfTTggLtzkoUhO86Q" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/4wXchxfTTggLtzkoUhO86Q'
   },
   {
     artist: 'Sophie And The Giants',
     festivals: ['CloseUp Festival', 'Isle of Wight Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120295/Artist%20Images/Sophie-and-the-Giants_owkjad.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/4FrXHrpbDLNyO3pbVv8RmF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/4FrXHrpbDLNyO3pbVv8RmF'
   },
   {
     artist: 'Sophie Ellis-Bextor',
     festivals: ['Cambridge Club'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120292/Artist%20Images/Sophie-Ellis-Bextor_aeamep.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/2cBh5lVMg222FFuRU7EfDE" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/2cBh5lVMg222FFuRU7EfDE'
   },
   {
     artist: 'Stevie Nicks',
     festivals: ['New Orleans Jazz & Heritage Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120293/Artist%20Images/Stevie-Nicks_mnsymp.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/7crPfGd2k81ekOoSqQKWWz" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/7crPfGd2k81ekOoSqQKWWz'
   },
   {
     artist: 'Stormzy',
     festivals: ['Leeds Festival', 'Reading Festival', 'Sziget Festival', 'We Love 90s In The Park!', 'Rolling Loud Portugal'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120292/Artist%20Images/Stormzy_ny2osx.webp',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/2SrSdSvpminqmStGELCSNd" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/2SrSdSvpminqmStGELCSNd'
   },
   {
     artist: 'System of a Down',
     festivals: ['Rock am Ring & Rock im Park'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120291/Artist%20Images/System-of-a-Down_evdzla.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/5eAWCfyUhZtHHtBdNk56l1" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/5eAWCfyUhZtHHtBdNk56l1'
   },
   {
     artist: 'Tame Impala',
     festivals: ['Primavera Sound', 'Life is Beautiful Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120291/Artist%20Images/Tame-Impala_jp9r16.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/5INjqkS1o8h1imAzPqGZBb" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/5INjqkS1o8h1imAzPqGZBb'
   },
   {
     artist: 'Taylor Swift',
     festivals: ['We Love 90s In The Park!'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120296/Artist%20Images/Taylor-Swift_tfayma.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/06HL4z0CvFAxyc27GXpf02" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/06HL4z0CvFAxyc27GXpf02'
   },
   // {
   //   artist: 'team Down',
@@ -500,114 +500,114 @@ export default [
     artist: 'The Lumineers',
     festivals: ['NOS Alive'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120290/Artist%20Images/The-Lumineers_xzvzeo.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/16oZKvXb6WkQlVAjwo2Wbg" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/16oZKvXb6WkQlVAjwo2Wbg'
   },
   {
     artist: 'The Strokes',
     festivals: ['NOS Alive', 'Primavera Sound', 'Sziget Festival', 'Best Kept Secret'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120290/Artist%20Images/The-Strokes_cswonp.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/0epOFNiUfyON9EYx7Tpr6V" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/0epOFNiUfyON9EYx7Tpr6V'
   },
   {
     artist: 'The Who',
     festivals: ['New Orleans Jazz & Heritage Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120292/Artist%20Images/The-Who_ulx9g4.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/67ea9eGLXYMsO2eYQRui3w" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/67ea9eGLXYMsO2eYQRui3w'
   },
   {
     artist: 'The Wombats',
     festivals: ['Reading Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120291/Artist%20Images/The-Wombats_lxxqjc.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/0Ya43ZKWHTKkAbkoJJkwIB" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/0Ya43ZKWHTKkAbkoJJkwIB'
   },
   {
     artist: 'This Is The Kit',
     festivals: ['Kite Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120289/Artist%20Images/This-Is-The-Kit_hacmjn.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/0ZUyFEafMwocvApBjTXvdo" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/0ZUyFEafMwocvApBjTXvdo'
   },
   {
     artist: 'Tom Grennan',
     festivals: ['Latitude Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120305/Artist%20Images/Tom-Grennan_au7iiq.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/5SHxzwjek1Pipl1Yk11UHv" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/5SHxzwjek1Pipl1Yk11UHv'
   },
   {
     artist: 'Tom Misch',
     festivals: ['All Points East'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120289/Artist%20Images/Tom-Mish_qatlnx.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/1uiEZYehlNivdK3iQyAbye" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/1uiEZYehlNivdK3iQyAbye'
   },
   {
     artist: 'Travis Scott',
     festivals: ['Coachella', 'We Love 90s In The Park!', 'Rolling Loud Portugal'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120288/Artist%20Images/Travis-Scott_kwdw8k.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/0Y5tJX1MQlPlqiwlOH1tJY" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/0Y5tJX1MQlPlqiwlOH1tJY'
   },
   {
     artist: 'Trevor Horn',
     festivals: ['Rewind South'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120288/Artist%20Images/Trevor-Horn_qsahaf.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/2oQd3GVbHbjyCyeG4MGMuT" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/2oQd3GVbHbjyCyeG4MGMuT'
   },
   {
     artist: 'Two Door Cinema Club',
     festivals: ['Reading Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120289/Artist%20Images/Two-Door-Cinema-Club_yxprje.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/536BYVgOnRky0xjsPT96zl" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/536BYVgOnRky0xjsPT96zl'
   },
   {
     artist: 'Tyler, the Creator',
     festivals: ['Primavera Sound'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120288/Artist%20Images/Tyler-the-Creator_bszlnu.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/4V8LLVI7PbaPR0K2TGSxFF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/4V8LLVI7PbaPR0K2TGSxFF'
   },
   {
     artist: 'Van Morrison',
     festivals: ['Black Deer Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120288/Artist%20Images/Van-Morrison_jzuy9e.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/44NX2ffIYHr6D4n7RaZF7A" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/44NX2ffIYHr6D4n7RaZF7A'
   },
   {
     artist: 'Volbeat',
     festivals: ['Rock am Ring & Rock im Park'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120288/Artist%20Images/Volbeat_pyoe1k.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/0L5fC7Ogm2YwgqVCRcF1bT" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/0L5fC7Ogm2YwgqVCRcF1bT'
   },
   {
     artist: 'Wilkinson',
     festivals: ['Highest Point Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120288/Artist%20Images/Wilkinson_m9hpj7.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/6m8itYST9ADjBIYevXSb1r" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/6m8itYST9ADjBIYevXSb1r'
   },
   {
     artist: 'Bombay Bicycle Club',
     festivals: ['Lost Village'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617260425/mainFestivalImage/8W0A7792_r8hfye.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/3pTE9iaJTkWns3mxpNQlJV" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/3pTE9iaJTkWns3mxpNQlJV'
   },
   {
     artist: 'Honey Dijon',
     festivals: ['Lost Village'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617260571/mainFestivalImage/Honey-Dijon_kd8fbz.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/0XfQBWgzisaS9ltDV9bXAS" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>' 
+    spotify: 'https://open.spotify.com/embed/artist/0XfQBWgzisaS9ltDV9bXAS' 
   },
   {
     artist: 'Bonobo',
     festivals: ['Lost Village'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617260721/mainFestivalImage/artworks-000061949500-aqlxzy-t500x500_xr1btx.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/0cmWgDlu9CwTgxPhf403hb" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/0cmWgDlu9CwTgxPhf403hb'
   },
   {
     artist: 'Chaos In The Cbd',
     festivals: ['Lost Village'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617260822/mainFestivalImage/636607418596422864_JN7A71552_yh8gp5.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/0QOQc6jEsPX5Y45TV0hXQy" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+    spotify: 'https://open.spotify.com/embed/artist/0QOQc6jEsPX5Y45TV0hXQy'
   },
   {
     artist: 'Shanti Celeste',
     festivals: ['Lost Village'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617260992/mainFestivalImage/shanti_celeste02_website_image_krtb_standard_tjjx09.jpg',
-    spotify: '<iframe src="https://open.spotify.com/embed/artist/3CkM2290WOa2ESzhlu5mzM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>' 
+    spotify: 'https://open.spotify.com/embed/artist/3CkM2290WOa2ESzhlu5mzM' 
   }
 ]
