@@ -1,14 +1,9 @@
 export default [
   {
     artist: 'A$AP Rocky',
-<<<<<<< HEAD
-    festivals: ['Sziget Festival', 'Life is Beautiful Festival', 'Rolling Loud Portugal'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120315/Artist%20Images/a_ap_rocky_tk5rnd.jpg'
-=======
     festivals: ['Sziget Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120315/Artist%20Images/a_ap_rocky_tk5rnd.jpg',
     spotify: 'https://open.spotify.com/embed/artist/13ubrt8QOOCPljQ2FL1Kca'
->>>>>>> styling
   },
   {
     artist: 'Afrojack',
@@ -18,14 +13,9 @@ export default [
   },
   {
     artist: 'AJ Tracey',
-<<<<<<< HEAD
-    festivals: ['Parklife', 'Rolling Loud Portugal'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120314/Artist%20Images/aj_tracey_wthtx7.jpg'
-=======
     festivals: ['Parklife'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120314/Artist%20Images/aj_tracey_wthtx7.jpg',
     spotify: 'https://open.spotify.com/embed/artist/4Xi6LSfFqv26XgP9NKN26U'
->>>>>>> styling
   },
   {
     artist: 'Alt-J',
@@ -70,14 +60,9 @@ export default [
   },
   {
     artist: 'Billie Eilish',
-<<<<<<< HEAD
-    festivals: ['We Love 90s In The Park!', 'Life is Beautiful Festival'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120312/Artist%20Images/Billie_Eilish_c88sji.jpg'
-=======
     festivals: ['We Love 90s In The Park!'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120312/Artist%20Images/Billie_Eilish_c88sji.jpg',
     spotify: 'https://open.spotify.com/embed/artist/6qqNVTkY8uBg9cP3Jd7DAH'
->>>>>>> styling
   },
   {
     artist: 'Billy Ocean',
@@ -105,14 +90,9 @@ export default [
   },
   {
     artist: 'Catfish And The Bottlemen',
-<<<<<<< HEAD
-    festivals: ['Leeds Festival', 'Reading Festival', 'Best Kept Secret'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120311/Artist%20Images/Catfish-And-The-Bottlemen_ww2mql.jpg'
-=======
     festivals: ['Leeds Festival', 'Reading Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120311/Artist%20Images/Catfish-And-The-Bottlemen_ww2mql.jpg',
     spotify: 'https://open.spotify.com/embed/artist/2xaAOVImG2O6lURwqperlD'
->>>>>>> styling
   },
   {
     artist: 'Celeste',
@@ -122,14 +102,9 @@ export default [
   },
   {
     artist: 'Dababy',
-<<<<<<< HEAD
-    festivals: ['Reading Festival', 'Rolling Loud Portugal'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120313/Artist%20Images/Dababy_axd8b0.jpg'
-=======
     festivals: ['Reading Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120313/Artist%20Images/Dababy_axd8b0.jpg',
     spotify: 'https://open.spotify.com/embed/artist/4r63FhuTkUYltbVAg5TQnk'
->>>>>>> styling
   },
   {
     artist: 'Dave',
@@ -241,14 +216,9 @@ export default [
   },
   {
     artist: 'Green Day',
-<<<<<<< HEAD
-    festivals: ['Rock am Ring & Rock im Park', 'Life is Beautiful Festival'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120310/Artist%20Images/Green-Day_e4txw9.jpg'
-=======
     festivals: ['Rock am Ring & Rock im Park'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120310/Artist%20Images/Green-Day_e4txw9.jpg',
     spotify: 'https://open.spotify.com/embed/artist/7oPftvlwr6VrsViSDV7fJY'
->>>>>>> styling
   },
   {
     artist: 'Gregory Porter',
@@ -276,15 +246,6 @@ export default [
   },
   {
     artist: 'Jamie xx',
-<<<<<<< HEAD
-    festivals: ['All Points East', 'Parklife', 'Best Kept Secret'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120306/Artist%20Images/Jamie-xx_bkplv2.jpg'
-  },
-  {
-    artist: 'Kano',
-    festivals: ['All Points East', 'Boomtown'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120306/Artist%20Images/Kano_djiqhu.jpg'
-=======
     festivals: ['All Points East', 'Parklife'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120306/Artist%20Images/Jamie-xx_bkplv2.jpg',
     spotify: 'https://open.spotify.com/embed/artist/7A0awCXkE1FtSU8B0qwOJQ'
@@ -294,7 +255,6 @@ export default [
     festivals: ['All Points East'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120306/Artist%20Images/Kano_djiqhu.jpg',
     spotify: 'https://open.spotify.com/embed/artist/50nN8IFD4xA67fI4jYbLV4'
->>>>>>> styling
   },
   {
     artist: 'Keane',
@@ -322,15 +282,6 @@ export default [
   },
   {
     artist: 'Lewis Capaldi',
-<<<<<<< HEAD
-    festivals: ['Leeds Festival', 'Reading Festival', 'We Love 90s In The Park!', 'Lewis Capaldi'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120303/Artist%20Images/Lewis-Capaldi_tigcwi.jpg'
-  },
-  {
-    artist: 'Liam Gallagher',
-    festivals: ['Leeds Festival', 'Reading Festival', 'We Love 90s In The Park!', 'Isle of Wight Festival'],
-    image: 'https://res.cloudinary.com/project-3/image/upload/v1617120302/Artist%20Images/Liam-Gallagher_oeosiq.jpg'
-=======
     festivals: ['Leeds Festival', 'Reading Festival', 'We Love 90s In The Park!'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120303/Artist%20Images/Lewis-Capaldi_tigcwi.jpg',
     spotify: 'https://open.spotify.com/embed/artist/4GNC7GD6oZMSxPGyXy4MNB'
@@ -341,7 +292,6 @@ export default [
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120302/Artist%20Images/Liam-Gallagher_oeosiq.jpg',
     spotify: 'https://open.spotify.com/embed/artist/6sN51vEARnAAdBw1IKZ8Q9'
     
->>>>>>> styling
   },
   //* - - - - - - - - - - - - - Sotirios seeding extra info from below this line
   {
