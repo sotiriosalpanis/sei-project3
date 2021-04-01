@@ -442,5 +442,5 @@ export default [
     latitude: 50.708119,
     longitude: -1.286773,
     mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1617259265/mainFestivalImage/IOWArtwork_J0qix6d_kt8xza.jpg'
-  },
+  }
 ]

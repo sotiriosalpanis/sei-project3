@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import NavBar from '../src/components/Navbar.js'
 import Home from '../src/components/Home.js'
@@ -17,12 +17,9 @@ import ArtistCard from './components/ArtistCard.js'
 
 const App = () =>{
 
-  const history = useHistory()
-  // console.log('History', history)
-
   return (
     <BrowserRouter>
-      <NavBar {...history}/>
+      <NavBar />
       <Switch>
         <Route exact path ="/">
           <Home/>
