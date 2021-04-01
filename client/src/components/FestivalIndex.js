@@ -307,7 +307,7 @@ const FestivalIndex = () => {
             <>
               { festivals.map( festival => {
                 return <Grid.Column key={festival._id}>
-                  <FestivalCard {...festival} />
+                  <FestivalCard { ...festivals } />
                 </Grid.Column> 
               })}
             </>
@@ -315,7 +315,7 @@ const FestivalIndex = () => {
             <>
               { filteredFestivals.map( festival => {
                 return <Grid.Column key={festival._id}>
-                  <FestivalCard {...festival} />
+                  <FestivalCard { ...festivals } />
                 </Grid.Column> 
               })}
             </>
