@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Container, Divider , Button, Form } from 'semantic-ui-react'
+import { Container, Divider , Button, Form, Message } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 
 const Login = () => {
@@ -8,13 +8,15 @@ const Login = () => {
   const history = useHistory()
 
   const [ formData, setFormData ] = useState({
+    username: '',
     email: '',
     password: ''
   })
-  const [ errors, setErrors ] = useState({
-    email: '',
-    password: ''
-  })
+  const [ errors, setErrors ] = useState(false)
+  // const [ errors, setErrors ] = useState({
+  //   email: '',
+  //   password: ''
+  // })
 
   const handleChange = (event) =>{
     const newFormData = { ...formData, [event.target.name]: event.target.value }
@@ -31,21 +33,34 @@ const Login = () => {
       history.goBack()
     } catch (err) {
       // console.log(err)
-      setErrors(err.response.data)
+      setErrors(true)
     }
   }
 
-  console.log(errors.message)
+  console.log(errors)
 
   return (
     <div>
       <Container>
         {/* <Header as='h3'>Login to your account</Header> */}
         <Divider />
-        <Form className='ui form' onSubmit={handleSubmit} >
+        <Form className='ui form'  onSubmit={handleSubmit}>
           <div className="field">
             <Form.Field>
-              <label>Email address or Username:</label>
+              <label>Username:</label>
+              <input 
+                placeholder='Vera' 
+                type="text"
+                name='username'
+                value={formData.username} 
+                onChange={handleChange}
+              />
+            </Form.Field>
+          </div>
+          <Divider horizontal >OR</Divider>
+          <div className="field">
+            <Form.Field>
+              <label>Email address:</label>
               <input 
                 placeholder='someone@example.com' 
                 type="email"
@@ -70,6 +85,11 @@ const Login = () => {
 
           <Button type='submit' className="ui button">Login</Button>
         </Form>
+        {/* <Message
+          error
+          header="Something isn't right"
+          content="Please check your login details and try again"
+        /> */}
       </Container>
     </div>
   )

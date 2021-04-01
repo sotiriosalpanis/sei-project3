@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import ReactMapGL, { Marker, Popup } from 'react-map-gl'
 import { Link } from 'react-router-dom'
-import { Container } from 'semantic-ui-react'
+import { Container, Header } from 'semantic-ui-react'
 
 const FestivalMap = () => {
 
@@ -13,7 +13,7 @@ const FestivalMap = () => {
   const [viewport, setViewport] = useState({
     latitude: 51.515,
     longitude: -0.078,
-    zoom: 2
+    zoom: 3
   })
 
   useEffect(() => {
@@ -30,10 +30,9 @@ const FestivalMap = () => {
 
   if (!mapData) return null
   if (!viewport) return null
-  console.log('mapbox', process.env.REACT_APP_MAPBOX_ACCESS_TOKEN)
 
   return (
-    <Container fluid className="map-container">
+    <Container className="map-container">
       <ReactMapGL
         mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
         height='100%'
@@ -49,7 +48,7 @@ const FestivalMap = () => {
             latitude={location.latitude}
           >
             <span onClick={() => setPopup(location)}>
-            📍
+            🎪
             </span>            
           </Marker>
         })}
@@ -60,9 +59,10 @@ const FestivalMap = () => {
             closeOnClick={false}
             onClose={() => setPopup(null)}
           >
-            {popup.festivalName}
+            <Header size='small'>{popup.festivalName}</Header>
+            <p>{popup.venue}</p>
             <Link to={`/festivals/${popup._id}`}>
-              <p>More info</p>
+              <Header sub>More info</Header>
             </Link>
           </Popup>
         }
