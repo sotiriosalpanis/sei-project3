@@ -73,16 +73,19 @@ const Home = () => {
                 </Grid.Column>
 
                 <Grid.Column>
-                  <Header className='homeHeader' as='h3'>{festivals[17].festivalName}</Header>
+                  <Header className='homeHeader' as='h3'>{festivals[18].festivalName}</Header>
                   <Image size='huge' 
-                    src={festivals[17].mainFestivalImage} 
+                    src={festivals[18].mainFestivalImage} 
                     circular 
                     as='a'
-                    href={festivals[17].website}
+                    href={festivals[18].website}
                   />
                 </Grid.Column>
                 
                 <Grid.Column>
+
+                  
+                  
                   <Header className='homeHeader' as='h3'>{festivals[4].festivalName}</Header>
                   <Image size='huge' 
                     src={festivals[4].mainFestivalImage} 
