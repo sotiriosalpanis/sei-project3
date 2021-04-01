@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { Card, Image, Container } from 'semantic-ui-react'
+import { Card, Container } from 'semantic-ui-react'
 
 const FestivalCard = ({ _id, festivalName, venue, mainFestivalImage, country, startDate, endDate }) => {
 

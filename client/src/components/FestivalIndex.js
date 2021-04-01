@@ -51,12 +51,17 @@ const FestivalIndex = () => {
   // * GET DATA
   useEffect(() => {
     const getData = async () => {
-      const response = await axios.get('/api/festivals')
+      try{
+        const response = await axios.get('/api/festivals')
       setFestivals(response.data)
+      } catch (err) {
+        console.log('Errors>>>',err)
+      }
+      
     }
     getData()
-
   }, [])
+
 
   // * HANDLE CHANGE ----------------------------------------------------------
   // * HANDLE CHANGE COUNTRIES
@@ -379,7 +384,7 @@ const FestivalIndex = () => {
             <>
               { festivals.map( festival => {
                 return <Grid.Column key={festival._id}>
-                  <FestivalCard { ...festivals } />
+                  <FestivalCard { ...festival } />
                 </Grid.Column> 
               })}
             </>
@@ -387,7 +392,7 @@ const FestivalIndex = () => {
             <>
               { filteredFestivals.map( festival => {
                 return <Grid.Column key={festival._id}>
-                  <FestivalCard { ...festivals } />
+                  <FestivalCard { ...festival } />
                 </Grid.Column> 
               })}
             </>
