@@ -85,54 +85,124 @@ const FestivalIndex = () => {
   // }
   // * HANDLE CHANGE ALL
   const handleChangeAll = (event, data) => {
-    console.log(event)
+    // console.log(event)
     const newFilters = { ...filterValues, [data.name]: data.value }
-    console.log('NEW FILTERS', newFilters)
+    // console.log('NEW FILTERS', newFilters)
     setFilterValues(newFilters)
   }
 
   // * RETURN FILTERED FESTIVALS ----------------------------------------------
 
-  useEffect(() => {
-    for (const [key, value] of Object.entries(filterValues)) {
-      console.log(`${key}: ${value}`)
+  // useEffect(() => {
+  //   for (const [key, value] of Object.entries(filterValues)) {
+  //     console.log(`${key}: ${value}`)
       
-      let filteredArray = [ ...festivals ]
-      console.log('filteredArray', filteredArray)
-      // * ARTIST
-      // if (key === 'artist' && value === '') {
-      //   setFilteredFestivals(festivals)
-      // }
-      if (key === 'artist' && value !== '') {
-        filteredArray = festivals.filter(festival => {
-          if (festival.lineup.includes(value) === true) {
-            return festival.lineup
-          } 
-        })
-        // setFilteredFestivals(filteredArray)
-      }
+  //     let filteredArray = [ ...festivals ]
+  //     console.log('filteredArray', filteredArray.length)
+  //     // * ARTIST
+  //     // if (key === 'artist' && value === '') {
+  //     //   setFilteredFestivals(festivals)
+  //     // }
+  //     if (key === 'artist' && value !== '') {
+  //       filteredArray = festivals.filter(festival => {
+  //         if (festival.lineup.includes(value) === true) {
+  //           return festival.lineup
+  //         } 
+  //       })
+  //       console.log('Artist filteredArray', filteredArray.length)
+  //     }
 
-      // * COUNTRY
-      // if (key === 'country' && value === '') {
-      //   setFilteredFestivals(festivals)
-      // }
-      if (key === 'country' && value !== '') {
-        filteredArray = festivals.filter(festival => {
-          // console.log('VALUE',  value, value.length)
-          // console.log('value equal country', festival.country === value)
-          // console.log('festival.country',  festival.country, festival.country.length)
-          return festival.country === value
-        })
-        // console.log('FILTERE FEST COUNTRY', filteredFestCountry)
-      } 
+  //     // * COUNTRY
+  //     // if (key === 'country' && value === '') {
+  //     //   setFilteredFestivals(festivals)
+  //     // }
+  //     if (key === 'country' && value !== '') {
+  //       filteredArray = festivals.filter(festival => {
+  //         return festival.country === value
+  //       })
+  //       // console.log('FILTERE FEST COUNTRY', filteredFestCountry)
+  //       console.log('Country filteredArray', filteredArray.length)
+  //       setFilteredFestivals(filteredArray)
+  //     }
+
+  useEffect(() => {
+    const countryFilterValue = filterValues.country
+    const artistFilterValue = filterValues.artist
+    const priceFilterValue = filterValues.price
+
+    let filteredArray = []
+    filteredArray = festivals.filter(festival => {
+      return festival.country === countryFilterValue
+    })
+    if (!artistFilterValue && !priceFilterValue) {
       setFilteredFestivals(filteredArray)
+    } else if (filteredArray.length === 0) {
+      filteredArray = festivals.filter(festival => {
+        return festival.lineup.includes(artistFilterValue) === true
+      })
+      setFilteredFestivals(filteredArray)   
+    } else {
+      filteredArray = filteredArray.filter(festival => {
+        return festival.lineup.includes(artistFilterValue) === true
+      })
+      setFilteredFestivals(filteredArray)
+    }
+    if (priceFilterValue && filteredArray.length === 0 ) {
+      console.log('Price alone', priceFilterValue)
+          if (priceFilterValue === 'cheap') {
+            filteredArray = festivals.filter(festival => {
+        return (festival.price <= 50)
+      })
+    }
+    if (priceFilterValue === 'midOne') {
+      filteredArray = festivals.filter(festival => {
+        return (festival.price >= 50 && festival.price <= 100)
+      })
+    }
+    if (priceFilterValue === 'midTwo') {
+      filteredArray = festivals.filter(festival => {
+        return (festival.price >= 100 && festival.price <= 200)
+      })
+    }
+    if (priceFilterValue === 'expensive') {
+      filteredArray = festivals.filter(festival => {
+        return (festival.price >= 200)
+      })
+    }
+      setFilteredFestivals(filteredArray)
+    } else {
+      console.log('Price combo', priceFilterValue, filteredArray.length)
+      if (priceFilterValue === 'cheap') {
+        filteredArray = filteredArray.filter(festival => {
+          return (festival.price <= 50)
+        })
+      }
+      if (priceFilterValue === 'midOne') {
+        filteredArray = filteredArray.filter(festival => {
+          return (festival.price >= 50 && festival.price <= 100)
+        })
+      }
+      if (priceFilterValue === 'midTwo') {
+        filteredArray = filteredArray.filter(festival => {
+          return (festival.price >= 100 && festival.price <= 200)
+        })
+      }
+      if (priceFilterValue === 'expensive') {
+        filteredArray = filteredArray.filter(festival => {
+          return (festival.price >= 200)
+        })
+      }
+        setFilteredFestivals(filteredArray)
+    }
+  },[filterValues])
+      
+      
       // else {
       //   setFilteredFestivals(festivals)
       // }
 
 
-    }
-  }, [filterValues])
+
 
 
   // * FILTERED BY COUNTRY
@@ -302,7 +372,7 @@ const FestivalIndex = () => {
 
       <Grid centered stackable>
         <Grid.Row columns={3} centered>
-          {console.log('filteredfestivals', filteredFestivals)}
+          {/* {console.log('filteredfestivals', filteredFestivals)} */}
           {filteredFestivals.length === 0 ? 
             <>
               { festivals.map( festival => {
