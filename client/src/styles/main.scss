@@ -46,10 +46,10 @@ $background-color-light: rgb(109, 199, 241);
 
 
 #festival-card {
-  border: 3px solid $background-color-medium-dark;
-  border-radius: 10px;
+  border: 1px solid rgb(179, 179, 179);
+  border-radius: 2px;
 
-  margin: 7px auto;
+  margin: 15px auto;
 }
 
 .map-container {
@@ -129,4 +129,49 @@ $background-color-light: rgb(109, 199, 241);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+// ----------------- Festival Cards Non UI
+.festival-card-image-wrapper {
+  padding: 40px 0;
+  height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  color: white;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5));
+}
+.festival-card-info-wrapper {
+  padding: 30px 0;
+  // max-height: 120px;
+  // min-height: 120px;
+  height: 120px;
+}
+.festival-card-venue {
+  text-align: center;
+  font-weight: 600;
+}
+.festival-card-dates {
+  text-align: center;
+  color: rgb(56, 56, 56);
+  padding: 6px;
+  font-weight: 600;
+}
+.festival-card-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-weight: 600;
+  font-family: $header-font;
+  letter-spacing: 2px;
+}
+
+// ------------------------------ festival index
+
+.index-dropdown {
+  margin: 20px 50px;
 }
