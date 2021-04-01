@@ -83,6 +83,9 @@ const Home = () => {
                 </Grid.Column>
                 
                 <Grid.Column>
+
+                  
+                  
                   <Header className='homeHeader' as='h3'>{festivals[4].festivalName}</Header>
                   <Image size='huge' 
                     src={festivals[4].mainFestivalImage} 

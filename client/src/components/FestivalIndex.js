@@ -322,6 +322,7 @@ const FestivalIndex = () => {
   return (
 
     <Container textAlign='justified'>
+
       <Segment.Inline>
 
         { /* Semantic UI Countries*/ }
@@ -333,6 +334,7 @@ const FestivalIndex = () => {
           onChange={handleChangeAll}
           placeholder='Country'
           name='country'
+          className="index-dropdown"
           // value={countriesOptions}
         />
 
@@ -354,10 +356,10 @@ const FestivalIndex = () => {
         
 
         { /* Semantic UI Artists */ }
-        <Dropdown placeholder='Artists' name='artist' clearable selection options={artistsOptions} onChange={handleChangeAll}/>
+        <Dropdown placeholder='Artists' name='artist' clearable selection options={artistsOptions} onChange={handleChangeAll} className="index-dropdown"/>
 
         { /* Semantic UI Price */ }
-        <Dropdown placeholder='Price per day (£)' name='price' clearable selection options={priceOptions} onChange={handleChangeAll}/>
+        <Dropdown placeholder='Price per day (£)' name='price' clearable selection options={priceOptions} onChange={handleChangeAll} className="index-dropdown"/>
 
 
 

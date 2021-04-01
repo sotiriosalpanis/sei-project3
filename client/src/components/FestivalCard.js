@@ -1,35 +1,45 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { Card, Image } from 'semantic-ui-react'
-// import { Link } from 'react-router-dom'
+import { Card, Image, Container } from 'semantic-ui-react'
 
-
-
-const FestivalCard = ({ _id, festivalName, mainFestivalImage, venue, country, startDate, endDate }) => {
+const FestivalCard = ({ _id, festivalName, venue, mainFestivalImage, country, startDate, endDate }) => {
 
   const startDateString = new Date(startDate).toDateString()
   const endDateString = new Date(endDate).toDateString()
 
   return (
-    <Card id="festival-card"
-      as='a' 
-      href={`/festivals/${_id}`}
-    >
-      <Image 
-        src={`${mainFestivalImage}`}
-        size='medium'
-        wrapped ui={false}
-      />
-      <Card.Content className='header-custom'>
-        <Card.Header >{festivalName}</Card.Header>
-        <Card.Description>
-          {venue} - {country}
-        </Card.Description>
-        <Card.Description>
-          {startDateString} - {endDateString}
-        </Card.Description>
-      </Card.Content>
-    </Card>
+  
+    <>
+      <Card id="festival-card"
+        as='a' 
+        href={`/festivals/${_id}`}
+      >
+        <Container
+            style={{
+              backgroundImage: `url(${mainFestivalImage})`
+            }}
+            as='a'
+            href={`/festivals/${_id}`}
+            className="festival-card-image-wrapper">
+              <div className="festival-card-title">
+                {festivalName.toUpperCase()}
+              </div>
+        </Container>
+
+        {/* <div className="festival-card-image-wrapper">
+          style={{
+              backgroundImage: `url(${mainFestivalImage})`
+            }}
+            <span>{festivalName}</span>
+        </div> */}
+
+        <div className="festival-card-info-wrapper">
+          <p className="festival-card-venue">{venue.toUpperCase()} - {country.toUpperCase()}</p>
+          <p className="festival-card-dates">{startDateString} - {endDateString}</p>
+        </div>
+
+      </Card>
+    </>
 
 
 
