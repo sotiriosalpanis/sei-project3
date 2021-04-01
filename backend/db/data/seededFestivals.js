@@ -222,7 +222,6 @@ export default [
     longitude: -90.08,
     mainFestivalImage: 'https://res.cloudinary.com/project-3/image/upload/v1616759752/mainFestivalImage/no-jazz-main_do5fgg.jpg'
   },
-  // --------------------------------------------------------------------------------------
   {
     festivalName: 'Sziget Festival',
     startDate: '2021-08-04',
@@ -368,8 +367,8 @@ export default [
   },
   {
     festivalName: 'Lost Village',
-    startDate: '26/08/2021',
-    endDate: '29/08/2021',
+    startDate: '2021-08-26',
+    endDate: '2021-08-29',
     website: 'https://lostvillagefestival.com/',
     price: 200,
     lineup: ['Bombay Bicycle Club', 'Bonobo', 'Honey Dijon', 'Chaos In The Cbd', 'Shanti Celeste'],
@@ -381,8 +380,8 @@ export default [
   },
   {
     festivalName: 'Boomtown',
-    startDate: '11/08/2021',
-    endDate: '15/08/2021',
+    startDate: '2021-08-11',
+    endDate: '2021-08-15',
     website: 'https://www.boomtownfair.co.uk/',
     price: 199,
     lineup: ['Wu-Tang Clan', 'Kano', 'Caravan Palace', 'De la Soul', 'Shy FX', 'Denis Sulta'],
@@ -394,8 +393,8 @@ export default [
   },
   {
     festivalName: 'Life is Beautiful Festival',
-    startDate: '11/09/2021',
-    endDate: '19/09/2021',
+    startDate: '2021-09-11',
+    endDate: '2021-09-19',
     website: 'https://lifeisbeautiful.com/',
     price: 400,
     lineup: ['Billie Eilish', 'Green Day', 'Tame Impala', 'HAIM', 'A$AP Rocky'],
@@ -407,8 +406,8 @@ export default [
   },
   {
     festivalName: 'Best Kept Secret',
-    startDate: '11/06/2021',
-    endDate: '13/06/2021',
+    startDate: '2021-06-11',
+    endDate: '2021-06-13',
     website: 'https://www.bestkeptsecret.nl/en/',
     price: 250,
     lineup: ['The Strokes', 'Catfish and the Bottlemen', 'The National', 'Jamie xx'],
@@ -420,8 +419,8 @@ export default [
   },
   {
     festivalName: 'Rolling Loud Portugal',
-    startDate: '06/07/2021',
-    endDate: '10/07/2021',
+    startDate: '2021-07-06',
+    endDate: '2021-07-10',
     website: 'https://www.rollingloudportugal.com/',
     price: 155,
     lineup: ['A$AP Rocky', 'Stormzy', 'DaBaby', 'Travis Scott', 'AJ Tracey'],
@@ -433,8 +432,8 @@ export default [
   },
   {
     festivalName: 'Isle of Wight Festival',
-    startDate: '16/09/2021',
-    endDate: '19/09/2021',
+    startDate: '2021-09-16',
+    endDate: '2021-09-19',
     website: 'https://isleofwightfestival.com/',
     price: 185,
     lineup: ['Sophie Ellis‐Bextor', 'Liam Gallagher', 'Snow Patrol', 'Kaiser Chiefs', 'Razorlight', 'Lewis Capaldi'],
