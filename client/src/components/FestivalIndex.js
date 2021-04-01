@@ -133,7 +133,9 @@ const FestivalIndex = () => {
     let filteredArray = []
     filteredArray = festivals.filter(festival => {
       return festival.country === countryFilterValue
+      
     })
+    setFilteredFestivals(filteredArray)
     if (!artistFilterValue && !priceFilterValue) {
       setFilteredFestivals(filteredArray)
     } else if (filteredArray.length === 0) {
@@ -148,7 +150,6 @@ const FestivalIndex = () => {
       setFilteredFestivals(filteredArray)
     }
     if (priceFilterValue && filteredArray.length === 0 ) {
-      console.log('Price alone', priceFilterValue)
           if (priceFilterValue === 'cheap') {
             filteredArray = festivals.filter(festival => {
         return (festival.price <= 50)
@@ -171,7 +172,6 @@ const FestivalIndex = () => {
     }
       setFilteredFestivals(filteredArray)
     } else {
-      console.log('Price combo', priceFilterValue, filteredArray.length)
       if (priceFilterValue === 'cheap') {
         filteredArray = filteredArray.filter(festival => {
           return (festival.price <= 50)
