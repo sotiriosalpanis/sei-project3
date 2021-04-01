@@ -36,7 +36,7 @@ const ArtistIndex = () => {
                   </div>
                   <div className='artist-index-image'>
                   <Link Link to={`/artists/${artist._id}`}>
-                  <Image src={artist.image} />
+                  <Image src={artist.image}/>
                   </Link>
                   </div>
                 </div>

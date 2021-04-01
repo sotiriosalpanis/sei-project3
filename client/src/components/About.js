@@ -66,7 +66,7 @@ const Home = () => {
             </Card.Content>
           </div>
           <div className='about-card'>
-            <Image src='https://media-exp1.licdn.com/dms/image/C4D03AQGMEdWdBetqYg/profile-displayphoto-shrink_200_200/0/1613654052738?e=1620864000&v=beta&t=A1slZ-XvNW9tTMhe7cZOtMf2j-Iti8hPeLm0rupa2l0'/>
+            <Image src='https://res.cloudinary.com/project-3/image/upload/v1617270749/mainFestivalImage/Screenshot_2021-04-01_at_10.52.17_am_jduxlx.png'/>
             <Card.Content>
               <Card.Header>Michael Henderson</Card.Header>
             </Card.Content>
