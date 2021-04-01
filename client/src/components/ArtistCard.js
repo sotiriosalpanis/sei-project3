@@ -54,10 +54,10 @@ const ArtistCard = () => {
             <Container>
               <Header className='homeHeader' as='h1'> {artist.artist} </Header>
             </Container>
-            <Grid stackable columns={4}>
-              <Grid.Row>
+            <Grid stackable relaxed padded >
+              <Grid.Row columns={2}>
                 <Grid.Column width={8}>
-                  <Segment>
+                  <Segment raised>
                     <Image 
                       src={artist.image}
                       fluid
@@ -66,22 +66,18 @@ const ArtistCard = () => {
                   </Segment>
                 </Grid.Column>
                 <Grid.Column width={8}>
-                  
-                  <iframe src="https://open.spotify.com/embed/artist/7CajNmpbOovFoOoasH2HaY" width="100%" height="100%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
-                  
+                  <iframe  src="https://open.spotify.com/embed/artist/7CajNmpbOovFoOoasH2HaY" width="100%" height="100%" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                 </Grid.Column>
               </Grid.Row>
 
-              <Grid.Row>
-                <Grid.Column width={8}>
-                  <h3>{filteredFestivals.map((fest, index) => {
-                    return <FestivalCard key={index} {...fest}/>
+              <Grid.Row stretched centered columns={1}>
+                <Grid.Column width={14}>
+                  <Segment raised>{filteredFestivals.map((fest, index) => {
+                    return <FestivalCard  key={index} {...fest}/>
                   })}
-                  </h3>
+                  </Segment>
                 </Grid.Column>
-                <Grid.Column width={8}>
-                  <Image src='https://react.semantic-ui.com/images/wireframe/paragraph.png' />
-                </Grid.Column>
+
               </Grid.Row>
             </Grid>
           </>
