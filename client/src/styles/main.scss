@@ -25,7 +25,7 @@ $background-color-light: rgb(109, 199, 241);
 }
 
 #navbar {
-  background-color: $background-color-light;
+  background-color: rgba(109, 199, 241, 0.1);
   color: $font-color-dark;
   height: 10vh;
 }
@@ -215,6 +215,7 @@ $background-color-light: rgb(109, 199, 241);
   text-align: center;
   font-weight: 600;
   margin: auto;
+  color: black;
 }
 .festival-card-dates {
   text-align: center;
@@ -233,10 +234,9 @@ $background-color-light: rgb(109, 199, 241);
   font-family: $header-font;
   letter-spacing: 2px;
   line-height: normal;
-  background-color: rgba(8, 8, 8, 0.2);
-  border-radius: 10px;
+  background-color: rgba(8, 8, 8, 0.9);
   &:hover{
-    background-color: rgba(8, 8, 8, 0.5);
+    background-color: rgb(8, 8, 8);
   }
 }
 

@@ -125,14 +125,14 @@ const FestivalPage = () => {
                 <Button as='div' labelPosition='right'>
                   <Button
                     basic
-                    color='teal'
+                    color='violet'
                     name='interested'
                     value={userAttendingStatus.interested}
                     onClick={handleAttendance}
                   >
                       Interested
                   </Button>
-                  <Label as='a' pointing='left' color='teal'>
+                  <Label as='a' pointing='left' color='violet'>
                     { userAttendingStatus.interested ? 'Yes' : 'No' }
                   </Label>
                 </Button>
@@ -141,14 +141,14 @@ const FestivalPage = () => {
                 <Button as='div' labelPosition='right' >
                   <Button
                     basic
-                    color='pink'
+                    color='blue'
                     onClick={handleAttendance}
                     name='going'
                     value={userAttendingStatus.going}
                   >
                       Going
                   </Button>
-                  <Label as='a' pointing='left' color='pink'>
+                  <Label as='a' pointing='left' color='blue'>
                     { userAttendingStatus.going ? 'Yes' : 'No' }
                   </Label>
                 </Button>

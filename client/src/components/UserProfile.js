@@ -72,7 +72,7 @@ const UserProfile = () => {
         <Grid.Row stretched>
           <Grid.Column>
           <Segment padded>
-            {!userInfo ? <Header size='large'>It looks like you do not have an account</Header> : <Header size='large' textAlign='center'>{username}, welcome to your Festivalist page</Header>}
+            {!userInfo ? <Header size='large'>It looks like you do not have an account</Header> : <Header id='your-profile-header' size='large' textAlign='center'>{username}, welcome to your Festivalist page</Header>}
           </Segment>
           </Grid.Column>
         </Grid.Row>
@@ -100,10 +100,19 @@ const UserProfile = () => {
         </Link>
       </Header>
       </Segment>
+      <Grid.Column width={4}>
+            <Segment textAlign='center'>
+              <Header sub>Map Key</Header>
+              <Segment>🕺🏻 your festivals</Segment>
+              <Segment>🎪 more festivals!</Segment>
+            </Segment>
+            
+
+          </Grid.Column>
 
             </Segment>
           </Grid.Column>
-          <Grid.Column width={8}>
+          <Grid.Column width={12}>
           <Segment className='map-container-medium-large'>
         <ReactMapGL 
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_ACCESS_TOKEN}
@@ -133,14 +142,7 @@ const UserProfile = () => {
           })}
         </ReactMapGL>
       </Segment>
-          </Grid.Column>
-          <Grid.Column width={4}>
-            <Segment textAlign='center'>
-              <Header>Map Key</Header>
-              <Segment>🕺🏻 your festivals</Segment>
-              <Segment>🎪 more festivals!</Segment>
-            </Segment>
-            
+      
 
           </Grid.Column>
         </Grid.Row>
