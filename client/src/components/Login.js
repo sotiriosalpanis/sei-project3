@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Container, Divider , Button, Form, Message } from 'semantic-ui-react'
+import { Container, Divider , Button, Form } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 
 const Login = () => {
@@ -32,7 +32,6 @@ const Login = () => {
       window.localStorage.setItem('token', token)
       history.goBack()
     } catch (err) {
-      // console.log(err)
       setErrors(true)
     }
   }

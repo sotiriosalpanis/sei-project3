@@ -79,8 +79,26 @@ $background-color-light: rgb(109, 199, 241);
 }
 
 .artist-grid {
+  display: flex;
+  max-height: 450px;
   margin: 15px;
   padding: 20px;
+  color: inherit;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  a {
+    color: white;
+  }
+  img {
+    max-height: 200px;
+    max-width: 100px;
+  }
+}
+
+.artist-index-info {
+  height: 200px;
+  width: 200px;
 }
 
 .festival-name{
@@ -129,4 +147,20 @@ $background-color-light: rgb(109, 199, 241);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+}
+
+.home-card-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  img {
+    height: 100px;
+    width: 200px;
+    min-height: 100px;
+    min-width: 200px;
+    max-height: 100px;
+    max-width: 200px;
+  }
+
+
 }

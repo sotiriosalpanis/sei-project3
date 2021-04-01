@@ -10,11 +10,11 @@ const ArtistIndex = () => {
     const getData = async () => {
       const { data } = await axios.get('/api/artists')
       setArtists(data)
-      console.log(artists)
     }
+    console.log('artists2', artists)
     getData()
-    console.log(artists)
   }, [])
+
 
   return (
     <>
@@ -24,17 +24,21 @@ const ArtistIndex = () => {
             return (
               <Grid.Column key={artist._id}>
                 <div className='artist-grid' key={artist.id}>
+                  <div className='artist-index-info'>
                   <Link Link to={`/artists/${artist._id}`}>
                     <h1>{artist.artist}</h1>
                   </Link>
-                  <p>Festivals: {artist.festivals.map( (festival, index) => {
+                  <p><h3>Festivals: </h3>{artist.festivals.map( (festival, index) => {
                     return (
-                      <div key={index}>
-                        <h3 className='festival-name' >{festival}</h3>
-                      </div>
+                        <p key={index} className='festival-name' >{festival}</p>
                     )
                   })}</p>
+                  </div>
+                  <div className='artist-index-image'>
+                  <Link Link to={`/artists/${artist._id}`}>
                   <Image src={artist.image} />
+                  </Link>
+                  </div>
                 </div>
               </Grid.Column> 
             )
