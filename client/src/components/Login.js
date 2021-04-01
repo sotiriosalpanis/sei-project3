@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { Container, Divider , Button, Form } from 'semantic-ui-react'
+import { Container, Divider , Button, Form, Message } from 'semantic-ui-react'
 import { useHistory } from 'react-router-dom'
 
 const Login = () => {
@@ -32,23 +32,23 @@ const Login = () => {
       window.localStorage.setItem('token', token)
       history.goBack()
     } catch (err) {
-      setErrors(true)
+      setErrors(err)
     }
   }
 
-  console.log(errors)
+  // console.log(errors.response.data.message)
 
   return (
     <div>
       <Container>
         {/* <Header as='h3'>Login to your account</Header> */}
         <Divider />
-        <Form className='ui form'  onSubmit={handleSubmit}>
+        <Form className='ui form' error onSubmit={handleSubmit}>
           <div className="field">
             <Form.Field>
               <label>Username:</label>
               <input 
-                placeholder='Vera' 
+                placeholder='Enter your username' 
                 type="text"
                 name='username'
                 value={formData.username} 
@@ -83,12 +83,16 @@ const Login = () => {
           </div>
 
           <Button type='submit' className="ui button">Login</Button>
+          {errors ? 
+          // <p>{errors.response.data.message}</p> 
+          <Message
+            error
+            header="We couldn't log you in"
+            content={errors.response.data.message}
+          />
+          : 
+          <p></p> }
         </Form>
-        {/* <Message
-          error
-          header="Something isn't right"
-          content="Please check your login details and try again"
-        /> */}
       </Container>
     </div>
   )

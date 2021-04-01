@@ -18,11 +18,8 @@ const Home = () => {
     const getData = async () => {
       const { data } = await axios.get('/api/festivals')
       setFestivals(data)
-      console.log('fests',festivals)
-      console.log(data)
     }
     getData()
-    console.log('festivals', festivals)
   }
 
   let getNewImage = false
