@@ -1,7 +1,7 @@
 export default [
   {
     artist: 'A$AP Rocky',
-    festivals: ['Sziget Festival'],
+    festivals: ['Sziget Festival', 'Life is Beautiful Festival', 'Rolling Loud Portugal'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120315/Artist%20Images/a_ap_rocky_tk5rnd.jpg'
   },
   {
@@ -11,7 +11,7 @@ export default [
   },
   {
     artist: 'AJ Tracey',
-    festivals: ['Parklife'],
+    festivals: ['Parklife', 'Rolling Loud Portugal'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120314/Artist%20Images/aj_tracey_wthtx7.jpg'
   },
   {
@@ -51,7 +51,7 @@ export default [
   },
   {
     artist: 'Billie Eilish',
-    festivals: ['We Love 90s In The Park!'],
+    festivals: ['We Love 90s In The Park!', 'Life is Beautiful Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120312/Artist%20Images/Billie_Eilish_c88sji.jpg'
   },
   {
@@ -77,7 +77,7 @@ export default [
   },
   {
     artist: 'Catfish And The Bottlemen',
-    festivals: ['Leeds Festival', 'Reading Festival'],
+    festivals: ['Leeds Festival', 'Reading Festival', 'Best Kept Secret'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120311/Artist%20Images/Catfish-And-The-Bottlemen_ww2mql.jpg'
   },
   {
@@ -87,7 +87,7 @@ export default [
   },
   {
     artist: 'Dababy',
-    festivals: ['Reading Festival'],
+    festivals: ['Reading Festival', 'Rolling Loud Portugal'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120313/Artist%20Images/Dababy_axd8b0.jpg'
   },
   {
@@ -182,7 +182,7 @@ export default [
   },
   {
     artist: 'Green Day',
-    festivals: ['Rock am Ring & Rock im Park'],
+    festivals: ['Rock am Ring & Rock im Park', 'Life is Beautiful Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120310/Artist%20Images/Green-Day_e4txw9.jpg'
   },
   {
@@ -207,12 +207,12 @@ export default [
   },
   {
     artist: 'Jamie xx',
-    festivals: ['All Points East', 'Parklife'],
+    festivals: ['All Points East', 'Parklife', 'Best Kept Secret'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120306/Artist%20Images/Jamie-xx_bkplv2.jpg'
   },
   {
     artist: 'Kano',
-    festivals: ['All Points East'],
+    festivals: ['All Points East', 'Boomtown'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120306/Artist%20Images/Kano_djiqhu.jpg'
   },
   {
@@ -237,12 +237,12 @@ export default [
   },
   {
     artist: 'Lewis Capaldi',
-    festivals: ['Leeds Festival', 'Reading Festival', 'We Love 90s In The Park!'],
+    festivals: ['Leeds Festival', 'Reading Festival', 'We Love 90s In The Park!', 'Lewis Capaldi'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120303/Artist%20Images/Lewis-Capaldi_tigcwi.jpg'
   },
   {
     artist: 'Liam Gallagher',
-    festivals: ['Leeds Festival', 'Reading Festival', 'We Love 90s In The Park!'],
+    festivals: ['Leeds Festival', 'Reading Festival', 'We Love 90s In The Park!', 'Isle of Wight Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120302/Artist%20Images/Liam-Gallagher_oeosiq.jpg'
   },
   //* - - - - - - - - - - - - - Sotirios seeding extra info from below this line
@@ -344,7 +344,7 @@ export default [
   },
   {
     artist: 'Razorlight',
-    festivals: ['LakeFest'],
+    festivals: ['LakeFest', 'Isle of Wight Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120297/Artist%20Images/Razorlight_oitohw.jpg',
     spotify: '<iframe src="https://open.spotify.com/embed/artist/450iujbtN6XgiA9pv6fVZz" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
   },
@@ -392,7 +392,7 @@ export default [
   },
   {
     artist: 'Snow Patrol',
-    festivals: ['Latitude Festival'],
+    festivals: ['Latitude Festival', 'Isle of Wight Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120295/Artist%20Images/Snow-Patrol_ok4w4g.jpg',
     spotify: '<iframe src="https://open.spotify.com/embed/artist/3rIZMv9rysU7JkLzEaC5Jp" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
   },
@@ -404,7 +404,7 @@ export default [
   },
   {
     artist: 'Sophie And The Giants',
-    festivals: ['CloseUp Festival'],
+    festivals: ['CloseUp Festival', 'Isle of Wight Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120295/Artist%20Images/Sophie-and-the-Giants_owkjad.jpg',
     spotify: '<iframe src="https://open.spotify.com/embed/artist/4FrXHrpbDLNyO3pbVv8RmF" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
   },
@@ -422,7 +422,7 @@ export default [
   },
   {
     artist: 'Stormzy',
-    festivals: ['Leeds Festival', 'Reading Festival', 'Sziget Festival', 'We Love 90s In The Park!'],
+    festivals: ['Leeds Festival', 'Reading Festival', 'Sziget Festival', 'We Love 90s In The Park!', 'Rolling Loud Portugal'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120292/Artist%20Images/Stormzy_ny2osx.webp',
     spotify: '<iframe src="https://open.spotify.com/embed/artist/2SrSdSvpminqmStGELCSNd" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
   },
@@ -434,7 +434,7 @@ export default [
   },
   {
     artist: 'Tame Impala',
-    festivals: ['Primavera Sound'],
+    festivals: ['Primavera Sound', 'Life is Beautiful Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120291/Artist%20Images/Tame-Impala_jp9r16.jpg',
     spotify: '<iframe src="https://open.spotify.com/embed/artist/5INjqkS1o8h1imAzPqGZBb" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
   },
@@ -456,7 +456,7 @@ export default [
   },
   {
     artist: 'The Strokes',
-    festivals: ['NOS Alive', 'Primavera Sound', 'Sziget Festival'],
+    festivals: ['NOS Alive', 'Primavera Sound', 'Sziget Festival', 'Best Kept Secret'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120290/Artist%20Images/The-Strokes_cswonp.jpg',
     spotify: '<iframe src="https://open.spotify.com/embed/artist/0epOFNiUfyON9EYx7Tpr6V" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
   },
@@ -492,7 +492,7 @@ export default [
   },
   {
     artist: 'Travis Scott',
-    festivals: ['Coachella', 'We Love 90s In The Park!'],
+    festivals: ['Coachella', 'We Love 90s In The Park!', 'Rolling Loud Portugal'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120288/Artist%20Images/Travis-Scott_kwdw8k.jpg',
     spotify: '<iframe src="https://open.spotify.com/embed/artist/0Y5tJX1MQlPlqiwlOH1tJY" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
   },
@@ -531,5 +531,35 @@ export default [
     festivals: ['Highest Point Festival'],
     image: 'https://res.cloudinary.com/project-3/image/upload/v1617120288/Artist%20Images/Wilkinson_m9hpj7.jpg',
     spotify: '<iframe src="https://open.spotify.com/embed/artist/6m8itYST9ADjBIYevXSb1r" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+  },
+  {
+    artist: 'Bombay Bicycle Club',
+    festivals: ['Lost Village'],
+    image: 'https://res.cloudinary.com/project-3/image/upload/v1617260425/mainFestivalImage/8W0A7792_r8hfye.jpg',
+    spotify: '<iframe src="https://open.spotify.com/embed/artist/3pTE9iaJTkWns3mxpNQlJV" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+  },
+  {
+    artist: 'Honey Dijon',
+    festivals: ['Lost Village'],
+    image: 'https://res.cloudinary.com/project-3/image/upload/v1617260571/mainFestivalImage/Honey-Dijon_kd8fbz.jpg',
+    spotify: '<iframe src="https://open.spotify.com/embed/artist/0XfQBWgzisaS9ltDV9bXAS" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>' 
+  },
+  {
+    artist: 'Bonobo',
+    festivals: ['Lost Village'],
+    image: 'https://res.cloudinary.com/project-3/image/upload/v1617260721/mainFestivalImage/artworks-000061949500-aqlxzy-t500x500_xr1btx.jpg',
+    spotify: '<iframe src="https://open.spotify.com/embed/artist/0cmWgDlu9CwTgxPhf403hb" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+  },
+  {
+    artist: 'Chaos In The Cbd',
+    festivals: ['Lost Village'],
+    image: 'https://res.cloudinary.com/project-3/image/upload/v1617260822/mainFestivalImage/636607418596422864_JN7A71552_yh8gp5.jpg',
+    spotify: '<iframe src="https://open.spotify.com/embed/artist/0QOQc6jEsPX5Y45TV0hXQy" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>'
+  },
+  {
+    artist: 'Shanti Celeste',
+    festivals: ['Lost Village'],
+    image: 'https://res.cloudinary.com/project-3/image/upload/v1617260992/mainFestivalImage/shanti_celeste02_website_image_krtb_standard_tjjx09.jpg',
+    spotify: '<iframe src="https://open.spotify.com/embed/artist/3CkM2290WOa2ESzhlu5mzM" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>' 
   }
 ]
