@@ -46,6 +46,8 @@ const Navigation = () => {
           name='Home'
           header
         /> */}
+        
+        <Menu.Menu position='right'>
         <Dropdown item text='Find a festival'>
           <Dropdown.Menu>
             <Dropdown.Item
@@ -67,19 +69,8 @@ const Navigation = () => {
               name= 'Arists'
             > Artists
             </Dropdown.Item>
-            { isLoggedIn && 
-              <Dropdown.Item
-                as= { Link }
-                to='/my-festivals'
-                name='My Festivals'
-              >
-              My Festivals
-              </Dropdown.Item>
-            }
           </Dropdown.Menu>
         </Dropdown>
-        <Menu.Menu position='right'>
-          
           {!isLoggedIn ?
             <Menu.Item
               as= { Link }
