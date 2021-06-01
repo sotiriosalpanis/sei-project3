@@ -11,8 +11,11 @@
   },
   "type": "module",
   "scripts": {
-    "serve": "npx nodemon index.js",
-    "seed": "node db/seeds.js"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "seed": "node db/seeds.js",
+	  "dev": "nodemon",
+    "start": "node index.js",
+    "build": "cd frontend && npm install && npm run build"
   },
   "devDependencies": {
     "eslint": "^7.22.0"
