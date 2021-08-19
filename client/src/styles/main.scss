@@ -1,0 +1,318 @@
+@import '~semantic-ui-css/semantic.min';
+
+// --------------------------------------Variables
+$header-font: 'Anton', sans-serif;
+$text-font: 'Lato', sans-serif;
+
+$font-color-dark: rgb(26, 17, 41);
+$font-color-light: antiquewhite;
+
+$background-color-dark: rgb(45, 28, 73);
+$background-color-medium-dark: rgb(83, 33, 148);
+$background-color-medium-light: pink;
+$background-color-light: rgb(109, 199, 241);
+
+// -------------------------------------- High level site structure
+#root {
+  background-image: linear-gradient(to top, $background-color-dark, $background-color-medium-dark, $background-color-medium-light, $background-color-light );
+  font-family: $text-font;
+  color: $font-color-dark;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#navbar {
+  background-color: rgba(109, 199, 241, 0.1);
+  color: $font-color-dark;
+  height: 10vh;
+}
+
+#footer{
+  height: fit-content;
+  background-color: rgba(3, 3, 3, 0.1);
+  color: $font-color-light;
+  &.ui.text.menu .item, .ui.menu .item {
+    color: $font-color-light;
+    margin: auto;
+  }
+}
+
+// -------------------------------------- Features used frequently across the site
+
+.btn{
+  background-color: $background-color-medium-dark;
+  color: $background-color-medium-light;
+}
+
+// --------------------------------------Component selectors
+
+
+#festival-card {
+  background-color: rgba(255, 255, 255, 0.356);
+  border-radius: 10px;
+  margin: 7px auto;
+  height: 350px;
+  width: 500px;
+  img {
+    height: 200px;
+  }
+  .header {
+    color: white;
+  }
+  .description {
+    color: white;
+  }
+}
+
+#home-card {
+  background-color: rgba(255, 255, 255, 0.356);
+  border-radius: 10px;
+  margin: 7px auto;
+  height: 350px;
+  width: 500px;
+  img {
+    height: 200px;
+  }
+  .header {
+    color: white;
+  }
+  .description {
+    color: white;
+  }
+}
+
+.map-container {
+  height: 90vh;
+  max-width: 100%;
+  border: 2px solid $background-color-medium-light;
+  border-radius: 10px;
+}
+
+.map-container-medium{
+  height: 300px
+}
+.map-container-medium-large{
+  height: 400px;
+}
+
+.ui.header.header-custom {
+  font-family: $header-font;
+}
+
+.ui.card>.content>.header.header-custom, .ui.cards>.card>.content>.header.header-custom{
+  font-family: $header-font;
+}
+
+.homeHeader{
+  text-align: center;
+}
+
+.artist-grid {
+  display: flex;
+  max-height: 450px;
+  margin: 15px;
+  padding: 20px;
+  color: inherit;
+  text-decoration: none;
+  color: white;
+  overflow: hidden;
+  a {
+    color: white;
+  }
+  img {
+    max-height: 200px;
+    max-width: 100px;
+  }
+}
+
+.artist-index-info {
+  height: 200px;
+  width: 200px;
+}
+
+.index-artist-name {
+  margin-bottom: 10px !important;
+}
+
+.festival-name{
+  margin: 5px 0;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.about-inner-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 30px;
+  color: white;
+  img {
+    border-radius: 60%;
+  }
+}
+
+.about-card {
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  .Content {
+    font-size: 20px;
+  }
+  img {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.home-hero-container {
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    margin-bottom: 50px;
+    max-height: 600px;
+    width: 100%;
+  }
+}
+
+.home-hero-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+// ----------------- Festival Cards
+.festival-card-image-wrapper {
+  padding: 30px 20px;
+  height: 250px;
+  opacity: 0.8;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  text-align: center;
+  color: white;
+  &:hover{
+    color: white;
+  }
+}
+.festival-card-info-wrapper {
+  padding: 30px 0;
+  // max-height: 120px;
+  // min-height: 120px;
+  height: 120px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.festival-card-venue {
+  text-align: center;
+  font-weight: 600;
+  margin: auto;
+  color: black;
+}
+.festival-card-dates {
+  text-align: center;
+  color: rgb(56, 56, 56);
+  padding: 6px;
+  font-weight: 600;
+}
+.festival-card-title {
+  position: absolute;
+  opacity: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 30px;
+  font-weight: 600;
+  font-family: $header-font;
+  letter-spacing: 2px;
+  line-height: normal;
+  background-color: rgba(8, 8, 8, 0.9);
+  &:hover{
+    background-color: rgb(8, 8, 8);
+  }
+}
+
+// ------------------------------ festival index
+
+.index-dropdown {
+  margin: 20px 50px;
+}
+
+
+// .home-card-image {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   img {
+//     height: 100px;
+//     width: 200px;
+//     min-height: 100px;
+//     min-width: 200px;
+//     max-height: 100px;
+//     max-width: 200px;
+//   }
+
+
+// }
+
+.home-hero-container {
+  height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  img {
+    margin-bottom: 50px;
+    max-height: 600px;
+    width: 100%;
+  }
+  margin-bottom: 30px;
+}
+.home-hero-container {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.home-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin: 7px auto;
+  height: 200x;
+  width: 350px;
+  img {
+    height: 200px;
+    width: 400px;
+  }
+  .description {
+    color: white;
+  }
+}
+.home-card-header {
+    color: white;
+    h3 {
+      padding: 10px;
+      font-size: 30px;
+    }
+}
+.home-card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+@media screen and (max-width: 900px) {
+  .home-card-container {
+    display: flex;
+    flex-direction: column;
+  }
+}
